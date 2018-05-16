@@ -7,7 +7,7 @@ def int_to_hex(number, bits=16):
     This uses two's complement in encoding the integer, per Huber's
     manual.
     """
-    return '{:04x}'.format((number + (1 << bits)) % (1 << bits))
+    return '{:04X}'.format((number + (1 << bits)) % (1 << bits))
 
 
 def hex_to_int(hex_string, bits=16):
