@@ -27,6 +27,8 @@ def hex_to_int(hex_string, bits=16):
 
 def parse(number, settings):
     """Parse a number according to formats from Huber's manual."""
+    if number is None:
+        return None
     format = settings['format']
     if format == 'd':
         return number
