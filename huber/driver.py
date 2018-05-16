@@ -105,7 +105,8 @@ class Bath(object):
         if ('range' in settings and not
                 settings['range'][0] <= value <= settings['range'][1]):
             raise ValueError(f'Value {value} outside allowed range.')
-        response = await self._write_and_read(settings['address'], value)
+        encoded = int(100 * value) if settings['format'] == 'f' else value
+        response = await self._write_and_read(settings['address'], encoded)
         new = util.parse(response, settings)
         if abs(new - value) > .1:
             raise IOError(f'Could not set {key}.')
