@@ -92,7 +92,7 @@ class Bath(object):
         settings = util.fields[key]
         response = await self._write_and_read(settings['address'])
         value = util.parse(response, settings)
-        if ('range' in settings and not
+        if ('range' in settings and value is not None and not
                 settings['range'][0] <= value <= settings['range'][1]):
             raise ValueError(f'Value {value} outside allowed range.')
         return value
