@@ -76,13 +76,13 @@ The main `get` method strings together multiple TCP requests, and can take >0.5s
 to run. If you don't want all the data, you should instead use the following:
 
 ```python
-await get_setpoint()          # °C
-await get_internal()          # °C
-await get_pressure()          # mbar
-await get_pump_speed()        # rpm, may not be enabled
-await get_fill_level()        # [0, 1]
-await get_next_maintenance()  # days
-await get_status()            # boolean dictionary
+await bath.get_setpoint()          # °C
+await bath.get_internal()          # °C
+await bath.get_pressure()          # mbar
+await bath.get_pump_speed()        # rpm, may not be enabled
+await bath.get_fill_level()        # [0, 1]
+await bath.get_next_maintenance()  # days
+await bath.get_status()            # boolean dictionary
 ```
 
 You can also set the temperature setpoint and (if enabled) pump speed.
