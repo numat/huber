@@ -140,13 +140,10 @@ class Bath(object):
             if not self.open:
                 await asyncio.wait_for(self._connect(), timeout=0.25)
             self.reconnecting = False
-        except asyncio.TimeoutError:
+        except (asyncio.TimeoutError, OSError):
             if not self.reconnecting:
                 logger.error(f'Connecting to {self.ip} timed out.')
             self.reconnecting = True
-        except Exception:
-            logger.warning('Failed to connect.')
-            self.close()
 
     async def _handle_communication(self, command):
         """Manage communication, including timeouts and logging."""
@@ -156,14 +153,10 @@ class Bath(object):
             line = await asyncio.wait_for(future, timeout=0.25)
             result = line.decode().strip()
             self.timeouts = 0
-        except asyncio.TimeoutError:
+        except (asyncio.TimeoutError, TypeError):
             self.timeouts += 1
             if self.timeouts == self.max_timeouts:
                 logger.error(f'Reading from {self.ip} timed out '
                              f'{self.timeouts} times.')
-            result = None
-        except Exception as e:
-            logger.warning('Failed to connect: {}'.format(e))
-            self.close()
             result = None
         return result
