@@ -144,8 +144,8 @@ class Bath(object):
             if not self.reconnecting:
                 logger.error(f'Connecting to {self.ip} timed out.')
             self.reconnecting = True
-        except Exception as e:
-            logger.warning('Failed to connect: {}'.format(e))
+        except Exception:
+            logger.warning('Failed to connect.')
             self.close()
 
     async def _handle_communication(self, command):
