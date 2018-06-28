@@ -29,6 +29,7 @@ class Bath(object):
         self.timeouts = 0
         self.max_timeouts = 10
         self.waiting = False
+        self.connection = None
 
     async def get(self):
         """Get a pre-selected list of fields.
