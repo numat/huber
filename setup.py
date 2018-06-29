@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='huber',
-    version='0.2.0',
+    version='0.2.1',
     description='Python driver for Huber recirculating baths.',
     url='http://github.com/numat/huber/',
     author='Patrick Fuller',

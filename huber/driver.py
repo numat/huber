@@ -65,15 +65,15 @@ class Bath(object):
 
     async def get_setpoint(self):
         """Get the temperature setpoint of the bath, in C."""
-        return await self._get('setpoint')
+        return await self._get('temperature.setpoint')
 
     async def set_setpoint(self, value):
         """Set the temperature setpoint of the bath, in C."""
-        return await self._set('setpoint', value)
+        return await self._set('temperature.setpoint', value)
 
     async def get_internal(self):
         """Get the internal temperature of the bath, in C."""
-        return await self._get('internal')
+        return await self._get('temperature.internal')
 
     async def get_pump_pressure(self):
         """Get the bath pump outlet pressure, in mbar."""
