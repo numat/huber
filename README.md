@@ -57,18 +57,25 @@ If the bath is communicating, this should print a dictionary of the form:
 
 ```python
 {
-    'fill': 0.0,               # Oil level, [0, 1]
-    'internal': 23.49,         # Internal temperature, °C
-    'maintenance': 338,        # Time until maintenance alarm, days
-    'pressure': 0.0,           # Pump head pressure, mbar
-    'setpoint': 20.0,          # Temperature setpoint, °C
+    'on': False,               # Temperature control (+pump) active
+    'temperature': {
+        'internal': 23.49,     # Internal temperature, °C
+        'setpoint': 20.0       # Temperature setpoint, °C
+    },
+    'pump': {
+        'pressure': 0.0,       # Pump head pressure, mbar
+        'speed': 0,            # Pump speed, rpm
+        'setpoint': 0          # Pump speed setpoint, rpm
+    },
     'status': {
         'circulating': False,  # True if device is circulating
         'controlling': False,  # True if temperature control is active
         'error': False,        # True if an uncleared error is present
         'pumping': False,      # True if pump is on
         'warning': False       # True if an uncleared warning is present
-    }
+    },
+    'fill': 0.0,               # Oil level, [0, 1]
+    'maintenance': 338         # Time until maintenance alarm, days
 }
 ```
 
@@ -79,15 +86,17 @@ to run. If you don't want all the data, you should instead use the following:
 await bath.get_setpoint()          # °C
 await bath.get_internal()          # °C
 await bath.get_pressure()          # mbar
-await bath.get_pump_speed()        # rpm, may not be enabled
+await bath.get_pump_speed()        # rpm
 await bath.get_fill_level()        # [0, 1]
 await bath.get_next_maintenance()  # days
 await bath.get_status()            # boolean dictionary
 ```
 
-You can also set the temperature setpoint and (if enabled) pump speed.
+You can also start, stop, set temperature setpoint, and set pump speed.
 
 ```python
+await bath.start()
+await bath.stop()
 await bath.set_setpoint(50)     # °C
 await bath.set_pump_speed(100)  # rpm
 ```

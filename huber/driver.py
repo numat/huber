@@ -18,8 +18,17 @@ class Bath(object):
     """Python driver for Huber recirculating baths."""
 
     port = 8101
-    defaults = ['internal', 'setpoint', 'pressure',
-                'fill', 'maintenance', 'status']
+    defaults = [
+        'on',
+        'temperature.internal',
+        'temperature.setpoint',
+        'pump.pressure',
+        'pump.speed',
+        'pump.setpoint',
+        'fill',
+        'maintenance',
+        'status'
+    ]
 
     def __init__(self, ip):
         """Initialize the connection with the bath's IP address."""
@@ -37,7 +46,22 @@ class Bath(object):
         Note that this is slow, as it chains multiple requests to construct
         a response. Look into the other `get` methods for single fields.
         """
-        return {k: await self._get(k) for k in self.defaults}
+        output = {}
+        for default in self.defaults:
+            util.set_nested(output, default, await self._get(default))
+        return output
+
+    async def start(self):
+        """Start the controller and pump."""
+        return await self._set('on', True)
+
+    async def stop(self):
+        """Stop the controller and pump."""
+        return await self._set('on', False)
+
+    async def toggle(self, on):
+        """Start or stop the controller and pump."""
+        return await self._set('on', on)
 
     async def get_setpoint(self):
         """Get the temperature setpoint of the bath, in C."""
@@ -51,17 +75,17 @@ class Bath(object):
         """Get the internal temperature of the bath, in C."""
         return await self._get('internal')
 
-    async def get_pressure(self):
+    async def get_pump_pressure(self):
         """Get the bath pump outlet pressure, in mbar."""
-        return await self._get('pressure')
+        return await self._get('pump.pressure')
 
     async def get_pump_speed(self):
         """Get the bath pump speed, in RPM."""
-        return await self._get('speed')
+        return await self._get('pump.speed')
 
     async def set_pump_speed(self, value):
         """Set the bath pump speed, in RPM."""
-        return await self._set('speed', value)
+        return await self._set('pump.setpoint', value)
 
     async def get_fill_level(self):
         """Get the thermostat fluid fill level, in [0, 1]."""
@@ -90,7 +114,7 @@ class Bath(object):
 
     async def _get(self, key):
         """Get a property as specified by the corresponding key."""
-        settings = util.fields[key]
+        settings = util.get_field(key)
         response = await self._write_and_read(settings['address'])
         value = util.parse(response, settings)
         if ('range' in settings and value is not None and not
@@ -100,13 +124,13 @@ class Bath(object):
 
     async def _set(self, key, value):
         """Set property as specified by key."""
-        settings = util.fields[key]
+        settings = util.get_field(key)
         if 'writable' not in settings or not settings['writable']:
             raise ValueError(f'Can not write to {key}.')
         if ('range' in settings and not
                 settings['range'][0] <= value <= settings['range'][1]):
             raise ValueError(f'Value {value} outside allowed range.')
-        encoded = int(100 * value) if settings['format'] == 'f' else value
+        encoded = int(100 * value if settings['format'] == 'f' else value)
         response = await self._write_and_read(settings['address'], encoded)
         new = util.parse(response, settings)
         if abs(new - value) > .1:

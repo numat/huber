@@ -1,4 +1,64 @@
-"""Utility functions to handle Huber's number encoding."""
+"""Utilities to handle Huber's encodings."""
+
+fields = {
+    'on': {
+        'address': 0x14,
+        'writable': True,
+        'format': 'b',
+        'range': (0, 1)
+    },
+    'temperature': {
+        'setpoint': {
+            'address': 0x00,
+            'writable': True,
+            'format': 'f',
+            'range': (-151, 327)
+        },
+        'internal': {
+            'address': 0x01,
+            'format': 'f',
+            'range': (-151, 327)
+        }
+    },
+    'pump': {
+        'pressure': {
+            'address': 0x03,
+            'format': 'f',
+            'range': (0, 320)
+        },
+        'speed': {
+            'address': 0x26,
+            'format': 'd',
+            'range': (0, 32000)
+        },
+        'setpoint': {
+            'address': 0x48,
+            'writable': True,
+            'format': 'd',
+            'range': (1500, 4500)
+        }
+    },
+    'fill': {
+        'address': 0x0f,
+        'format': '%',
+        'range': (-0.001, 1)
+    },
+    'maintenance': {
+        'address': 0x5c,
+        'format': 'd'
+    },
+    'status': {
+        'address': 0x0a,
+        'format': 'list',
+        'list': {
+            0: 'controlling',
+            1: 'circulating',
+            4: 'pumping',
+            8: 'error',
+            9: 'warning'
+        }
+    }
+}
 
 
 def int_to_hex(number, bits=16):
@@ -30,6 +90,8 @@ def parse(number, settings):
     if number is None:
         return None
     format = settings['format']
+    if format == 'b':
+        return bool(number)
     if format == 'd':
         return number
     elif format == 'f':
@@ -42,47 +104,21 @@ def parse(number, settings):
         raise NotImplementedError(f'Number format "{format}" not supported.')
 
 
-fields = {
-    'setpoint': {
-        'address': 0x00,
-        'writable': True,
-        'format': 'f',
-        'range': (-151, 327)
-    },
-    'internal': {
-        'address': 0x01,
-        'format': 'f',
-        'range': (-151, 327)
-    },
-    'pressure': {
-        'address': 0x03,
-        'format': 'f',
-        'range': (0, 320)
-    },
-    'speed': {
-        'address': 0x42,
-        'writable': True,
-        'format': 'd',
-        'range': (0, 32000)
-    },
-    'fill': {
-        'address': 0x0f,
-        'format': '%',
-        'range': (-0.001, 1)
-    },
-    'maintenance': {
-        'address': 0x5c,
-        'format': 'd'
-    },
-    'status': {
-        'address': 0x0a,
-        'format': 'list',
-        'list': {
-            0: 'controlling',
-            1: 'circulating',
-            4: 'pumping',
-            8: 'error',
-            9: 'warning'
-        }
-    }
-}
+def get_field(key):
+    """Search period-separated key searching on `fields`."""
+    f = fields
+    for k in key.split('.'):
+        f = f[k]
+    return f
+
+
+def set_nested(dictionary, keys, value):
+    """Use period-separated keys to set nested dictionary value."""
+    d = dictionary
+    keys = keys.split('.')
+    nodes, leaf = keys[:-1], keys[-1]
+    for node in nodes:
+        if node not in d:
+            d[node] = {}
+        d = d[node]
+    d[leaf] = value
