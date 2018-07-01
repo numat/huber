@@ -94,8 +94,8 @@ You can also start, stop, set temperature setpoint, and set pump speed.
 ```python
 await bath.start()
 await bath.stop()
-await bath.set_setpoint(50)     # °C
-await bath.set_pump_speed(100)  # rpm
+await bath.set_setpoint(50)      # °C
+await bath.set_pump_speed(2000)  # rpm
 ```
 
 Implementation
