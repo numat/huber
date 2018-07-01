@@ -40,6 +40,26 @@ class Bath(object):
         self.waiting = False
         self.connection = None
 
+    def __enter__(self):
+        """Provide entrance to context manager."""
+        return self
+
+    async def __aenter__(self):
+        """Provide async entrance to context manager.
+
+        Contrasting synchronous access, this will connect on initialization.
+        """
+        await self._connect()
+        return self
+
+    def __exit__(self, *args):
+        """Provide exit to context manager."""
+        self.close()
+
+    async def __aexit__(self, *args):
+        """Provide async exit to context manager."""
+        self.close()
+
     async def get(self):
         """Get a pre-selected list of fields.
 

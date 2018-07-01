@@ -43,14 +43,11 @@ driver solely uses asynchronous Python ≥3.5.*
 import asyncio
 from huber import Bath
 
-async def print_state():
-    print(await bath.get())
+async def get():
+    with Bath('192.168.1.100') as bath:
+        print(await bath.get())
 
-bath = Bath('192.168.1.100')  # Change the IP to match your bath
-ioloop = asyncio.get_event_loop()
-ioloop.run_until_complete(print_state())
-bath.close()
-ioloop.close()
+asyncio.run(get())
 ```
 
 If the bath is communicating, this should print a dictionary of the form:
