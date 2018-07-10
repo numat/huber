@@ -153,7 +153,7 @@ class Bath(object):
         encoded = int(100 * value if settings['format'] == 'f' else value)
         response = await self._write_and_read(settings['address'], encoded)
         new = util.parse(response, settings)
-        if abs(new - value) > .1:
+        if settings['format'] != 'b' and abs(new - value) > .1:
             raise IOError(f'Could not set {key}.')
 
     async def _write_and_read(self, address, value=None):
