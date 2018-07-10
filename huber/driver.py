@@ -166,7 +166,7 @@ class Bath(object):
             return None
         self.waiting = True
 
-        value = util.int_to_hex(value) if value else '****'
+        value = '****' if value is None else util.int_to_hex(value)
         command = f'{{M{address:02X}{value}\r\n'
 
         await self._handle_connection()
