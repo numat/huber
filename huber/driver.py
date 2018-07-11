@@ -197,7 +197,7 @@ class Bath(object):
             line = await asyncio.wait_for(future, timeout=0.25)
             result = line.decode().strip()
             self.timeouts = 0
-        except (asyncio.TimeoutError, TypeError):
+        except (asyncio.TimeoutError, TypeError, OSError):
             self.timeouts += 1
             if self.timeouts == self.max_timeouts:
                 logger.error(f'Reading from {self.ip} timed out '
