@@ -124,7 +124,7 @@ def parse(number, settings):
     elif format == 'list':
         return {v: bool(number >> i & 1) for i, v in settings['list'].items()}
     elif format == 'fault':
-        return faults[number]
+        return faults[number] if number < 0 else None
     else:
         raise NotImplementedError(f'Number format "{format}" not supported.')
 
