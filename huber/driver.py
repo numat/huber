@@ -7,8 +7,8 @@ try:
     import asyncio
 except ImportError:
     raise ImportError("TCP connections require python >=3.5.")
-
 import logging
+
 from huber import util
 
 logger = logging.getLogger('huber')
@@ -69,6 +69,10 @@ class Bath(object):
         output = {}
         for default in self.defaults:
             util.set_nested(output, default, await self._get(default))
+        if 'status' in output:
+            for fault in ['warning', 'error']:
+                if output['status'][fault]:
+                    output[fault] = await self._get(fault)
         return output
 
     async def start(self):
@@ -102,6 +106,22 @@ class Bath(object):
     async def get_pump_speed(self):
         """Get the bath pump speed, in RPM."""
         return await self._get('pump.speed')
+
+    async def get_error(self):
+        """Get the most recent error, as a dictionary."""
+        return await self._get('error')
+
+    async def get_warning(self):
+        """Get the most recent warning, as a dictionary."""
+        return await self._get('warning')
+
+    async def clear_error(self):
+        """Clear the most recent error."""
+        await self._set('error', 1)
+
+    async def clear_warning(self):
+        """Clear the most recent warning."""
+        await self._set('warning', 1)
 
     async def set_pump_speed(self, value):
         """Set the bath pump speed, in RPM."""

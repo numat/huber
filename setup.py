@@ -6,7 +6,7 @@ with open('README.md', 'r') as in_file:
 
 setup(
     name='huber',
-    version='0.2.5',
+    version='0.2.6',
     description='Python driver for Huber recirculating baths.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -14,6 +14,7 @@ setup(
     author='Patrick Fuller',
     author_email='pat@numat-tech.com',
     packages=['huber'],
+    package_data={'huber': ['faults.csv']},
     entry_points={
         'console_scripts': [('huber = huber:command_line')]
     },

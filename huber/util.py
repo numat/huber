@@ -1,4 +1,17 @@
 """Utilities to handle Huber's encodings."""
+import csv
+import os
+
+root = os.path.normpath(os.path.dirname(__file__))
+with open(os.path.join(root, 'faults.csv')) as in_file:
+    reader = csv.reader(in_file)
+    next(reader)
+    faults = {int(row[0]): {
+        'code': int(row[0]),
+        'type': row[1],
+        'condition': row[2] if len(row) >= 3 else None,
+        'recovery': row[3] if len(row) == 4 else None
+    } for row in reader if row[0]}
 
 fields = {
     'on': {
@@ -57,6 +70,16 @@ fields = {
             8: 'error',
             9: 'warning'
         }
+    },
+    'error': {
+        'address': 0x05,
+        'format': 'fault',
+        'writable': True
+    },
+    'warning': {
+        'address': 0x06,
+        'format': 'fault',
+        'writable': True
     }
 }
 
@@ -100,6 +123,8 @@ def parse(number, settings):
         return number / 1000.0
     elif format == 'list':
         return {v: bool(number >> i & 1) for i, v in settings['list'].items()}
+    elif format == 'fault':
+        return faults[number]
     else:
         raise NotImplementedError(f'Number format "{format}" not supported.')
 

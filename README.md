@@ -64,7 +64,19 @@ If the bath is communicating, this should print a dictionary of the form:
         'warning': False       # True if an uncleared warning is present
     },
     'fill': 0.0,               # Oil level, [0, 1]
-    'maintenance': 338         # Time until maintenance alarm, days
+    'maintenance': 338,        # Time until maintenance alarm, days
+    'warning': {               # Only present if warning is detected
+        'code': -1,
+        'condition': '',
+        'recovery': '',
+        'type': ''
+    },
+    'error': {                 # Only present if error is detected
+        'code': -1,
+        'condition': '',
+        'recovery': '',
+        'type': ''
+    }
 }
 ```
 
@@ -79,6 +91,8 @@ await bath.get_pump_speed()        # rpm
 await bath.get_fill_level()        # [0, 1]
 await bath.get_next_maintenance()  # days
 await bath.get_status()            # boolean dictionary
+await bath.get_warning()           # None or dictionary
+await bath.get_error()             # None or dictionary
 ```
 
 You can also start, stop, set temperature setpoint, and set pump speed.
@@ -88,6 +102,8 @@ await bath.start()
 await bath.stop()
 await bath.set_setpoint(50)      # °C
 await bath.set_pump_speed(2000)  # rpm
+await bath.clear_warning()
+await bath.clear_error()
 ```
 
 Implementation

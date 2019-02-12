@@ -1,0 +1,1256 @@
+Code,Type,Condition,Recovery
+-1,hard error,Over temperature protection has operated,Over temperature protection has been activated. Fluid temperature in or near heater was higher than the set OTP temperature
+-2,hard error,The software version could not be read,
+-4,hard error,Upper alarm temperature in fluid outlet or bath has been reached Parameters critically set . Over swing / load change,
+-5,hard error,Lower alarm temperature in fluid outlet or bath has been reached Parameters critically set . Over swing / load change,
+-6,hard error,Upper alarm temperature in process has been reached Parameters critically set . Over swing / load change,
+-7,hard error,Lower alarm temperature in process has been reached. Parameters critically set . Over swing / load change,
+-9,hard error,Internal Pt100 faulty,
+-10,hard error,Process Pt100 faulty,
+-11,hard error,Condensing temperature Pt100 faulty,Condensation temperature Pt100 OK
+-14,hard error,Condensation Temperature monitor,Cooling Water or air supply insufficient / environment or water temperature too high
+-15,hard error,Variable speed pump fault,Pump is activated but rpm can not be measured. There is no speed impulse measured from the motor. Possible motor or controller fault. Replace controller / motor as required
+-16,hard error,The high pressure cut out pressostat of the HT-stage has been triggered,
+-17,hard error,The low pressure cut out pressostat of the HT-stage has been triggered,
+-36,hard error,The temperature in the expansion vessel has risen above 90 °C,External Communication not ok. Data transfer too fast . Monitor timings . Externe Kommunikation fehlerhaft. Unistat Pilot and Control software not compatible. The Pilot and Controller software is not compatible. Flash both with a compatible software. Unistat Pilot und Control Software nicht kompatibel
+-41,hard error,The error contact of the pump has triggered The pump has stopped caused to an error,
+-42,hard error,Fluid return Pt100 sensor faulty,Return Pt100 sensor ok
+-43,hard error,HT stage evaporator end Pt100 sensor faulty,
+-45,hard error,NTR-Transistor 1 failed,The transistor driving the BusBoard NTR relay is faulty. Replace controller. NTR Transistor 1 defekt
+-46,hard error,NTR-Transistor 2 failed,The transistor driving the BusBoard NTR relay is faulty. Replace controller. NTR Transistor 2 defekt
+-48,hard error,The evaporation pressure too low,Either a stuck stepper motor or expansion valve.  or lack of refrigerant.  or a controller fault. Check the refrigerant sight glass for bubbles. It should be full with no bubbles. Check controller by replacement
+-49,hard error,Evaporation pressure too high. (MOP monitor),The evaporation pressure is too high (Above the MOP value). Has the compressor started
+-50,hard error,The superheat is too low,The difference between the evaporation and evaporator end temperatures was too small. Poor fluid flow.  incorrect oil or fluid.  or impurities in the oil can cause this effect. Also faulty sensors and/or incorrect parallel evap operation. Error in comparison of the unit and controller EEPROMs. 3 sets of data were not the same. A/D converter Reference out of range. This is a hardware error in the Controller. The controller should be exchanged
+-54,hard error,Pump and UNIPUMP not synchronised,Internal pump and external Unipump do not run together. Is the POKO programming ok
+-55,hard error,Com.G@te sees a level sensor fault,Level input plausibility control not okay Pin 3 measures data.  although Pin 1 senses no sensor is connected. Possible Com.G@te fault. Test by replacement
+-56,hard error,Faulty pump speed measured,The pump apparently rotates although it should be turned off Fehlerhafte Pumpendrehzahl gemessen
+-57,hard error,Set point tracking is chosen but process sensor not present,The Set point tracking requires a valid process temperature measurement at the Lemosa connector.  but this sensor is not connected
+-58,hard error,Standby current too high,Something is drawing too much current in the standby condition. Check for stuck relays. Standby Strom zu hoch
+-59,hard error,Pump current too high,The pump is drawing too much current when running. Check supply voltage and fluid viscosity. Possible pump motor fault. Check it rotates freely when turned by hand Pumpenstrom zu hoch. The input voltage on one channel of the AD converter has measured an out of range input voltage (OVR Bit is set)
+-61,hard error,100 Ohm Ref Resistor fault,An error has occurred during the measurement of a reference resistor. (100 ohm Resistor in controller)This reference resistor is inside the controller. Replace the controller
+-62,hard error,150 Ohm Ref resistor fault,An error has occurred during the measurement of a reference resistor. (150 ohm Resistor in controller)This reference sensor is inside the controller. Replace the controller
+-63,hard error,Pump pressure has dropped severely during temperature control,Air / gas in the pump. Leakage. Boiling in fluid. HTF contaminated or de-natured. Internal A/D data transfer faulty. The data transmission between the 24 bit AD-converter and the processor is faulty. Faulty controller. Exchange to check. No stepper motor module. A stepper motor module was recognised but is not responding anymore. Faulty module or CAN-Bus problem. Check connections
+-67,hard error,During de-gassing, pump pressure no longer reached. Despite switching off the heater and fluid cooling During de-gassing.  no pump pressure could be measured over several minutes
+-68,hard error,The source, defined as Internal temperature sensor.  is not showing valid values. Please check the defined internal temperature source: 'Internal Pt100.  External Pt100.  analogue input or digital interface'
+-69,hard error,The source, defined as External temperature sensor.  is not showing valid values. Please check the defined external temperature source: 'External Pt100.  analogue input or digital interface'. Despite several attempts the EEPROM cannot be read. Despite several attempts the EEPROM cannot be written
+-72,hard error,The mains frequency could not be detected,It could not be decided with certainty if the time between interrupts is for a mains frequency of 50Hz or 60Hz.Possible BusBoard or controller problem. Change controller and if not successful replace BusBoard. Possible noise on mains. Try a different power point. The measured AD values are not plausible (strong oscillations)
+-74,hard error,OT to Pt100 difference temp more than 30K,There is an unusually large temperature difference in the hydraulic circuit between heaters and outlet. Heating is stopped to prevent high heater surface temperatures. Circulation very poor. Thermal oil very viscous
+-75,hard error,The level monitoring (ComG@ate) is too low,Refill HTF. Leakage. Check float or level switch
+-76,hard error,The pressostat of the HT-stage has been triggered,Insufficient machine cooling. Check cooling water flow and filter. Check cooling air for good flow.  and fans for correct operation and that condenser fins are clean and unobstructed
+-77,hard error,Over temperature in the expansion vessel,Expansion vessel temperature typically rises too high when the fluid or contaminants in it boils. Fluid Contamination or aging. Monitor temperature in expansion vessel when heating. During the current test the NTR was not open. The supply frequency could not be measured during the current test. The supply voltage could not be measured during the current test
+-81,hard error,Com.G@te missing,The Com.G@te cannot be found (any more) even though it should be connected e.g. with ECS/AIF input. Check Com.G@te connection to machine. Replace Com.G@te Com.G@te fehlt
+-82,hard error,Current test impossible due OT trip,Due to an over temperature trip.  the machine cannot do the start up current test. Turn off the machine and let it cool down. Otherwise increase the OT trip setting.  then turn machine off and on again to reset the alarm. Incompatible Pilot/Controller software. The data structures that should be exchanged between the controller and the control panel are not compatible. Controller and control panel software are not compatible. Flash Controller and Pilot with compatible software. Inkompatible Pilot/Regler Software
+-84,hard error,An automation system has programmed the watchdog as a protection system. The agreed refresh time has been exceeded, thus causing a pre-programmed reaction. RS-Watchdog WD1
+-85,hard error,T-internal to T-process difference too large,The temperature difference between the intern- and extern sensors is unacceptably large. Sensor fault. Is the External sensor actually in the reactor
+-86,hard error,NTR (power isolation relay) failed,A current increase was seen when heating is activated with opened NTR. Faulty Relay (stuck closed .) Inspect relays. Faulty controller. Check by substitution. Faulty BusBoard. Check by replacement
+-87,hard error,Heater SSR failed,Recognised a current increase with deactivated heating and a closed NTR. Replace Opto (Solid state relay)
+-88,hard error,Heater 1 (main heater) failed,No sufficient current increase was detected when heating 1 is activated. Check controller by replacement.  Check heater wiring.  check heater resistance.  check SSR and power supplies Heizung 1 (Hauptheizung) fehlerhaft
+-89,hard error,Heater 2 (Fine heater) failed,No sufficient current increase was detected when heating 2 is activated. Check controller by replacement.  check heater wiring.  Check heater resistance.  check SSR and power supplies. Heater 1 (main heater) current does not drop. Despite a certain holding time.  the current has not reduced enough after deactivation of heating 1 (main heater) to be able to start with the test of heating 2 (Fine heater). Leakage through the heating SSR. Check by measurement
+-91,hard error,The firmware is not compatible with this machine,The firmware does not recognise the machine. Pilot ONE® exchanged for one with an older software. Update the firmware
+-92,hard error,Hardware / software incompatibility,The software does not know the level of the controller hardware. Old software. Try flashing new software on Controller and Pilot. Possible communications problem between controller and Pilot. Replace with a known working pair. Hardware / Software Inkompatibilität
+-93,hard error,Hardware / software incompatibility,The software does not recognize the machine and does not know the level of the controller hardware. Old software. Try flashing new software on Controller and Pilot. Possible communications problem between controller and Pilot. Replace with a known working pair. Hardware / Software Inkompatibilität
+-94,hard error,The firmware does not recognise the machine,Pilot ONE with too old a firmware exchanged. Update firmware. Controller and Pilot software versions are not compatible
+-96,hard error,Pilot adjustment memory inconsistent,
+-97,hard error,Machine parameter memory inconsistent,Loss of essential machine data (SimFile)
+-98,hard error,Pilot parameter memory inconsistent,Loss of essential machine data (Controller file). The NTR-Relay (power isolation relay) stuck. Possible Controller problem.  test by replacement. Possible BusBoard problem. Replace Busboard. Das NTR relais (Netztrennrelais) hängt. mains frequency recognition was cancelled after a timeout. Possible BusBoard problem.  test by replacement. Possible Controller problem. Test by replacement
+-101,hard error,The SSR blocks the positive half cycle Replace Opto (Soid state relay),
+-102,hard error,The SSR blocks the negative half cycle Replace Opto (Soid state relay),
+-103,hard error,During the current test, It was not clear if an AC or a three phase connection is connected
+-104,hard error,Standby current draw outside tolerance,The standby current draw during the current measurement of a CC400/CC401 is widely different to the set value (5V). Check all cable connections and plugs. Possible stuck relay or active board problem. The standby current draw during the current measurement of a CC400/CC401 is widely different to the set value (5V)
+-105,hard error,the start-up current test failed CC400/CC401,Check all cable connections and plugs. Possible stuck relay or active board problem
+-106,hard error,Feedback from contactor KM10 has tripped,
+-107,hard error,Circuit breaker (Fan) QM10.1 or QM10.2 has tripped,
+-108,hard error,Feedback from contactor (Fan) KM10.1 or KM10.2 has tripped,
+-109,hard error,Circuit breaker compressor HT (QV1.1 or QV1.2) has tripped,
+-110,hard error,150 Ohm reference measurement voltage out of range,The 150 Ohm reference resistor for the Pt100 temperature measurement is within the controller. Possible controller fault - test by replacement. Possible Pt100 fault - check insulation to earth (greater than 20 MegOhm) Check Pt100 resistance. If faulty.  replace
+-111,hard error,100 Ohm reference measurement voltage out of range,The 100 Ohm reference resistor for the Pt100 temperature measurement is within the controller. Possible controller fault - test by replacement Possible Pt100 fault check insulation to earth (greater than 20 MegOhm) Check Pt100 resistance. If faulty.  replace
+-112,hard error,Reserve sensor measurement voltage out of range,Input voltage to the reserve sensor is out of range.  Possible controller problem or bad connections. or Pt100 leakage to earth. Check and replace if necessary
+-113,hard error,Sensor 3 (Tangoboard Pt_T3) measurement voltage out of range,The sensor 3 on tango board X1: 7-9 voltage out of range. Possible controller problem or bad connections. or Pt100 leakage to earth. Check and replace if necessary
+-114,hard error,Return flow Pt100 sensor meaurement voltage out of range,Fluid Return Pt100 sensor 4 Pt T4 X1:10-12 measurement voltage out of range. Sensor faulty or bad connections. Check and replace if necessary
+-115,hard error,Pt100 Sensor 2 input voltage out of range,Pt100 sensor 2 on Tango board PT_T4.  X1:4-6. Sensor faulty or bad connections. Check and replace if necessary
+-116,hard error,Process Pt100 input voltage out of range,Process Pt100 input voltage out of range. Sensor faulty or bad connections. Check and replace if necessary.  Sensor faulty or bad connections. Check and replace if necessary
+-117,hard error,Fluid outlet Pt100 sensor 1 input voltage out of range,Fluid outlet Pt100 on Tango board Pt_T1. X1:1-3. Sensor faulty or bad connections. Check and replace if necessary
+-118,hard error,No over temperature trip present,Controller faulty.  check by replacement. Over temp board fault. Or bad connection to flatband cable
+-119,hard error,AD7738 could not be initialized,EEPROM of the over temperature trip is blank. The over temperature board is a part of the controller.  so the controller is faulty. check by replacement. Error during writing to the over temperature EEPROM. The over temperature board is a part of the controller.  so the controller is faulty. check by replacement. error during reading from the over temperature EEPROM. The over temperature board is a part of the controller.  so the controller is faulty. check by replacement. Error during 2 out of 3 comparison of over temperature EEPROM. The over temperature board is a part of the controller.  so the controller is faulty. check by replacement. over temperature trip was reset by the processor Watchdog. The over temperature board is a part of the controller.  so the controller is faulty. check by replacement. over temperature trip was reset by the EEPROM Watchdog. The over temperature board is a part of the controller.  so the controller is faulty. check by replacement. over temperature (OT) sensor 1 (heating 1 - Main heater). Pt1000 Sensor faulty - open or short circuit. Check connections and sensor. Replace if necessary
+-127,hard error,over temperature trip sensor 1 has a short circuit (Main heater) Pt1000 short circuit. Replace sensor,
+-128,hard error,over temperature trip sensor 1 is open circuit (Main heater),
+-129,hard error,Over temperature protection (sensor 2) has operated,Over temperature protection has been activated. Fluid temperature in or near heater was higher than the set OTP temperature
+-130,hard error,over temperature trip sensor 2 has a short circuit (Fine heater),
+-131,hard error,over temperature trip sensor 2 is open circuit (Fine heater),Pt1000 open circuit or wiring or connector fault. Check connections and sensor. Replace sensor if necessary
+-132,hard error,over temperature (OT) sensor 3 (Expansion vessel),The expansion tank can overheat if the thermal fluid or impurities in it boil. In this case try de-gassing the oil by slowly raising its temperature with the de-gassing turned on. The OT trip temperature must be suitably above the room temperature. It can be set to a maximum of 70°C.If the tank is not hot.  then possibly the Pt1000 Sensor is faulty. Check connections and sensor. Replace if necessary
+-133,hard error,over temperature sensor 3 (Expansion vessel) has a short circuit Pt1000 short circuit. Replace sensor,
+-134,hard error,over temperature trip sensor 3 (Expansion vessel) is open circuit,Possible wiring or connector fault or Pt1000 open circuit. Check connections and sensor. Replace sensor if necessary
+-135,hard error,over temperature (OT) reference resistor,
+-136,hard error,reference resistor (OT) has a short circuit,faulty OT board. Replace Controller
+-137,hard error,reference sensor (OT) is open circuit,faulty OT board. Replace Controller
+-138,hard error,Set point for the over temperature sensor 1 fluctuates Possible controller fault. Test by replacement,
+-139,hard error,Set point for the over temperature sensor 2 fluctuates Possible controller fault. Test by replacement,
+-140,hard error,Set point for the over temperature sensor 3 fluctuates Possible controller fault. Test by replacement,
+-141,hard error,No CAN-communication with over temperature module,Faulty OT board or flatband cable. Replace controller. Keine CAN Kommunikation mit Übertemperatur Modul. over temperature module signal present (Meander) but no CAN message received. Possible controller fault. Test by replacement
+-143,hard error,The pressostat of the LT-stage has triggered,Insufficient power in HT or MT stage. Check cooling water and HT or MT stage refrigerant sight glass. There should be no bubbles. Possible HT or MT stage refrigerant leak
+-144,hard error,The pressostat of the MT-level has triggered,Insufficient power in HT stage. Check cooling water and HT stage refrigerant sight glass. There should be no bubbles. Possible HT stage refrigerant leak
+-145,hard error,The signalling contact of the HT-compressor has triggered,HT compressor relay has apparently dropped out. Check signalling contact.  wiring and connectors. Check everything in series with relay coil (Requires circuit diagram) Possible controller problem. Check by replacement
+-146,hard error,The signalling contact of the MT-compressor has triggered,MT compressor relay has apparently dropped out. Check signalling contact.  wiring and connectors. Check everything in series with relay coil (Requires circuit diagram). Possible controller problem. Check by replacement
+-147,hard error,The signalling contact of the LT-compressor has triggered,LT compressor relay has apparently dropped out. Check signalling contact.  wiring and connectors. Check everything in series with relay coil (Requires circuit diagram). Possible controller problem. Check by replacement
+-148,hard error,reporting contact of pump contactor (KM1) has caused an error,Pump motor relay has apparently dropped out. Check signalling contact.  wiring and connectors. Check everything in series with relay coil (Requires circuit diagram). check mains power supply and phase relay. Possible controller problem. Check by replacement
+-149,hard error,Power supply to pump motor not okay,The Pump motor Phase relay (F4M1) has triggered. The reason could be that the motor protection relay QP1 was activated.  or a supply phase is missing. Check pump motor over current relay and check power supply connections. Possibly phases incorrect. Reverse two phases on mains supply
+-150,hard error,RF4M3 Pt100 compressor outlet gas temperature sensor HT-stage failed,Faulty Pt100 sensor on HT compressor gas outlet. Replace it
+-151,hard error,RF4M4 Pt100 compressor outlet gas temperature sensor LT-stage failed,Faulty Pt100 sensor on LT compressor gas outlet. Replace it
+-152,hard error,Thermal trip in pump motor M1 (M1F3) has operated,Pump motor is too hot. Check power supply voltage and also fluid viscosity. Possible bearing problems. Check motor rotates freely by hand. Replace motor
+-153,hard error,Kriwan. HT-compressor motor temp too high,Kriwan: HT compressor motor windings too hot. Check power supply voltage. Check for bubbles in refrigerant sight glass
+-154,hard error,Kriwan. LT-compressor motor temp too high,Kriwan: LT compressor windings too hot. Check power supply voltage. Check for bubbles in refrigerant sight glass
+-155,hard error,Oil pressure of HT-compressor too low,Possible HT compressor or oil separator problem. Machine running at low loading for long periods. The oil pressure of the LT-compressor is too low. Possible LT compressor or oil separator problem. Machine running at low loading for long periods
+-157,hard error,HT compressor 1st stage problem,The relay for the 1st stage of the 2 stage HT compressor has dropped out.  or has a bad contact on the status contact of relay. Check relay and all components in series with relay coil. Possible Controller problem. Check by replacement. LT compressor 1st stage problem. The relay for the 1st stage of the 2 stage LT compressor has dropped out or has a bad contact on the status contact of relay. Check relay and all in series with relay coil. Possible Controller problem. Check by replacement
+-159,hard error,HT compressor 2nd stage problem,The relay for the 2nd stage of the 2 stage HT compressor has dropped out or has a bad contact on the status contact of relay. Check relay and all in series with relay coil. Possible Controller problem. Check by replacement. LT compressor 2nd stage problem. The relay for the 2nd stage of the 2 stage LT compressor has dropped out or has a bad contact on the status contact of relay. Check relay and all in series with relay coil. Possible Controller problem. Check by replacement
+-161,hard error,DEM1 does not respond,CAN-Bus or DEM1 (Digital input) module problem
+-162,hard error,DEM2 does not respond,CAN-Bus or DEM2 (Digital input) module problem
+-163,hard error,DEM3 does not respond,CAN-Bus or DEM3 (Digital input) module problem
+-164,hard error,DEM4 does not respond,CAN-Bus or DEM4 (Digital input) module problem
+-165,hard error,DAM1 does not respond,CAN-Bus or DAM1 (Digital output) module problem
+-166,hard error,DAM2 does not respond,CAN-Bus or DAM2 (Digital output) module problem
+-167,hard error,DAM3 does not respond,CAN-Bus or DAM3 (Digital output) module problem
+-168,hard error,DAM4 does not respond,CAN-Bus or DAM4 (Digital output) module problem
+-169,hard error,The input 1 of the DEM1 is fluttering,Intermittent contact at input 1 of DEM1 (Digital input module)
+-170,hard error,The input 2 of the DEM1 is fluttering,Intermittent contact at input 2 of DEM1 (Digital input module)
+-171,hard error,The input 3 of the DEM1 is fluttering,Intermittent contact at input 3 of DEM1 (Digital input module)
+-172,hard error,The input 4 of the DEM1 is fluttering,Intermittent contact at input 4 of DEM1 (Digital input module)
+-173,hard error,The input 1 of the DEM2 is fluttering,Intermittent contact at input 1 of DEM2 (Digital input module)
+-174,hard error,The input 2 of the DEM2 is fluttering,Intermittent contact at input 2 of DEM2 (Digital input module)
+-175,hard error,The input 3 of the DEM2 is fluttering,Intermittent contact at input 3 of DEM2 (Digital input module)
+-176,hard error,The input 4 of the DEM2 is fluttering,Intermittent contact at input 4 of DEM2 (Digital input module)
+-177,hard error,The input 1 of the DEM3 is fluttering,Intermittent contact at input 1 of DEM3 (Digital input module)
+-178,hard error,The input 2 of the DEM3 is fluttering,Intermittent contact at input 2 of DEM3 (Digital input module)
+-179,hard error,The input 3 of the DEM3 is fluttering,Intermittent contact at input 3 of DEM3 (Digital input module)
+-180,hard error,The input 4 of the DEM3 is fluttering,Intermittent contact at input 4 of DEM3 (Digital input module)
+-181,hard error,The input 1 of the DEM4 is fluttering,Intermittent contact at input 1 of DEM4 (Digital input module)
+-182,hard error,The input 2 of the DEM4 is fluttering,Intermittent contact at input 2 of DEM4 (Digital input module)
+-183,hard error,The input 3 of the DEM4 is fluttering,Intermittent contact at input 3 of DEM4 (Digital input module)
+-184,hard error,The input 4 of the DEM4 is fluttering,Intermittent contact at input 4 of DEM4 (Digital input module)
+-185,hard error,DEM1 Timeout,DEM1 (Digital input module) signals no data received from Controller in last 30s - CAN problem
+-186,hard error,DEM2 Timeout,DEM2 (digital input module) signals no data received from Controller in last 30s - CAN problem
+-187,hard error,DEM3 Timeout,DEM3 (Digital input module) signals no data received from Controller in last 30s - CAN problem
+-188,hard error,DEM4 Timeout,DEM4 (digital input module) signals no data received from Controller in last 30s - CAN problem
+-189,hard error,DAM1 Timeout,DAM1 (digital output module) signals no data received from Controller in last 30s - CAN problem
+-190,hard error,DAM2 Timeout,DAM2 (digital output module) signals no data received from Controller in last 30s - CAN problem
+-191,hard error,DAM3 timeout,DAM3 (digital output module) signals no data received from Controller in last 30s - CAN problem. empfangen hat - CAN Problem
+-192,hard error,DAM4 Timeout,DAM4 (digital output module) signals no data received from Controller in last 30s - CAN problem
+-193,hard error,DEM1 error,The DEM1 reports an error DEM1 Fehler
+-194,hard error,DEM2 error,The DEM2 reports an error DEM2 Fehler
+-195,hard error,DEM3 error,The DEM3 reports an error DEM3 Fehler
+-196,hard error,DEM4 error,The DEM4 reports an error DEM4 Fehler
+-197,hard error,DAM1 error,The DAM1 reports an error DAM1 Fehler
+-198,hard error,DAM2 error,The DAM2 reports an error DAM2 Fehler
+-199,hard error,DAM3 error,The DAM3 reports an error DAM3 Fehler
+-200,hard error,DAM4 error,The DAM4 reports an error DAM4 Fehler
+-201,hard error,HT-compressor outlet gas temp is too high,HT Compressor Gas outlet temp to high. Check cooling water has sufficient flow.  check sufficient DIFFERENTIAL water pressure and it is connected the right way. Possible lack of refrigerant. Check HT compressor refrigerant sight glass. It should be full and no bubbles
+-202,hard error,LT-compressor outlet gas temp is too high,LT Compressor Gas outlet temp to high. Check cooling water has sufficient flow.  check sufficient DIFFERENTIAL water pressure and it is connected the right way. Possible lack of refrigerant. Check LT compressor refrigerant sight glass. It should be full and no bubbles
+-203,hard error,Pump does not stop,The pump should have been shut down but the rpm 0 was never reached. Pump does not appear to stop. Change controller. Change pump motor. Pumpe stoppt nicht
+-204,hard error,Pump motor tripped by OT event,Fluid temperature too high above OT trip value. Machine power disconnected by a motor protection switch. Check Over temperature settings. Reset switch by hand
+-205,hard error,Poor fluid flow,the difference between 2 of the 3 sensors OT-Heater.  OT-Fine Heater.  and the fluid outlet is greater that 30K with a pump which has been running for more than 60s. Possibly poor fluid flow giving a large difference between heater and outlet temperatures. Check for closed valves or other reasons for bad fluid flow in the application. The heater turns off under these conditions. Pump pressure threshold value mem. area was overwritten. Possible software problem
+-207,hard error,HT Compressor phase relay,The Phase sensitive relay of the compressor HT-stage has responded. Power supply to compressor incorrect. Check phases.  and correct connection. Phasenfolgerelais des HT Kompressors
+-208,hard error,HT compressor outlet gas too hot,The compressor outlet gas over temperature trip HT-stage has triggered. (cooling water connected wrong way around. Possible loss of refrigerant. Check HT refrigerant sight glass for bubbles
+-209,hard error,LT compressor outlet gas too hot,The 'Compressor outlet gas over temperature trip LT-stage' has triggered. Possible loss of refrigerant. Check LT refrigerant sight glass for bubbles. Check cooling water flow and temperature
+-210,hard error,Thermal contact in pump motor M2 (M2-F3) has triggered,Pump motor too hot. Possibly thermal fluid too viscous or motor bearing problems. Check power supply voltage and fluid used. check that motor rotates freely by hand Thermokontakt in Pumpenmotor M2 (M2-F3) hat ausgelöst
+-211,hard error,Reporting contact of internal pump protection (KM2) has caused an alarm,The pump relay has apparently dropped out.  but controller does not know why. Check connections.  relay contact and for loose wires. Check everything which is in series with KM2 relay coil. Check controller by replacement. Superheat too small. Superheat monitor of the HT-stage for Unistat 925 / 930. Superheat too low (<3K) over a certain amount of time (200s). Refrigeration problem.  Check if fluid flow good and if fluid suitable for -90°C Check that compressors all running
+-213,hard error,OT fault,A fault is reported by the Over Temp
+-214,hard error,KM3 or KM3.1 dropped out,The larger compressors have a part winding start system using two relays. one of these has dropped out. HT compressor starting problem. Check controller by replacement. Check relay contacts and check power supply voltage on HT compressor
+-215,hard error,Pump security – Heater over-temp,The heater became too hot. The temperature continued rising due to stored energy even after the machine was stopped by the OT safety system. This results in the pump over current relay being tripped to prevent possibility of a stuck pump operating relay causing it to continue running and adding heat to the system. Check over temperature setting. Reset motor protection switch by hand. Pump security - Fine heater over-temp. The Fine heater became too hot. The temperature continued rising due to stored energy even after the machine was stopped by the OT safety system. This results in the pump over current relay being tripped to prevent possibility of a stuck pump operating relay causing it to continue running and adding heat to the system. Check over temperature setting. Reset motor protection switch by hand. CAN-Bus timeout. The check to see if all CAN-modules are present was cancelled after a timeout (unknown problem) Some CAN modules not found
+-218,hard error,DEM1 not found,DEM1 module (A16) cannot be found on the CAN-Bus although it should be present DEM1 nicht gefunden. sollte
+-219,hard error,DEM2 not found,DEM2 module (A16.1) cannot be found on the CAN-Bus although it should be present DEM2 nicht gefunden
+-220,hard error,DEM3 not found,DEM3 module (A16.2)cannot be found on the CAN-Bus although it should be present DEM3 nicht gefunden
+-221,hard error,DEM4 not found,DEM4 module (A16.3) cannot be found on the CAN-Bus although it should be present DEM4 nicht gefunden
+-222,hard error,DAM1 not found,DAM1 module (A17) cannot be found on the CAN-Bus although it should be present DAM1 nicht gefunden
+-223,hard error,DAM2 not found,DAM2 module (A17.1) cannot be found on the CAN-Bus although it should be present DAM2 nicht gefunden
+-224,hard error,DAM3 not found,DAM3 module (A17.2) cannot be found on the CAN-Bus although it should be present DAM3 nicht gefunden
+-225,hard error,DAM4 not found,DAM4 module (A17.3) cannot be found on the CAN-Bus although it should be present DAM4 nicht gefunden
+-226,hard error,contactor feedback KHK1.2 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-227,hard error,contactor feedback KHK1.1 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-228,hard error,contactor feedback KHK2.1 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-229,hard error,contactor feedback KHK2.2 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-230,hard error,contactor feedback KHK3.1 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-231,hard error,contactor feedback KHK3.2 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-232,hard error,contactor feedback KHK4.1 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-233,hard error,contactor feedback KHK4.2 has caused an error,Relay dropped out but controller does not know why. Check connections and contacts
+-234,hard error,Tandem compressor1 part-winding1 contactor (KM30) has an error,
+-235,hard error,Tandem compressor1 part-winding2 contactor (KM30.1) has an error,
+-236,hard error,Contactor Tandem compressor2 part-winding1 contactor (KM31) has an error,
+-237,hard error,Tandem compressor2 part-winding2 contactor (KM31.1) has an error,
+-238,hard error,HD-limiter Tandem compressor1 (F6M30) has triggered,Pressostat F6M30 has operated. Check water flow and temperature
+-239,hard error,HD-limiter Tandem compressor2 (F6M31) has triggered,Pressostat F6M31 has operated. Check water flow and temperature
+-240,hard error,Motor protection Tandem compressor1 (QV1.1-HT, QV2.2-HT) has triggered. Tandem compressor 1 Over current QV1.1-HT.  QV2.2-HT have tripped. Check supplies to compressor
+-241,hard error,Motor protection Tandem compressor2 (QM31, QM31.1) has triggered. Tandem compressor 2 Over current QM31.  QM31.1 have tripped. Check supplies to compressor
+-242,hard error,Thermistors in M3 (M3-T1) (Tandem compressor1) have triggered,Kriwan Compressor 1. Check compressor supplies and fans. Check water cooling ok. Check refrigerant sight glass for being full with no bubbles. 
+-243,hard error,Thermistors in M4 (M4-T1) (Tandem compressor2) have triggered,Kriwan Compressor 2. Check compressor supplies and fans. Check water cooling ok. Check refrigerant sight glass for being full with no bubbles
+-244,hard error,Oil differential pressure switch Tandem compressor1 (F14M30) has triggered Compressor 1 oil pressure too low. Reset F14M30 by pressing red knob,
+-245,hard error,Oil differential pressure switch Tandem compressor2 (F14M31) has triggered Compressor 2 oil pressure too low. Reset F14M31 by pressing red knob,
+-246,hard error,DEM5 not found,The DEM5 did not give any feedback during the start-up phase even though it should have. Check connections. Check that at least some module LEDs are lit and no blinking red LEDs DEM5 nicht gefunden
+-247,hard error,DEM5 does not respond anymore,Digital input module 5 no longer answers. Check connections. Check connections. Check that at least some module LEDs are lit and no blinking red LEDs
+-248,hard error,The input 1 of the DEM5 is fluttering,Check connections to Digital input module 5
+-249,hard error,The input 2 of the DEM5 is fluttering,Check connections to Digital input module 5
+-250,hard error,The input 3 of the DEM5 is fluttering,Check connections to Digital input module 5
+-251,hard error,The input 4 of the DEM5 is fluttering,Check connections to Digital input module 5
+-252,hard error,DEM5 CAN-Bus timeout,The DEM5 has signalled that it has not received any data from the controller for more than 30s. Check connections to Digital input module 5. DEM5 CAN-Bus Timeout
+-253,hard error,The DEM5 has reported an error,Check connections to Digital input module 5
+-254,hard error,Stepper motor module 1 not found,The stepper motor module 1 was not recognized during initialisation. Check connections
+-255,hard error,The stepper motor module1 does not respond anymore,Stepper motor module 1 no longer answers. Check connections
+-256,hard error,Safety module 1 not found,The safety circuit module 1 was not recognized during initialisation. Check connections
+-257,hard error,The safety circuit module 1 does not respond anymore,Safety module 1 no longer answers. Check connections
+-258,hard error,T2M1 was not recognized during initialisation,
+-259,hard error,T2M1 no longer answers,Check connections to second temperature module 1
+-260,hard error,T2M2 was not recognized during initialisation,Check connections to T2M2
+-261,hard error,T2M2 does not respond anymore Check connections to T2M2,
+-262,hard error,The stepper motor module 1 signals: 'Hardware could not be recognised,
+-263,hard error,The stepper motor module 1 signals: 'Wrong SimFile in module,The stepper motor module 1 signals: 'No CAN-communication' Schrittmotormodul 1 meldet: 'Keine CAN Kommunikation'
+-265,hard error,The stepper motor module 1 has reported an error,
+-266,hard error,The over temperature trip signals: 'reference current sensor PT1' Faulty Pt1000 (PT1) or Over-Temp board,
+-267,hard error,
+-268,hard error,
+-269,hard error,The over temperature trip signals: 'reference current PT reference' Faulty Pt1000 or Over-Temp board,
+-270,hard error,T2M1 has reported an error,Check T2M1 wiring
+-271,hard error,T2M1 signals: 'short circuit in sensor PT1' T2M1. - Check wiring, Change PT1 sensor
+-272,hard error,T2M1 signals: 'sensor PT1 open circuit',T2M1
+-273,hard error,T2M1 signals: 'reference current sensor PT1',T2M1. - Check wiring.  Faulty sensor PT1 or temperature module
+-274,hard error,T2M1 signals: 'short circuit in sensor PT2',T2M1. - Check wiring.  Faulty sensor PT2 or temperature module. Change sensor
+-275,hard error,T2M1 signals: 'sensor PT2 open circuit',T2M1. - Check wiring.  Faulty sensor PT2 or temperature module. Change sensor
+-276,hard error,T2M1 signals: 'reference current sensor PT2',T2M1. - Check wiring.  Faulty sensor PT2 or temperature module
+-277,hard error,T2M1 signals: 'short circuit in sensor PT3',T2M1. - Check wiring.  Faulty sensor PT3 or temperature module. Change sensor
+-278,hard error,T2M1 signals: 'sensor PT3 open circuit',T2M1. - Check wiring.  Faulty sensor PT3 or temperature module. Change sensor
+-279,hard error,T2M1 signals: 'reference current sensor PT3',T2M1. - Check wiring.  Faulty sensor PT3 or temperature module
+-280,hard error,T2M1 signals: 'short circuit in sensor PT reference' Faulty Pt1000 or Over-Temp board,
+-281,hard error,T2M1 signals: 'open circuit sensor PT reference' Faulty Pt1000 or Over-Temp board,
+-282,hard error,T2M1 signals: 'reference current PT reference',Faulty Pt1000 or Over-Temp board
+-283,hard error,T2M1 signals: 'CAN-communication disrupted,Check T2M1 wiring. Faulty module
+-284,hard error,T2M2 has reported an error,Check T2M2 wiring
+-285,hard error,T2M2 signals: 'short circuit in sensor PT1' T2M2. - Check wiring, Change PT1 sensor
+-286,hard error,T2M2 signals: 'sensor PT1 open circuit',T2M2. - Check wiring.  Change PT1 sensor
+-287,hard error,T2M2 signals: 'reference current sensor PT1',T2M2. - Check wiring.  Change PT3 sensor
+-288,hard error,T2M2 signals: 'short circuit in sensor PT2',T2M2. - Check wiring.  Change PT2 sensor
+-289,hard error,T2M2 signals: 'sensor PT2 open circuit',T2M2. - Check wiring.  Change PT2 sensor
+-290,hard error,T2M2 signals: 'reference current sensor PT2',T2M2. - Check wiring.  Faulty sensor PT2 or temperature module
+-291,hard error,T2M2 signals: 'short circuit in sensor PT3',T2M2. - Check wiring.  Change PT3 sensor
+-292,hard error,T2M2 signals: 'sensor PT3 open circuit',T2M2. - Check wiring.  Change PT3 sensor
+-293,hard error,T2M2 signals: 'reference current sensor PT3',T2M2. - Check wiring.  Faulty sensor PT3 or temperature module
+-294,hard error,T2M2 signals: 'short circuit in sensor PT reference' Faulty Pt1000 or Over-Temp board,
+-295,hard error,T2M2 signals: 'open circuit sensor PT reference' Faulty Pt1000 or Over-Temp board,
+-296,hard error,T2M2 signals: 'reference current PT reference',Faulty Pt1000 or Over-Temp board
+-297,hard error,T2M2 signals: 'CAN-communication disrupted,Check T2M2. Faulty module
+-298,hard error,The safety circuit module 1 has reported an error,
+-299,hard error,The safety circuit module 1 signals: 'over temperature sensor PT1',
+-300,hard error,The safety circuit module 1 signals: 'short circuit in sensor PT1' Safety circuit module 1 Change sensor PT1,
+-301,hard error,The safety circuit module 1 signals: 'sensor PT1 open circuit' Safety circuit Module 1 Change sensor PT1,
+-302,hard error,The safety circuit module 1 signals: : 'reference current sensor PT1' Safety circuit module 1 or sensor PT1 faulty,
+-303,hard error,The safety circuit module 1 signals: 'over temperature sensor PT2',Safety circuit Module 1 Check reason for over temperature in PT2.T. settings
+-304,hard error,The safety circuit module 1 signals: 'short circuit in sensor PT2' Safety circuit module 1 Change sensor PT2,
+-305,hard error,The safety circuit module 1 signals: 'sensor PT2 open circuit' Safety circuit module 1 Change sensor PT2,
+-306,hard error,The safety circuit module 1 signals: : 'reference current sensor PT2',Safety circuit module 1 or sensor PT2 faulty
+-307,hard error,The safety circuit module 1 signals: 'over temperature sensor PT3',Safety circuit Module 1 Check reason for over temperature in PT3.T. settings
+-308,hard error,The safety circuit module 1 signals: 'short circuit in sensor PT3' Safety circuit module 1 Change sensor PT3,
+-309,hard error,The safety circuit module 1 signals: 'sensor PT3 open circuit' Safety circuit module 1 Change sensor PT3,
+-310,hard error,The safety circuit module 1 signals: : 'reference current sensor PT3' Safety circuit module 1 or sensor PT3 faulty,
+-311,hard error,The safety circuit module 1 signals: 'over temperature PT reference' Safety circuit module 1 or sensor PTreference faulty,
+-312,hard error,The safety circuit module 1 signals: 'short circuit in sensor PT reference' Safety circuit module 1 or sensor PTreference faulty,
+-313,hard error,The safety circuit module 1 signals: 'open circuit sensor PT reference' Safety circuit module 1 or sensor PTreference faulty,
+-314,hard error,The safety circuit module 1 signals: 'reference current PT reference.' Safety circuit module 1 or sensor PTreference faulty,
+-315,hard error,The safety circuit module 1 signals: 'set point PT1 is fluctuating.' Safety circuit module 1 check wiring,
+-316,hard error,The safety circuit module 1 signals: 'set point PT2 is fluctuating.' Safety circuit module 1 check wiring,
+-317,hard error,The safety circuit module 1 signals: 'set point PT3 is fluctuating.' Safety circuit module 1 check wiring,
+-318,hard error,The safety circuit module 1 signals: 'CAN-communication disrupted.' Safety circuit module 1 check wiring,
+-319,hard error,The safety circuit module 1 signals: 'Error in NTR (power isolation relay) stage 1,
+-320,hard error,The safety circuit module 1 signals: 'error in NTR (power isolation relay) stage 2,
+-321,hard error,The safety circuit module 1 signals: 'error in NTR (power isolation relay)-feedback,
+-322,hard error,The compressor outlet gas temperature of the HT-compressor 1 is too high,Check HT compressor 1 cooling. Check for bubbles in refrigerant sight glass
+-323,hard error,The compressor outlet gas temperature of the HT- compressor 2 is too high,Check HT compressor 2 cooling. Check for bubbles in refrigerant sight glass
+-324,hard error,VPC system registration not okay,Connectors OK. VPC notifies Hardware could not be recognised
+-325,hard error,VPC Parameters not okay,
+-326,hard error,The VPC signals: 'No CAN-communication' Check VPC cable and plugs,
+-327,hard error,VPC firmware not okay,VPC reports an error. Check VPC cable and plugs
+-328,hard error,The fluid outlet temperature is set by RS (mode CITM). No current value has been set for the fluid outlet temperature for 30s,Check the control software.  that it is regularly updating the fluid outlet temperature. Check RS232/485 connections
+-329,hard error,The process temperature is set by RS (mode CETM). No current value has been set for the process temperature for 30s,Check the control software.  that it is regularly updating the fluid outlet temperature. Check RS232/485 connections
+-330,hard error,The stepper motor module 2 was not recognized during initialisation. Stepper motor module 2 not found Check wiring,
+-331,hard error,The stepper motor module 2 is not responding anymore,Stepper motor module 2 not answering any more
+-332,hard error,The SMO2 signals: 'Hardware could not be recognized.' Stepper motor module 2,
+-333,hard error,The SMO2 signals: 'wrong SimFile in module.' Stepper motor module 2,
+-334,hard error,The SMO2 signals: 'No CAN-communication' Stepper motor module 2,
+-335,hard error,The SMO2 has reported an error. Stepper motor module 2,
+-336,hard error,The DSM1 was not recognized during initialisation,
+-337,hard error,The DSM1 is not responding anymore,
+-338,hard error,The DSM1 signals: 'Hardware could not be recognized,
+-339,hard error,The DSM1 signals: 'Wrong SimFile in module,
+-340,hard error,The DSM1 signals: 'No CAN-communication',DSM1 meldet: 'Keine CAN Kommunikation'
+-341,hard error,The DSM1 has reported an error,Compressor outlet gas overheating protection HT-stage (F11M3) hastriggered. HT compressor outlet gas too hot F11M3. Check compressor cooling.  check water cooling. Check refrigeration sight glass for bubbles. Possible leak.  Check compressor cooling.  check water cooling. Check refrigeration sight glass for bubbles. Possible leak
+-343,hard error,Compressor outlet gas overheating protection MT-stage (F11M5) has triggered,MT compressor outlet gas too hot F11M5. Check compressor cooling.  check water cooling. Check refrigeration sight glass for bubbles. Possible leak. Compressor outlet gas overheating protection LT-stage (F11M4) has triggered. LT compressor outlet gas too hot F11M4. Check compressor cooling.  check water cooling. Check refrigeration sight glass for bubbles. Possible leak.  Check compressor cooling.  check water cooling. Check refrigeration sight glass for bubbles. Possible leak
+-345,hard error,Temperature on Pt100 compressor outlet gas temperature sensor MT-stage (RF4M5) too high. MT compressor outlet gas too hot Pt100 RF4M5. Check compressor cooling, check water cooling. Check refrigeration sight glass for bubbles. Possible leak
+-346,hard error,Thermistor triggering device with integrated phase sensitive relay has triggered Check power supply to machine correct voltage and phase,
+-347,hard error,MCB protection compressor liquid subcooling (QM5) has triggered,Relay QM5 has tripped. Reset by hand
+-348,hard error,HD-limiter compressor liquid subcooling (F6M5),Over pressure switch F6M5 has operated. Check cooling and fluid flow
+-349,hard error,motor protection HT-stage part-winding.1 (QV1.1-HT),HT stage part winding over current QV1.1-HT. Reset by hand. Check power supplies and relays not sticking. Check controller by replacement
+-350,hard error,motor protection HT-stage part-winding.2 (QV1.2-HT),HT stage part winding over current QV1.2-HT. Reset by hand. Check power supplies and relays not sticking. Check controller by replacement
+-351,hard error,Thermistors in M4 (M4-T1) (LT-stage),NT compressor M4 windings too hot. Thermistor monitoring (M4-T1) Check power supply voltage and phases and machine cooling. 
+-352,hard error,Oil differential pressure switch LT-stage (F14M4),LT stage oil pressure too low (F14M4). Reset by pressing red button
+-353,hard error,LT-stage contactor part-winding 1 (KM4),LT stage part winding start KM4 gives an error. Check for sticking contacts. Check controller. by replacement
+-354,hard error,LT-stage part-winding 2 (KM4,LT stage part winding start KM4.1 gives an error. Check for sticking contacts. Check controller by replacement
+-355,hard error,motor protection LT -stage (QV1-NT),LT stage over current trip QV1-NT has operated. Reset by hand. Check all power supplies correct
+-356,hard error,RF30.1 Pt100 sensor evaporator end MT -stage,
+-357,hard error,RF2 Pt100 sensor evaporation end NT-stage,
+-358,hard error,RF4M5 Pt100 sensor compressor 1 outlet gas temperature HT-stage,Compressor 1 outlet gas temp sensor RF4M5 - Pt100 HT stage alarm
+-359,hard error,RF4M5 Pt100 sensor compressor 2 outlet gas temperature HT-stage,Compressor 2 outlet gas temp sensor RF4M5 - Pt100 HT stage alarm
+-360,hard error,RF4M5 Pt100 sensor compressor outlet gas temperature MT-stage,Compressor outlet gas temp sensor RF4M5 - Pt100 MT stage alarm
+-361,hard error,The VPC is not responding anymore,VPC no longer answers. Check connections
+-362,hard error,M10-F3: Thermo contact condenser fan,M10-F3: Thermo contact of condenser fan has operated. Turn off power.  Check fan for free running.  wait to cool.  turn on power and Check fan rotation. 
+-363,hard error,M10.1-F3: Thermo contact condenser fan,M10.1-F3: Thermo contact of condenser fan has operated. Turn off power.  Check fan for free running.  wait to cool.  turn on power and Check fan rotation
+-364,hard error,The temperature-pressure module 1 was not recognised during initialisation Check connections etc,
+-365,hard error,The temperature pressure module 1 is not responding anymore Check connections etc,
+-366,hard error,The TDM1 signals: 'Hardware could not be recognised,Check connections etc
+-367,hard error,The TDM1 signals: 'Wrong SimFile in Module,
+-368,hard error,the TDM1 signals: 'No CAN-communication Check connections etc,
+-369,hard error,The TDM1 reported an error,
+-370,hard error,The temperature - pressure module 2 was not recognised during initialisation Check connections etc,
+-371,hard error,The Temperature - pressure module 2 is not responding. Check connections etc,
+-372,hard error,The TDM2 signals: 'Hardware could not be recognized Check connections etc,
+-373,hard error,The TDM2 signals: 'Wrong SimFile in module,
+-374,hard error,The TDM2 signals: 'No CAN-communication Check connections etc,
+-375,hard error,The TDM2 has reported an error,
+-376,hard error,The DEM6 did not respond during the start-up phase even though it should have been present. Digital input module DEM 6 not found. Check connections. Are module LEDs lit,
+-377,hard error,The DEM6 is not responding anymore,Digital input module DEM 6 no longer answers. Check connections. Are module LEDs lit
+-378,hard error,The input 1 of the DEM6 is fluttering,Input 1 of Digital input module DEM6 fluttered. Check connections
+-379,hard error,The input 2 of the DEM6 is fluttering,Input 2 of Digital input module DEM6 fluttered. Check connections
+-380,hard error,The input 3 of the DEM6 is fluttering,Input 3 of Digital input module DEM6 fluttered. Check connections
+-381,hard error,The input 4 of the DEM6 is fluttering,Input 4 of Digital input module DEM6 fluttered. Check connections
+-382,hard error,The DEM6 has signalled that it has not received any data from the controller for more than 30s,Check connections on Digital input module DEM6
+-383,hard error,The DEM6 has reported an error,Check connections on Digital input module DEM6. The digital input DSEin 1 on the Tango board is open. The digital input DSEin 1 on the Tango board is fluttering. The digital input DSEin 2 on the Tango board is open. The digital input DSEin 2 on the Tango board is fluttering
+-388,hard error,The signal of the HT-over pressure trip is fluttering,HT over pressure trip contacts fluttering. Check connections on Pressostat and all connectors. Pressostat should normally be a closed circuit when ok. The signal of the HT-over pressure trip or the thermistor monitoring for the HT compressor is fluttering. Intermittent contact of pressostat.  or thermistor motor monitor. Check wiring for bad contacts. The over pressure trip signal of the HT-Tandem compressor 1 is fluttering. The over pressure trip signal of the HT-Tandem compressor 2 is fluttering
+-392,hard error,The over pressure trip signal of MT-compressor is fluttering,Intermittent contact on pressostat of MT compressor. Check wiring for bad connections
+-393,hard error,The over pressure trip signal of NT-compressor is fluttering,Intermittant contact on pressostat of NT compressor. Check wiring for bad connections. The signal of the over pressure trip of the additional sub-cooling is fluttering. Intermittent contact on pressostat of additional sub cooling compressor. Check wiring for bad connections
+-395,hard error,The temperature in the unit casing has risen above 80 °C. Check ventilation fans operating and air circulation,
+-396,hard error,VPC parameter not okay,VPC reports the wrong SimFile version VPC Parameter nicht korrekt
+-397,hard error,Fault by the measurement of the suction gas temperature (RF5M3) Possible fault on Pt100 sensor used for suction gas measurement (RF5M3) Fehler bei der Messung der Sauggastemperatur (RF5M3),
+-398,hard error,Fault by the measurement of the intermediate injection of the tandem compressor 1 (RF12M30),Possible fault on Pt100 sensor for intermediate injection measurement (RF12M30) on compressor 1
+-399,hard error,Fault by the measurement of the intermediate injection of the Tandem compressor 2 (RF12M31),Possible fault on Pt100 sensor for intermediate injection measurement (RF12M31) on compressor 2
+-400,hard error,Fault by the measurement of the Parallel Evaporator end temperature (RF13),Possible fault on Pt100 sensor for measuring the parallel Evap. end temperature (RF13)
+-401,hard error,Fault by the measurement of the intermediate injection of the HT stage,
+-402,hard error,Fault by the measurement of the machine compartment temperature,Possible fault on Pt100 sensor for measuring the machine compartment temperature
+-403,hard error,The winding protection of the LT stage (M4-F10) has tripped,Check power supply to LT stage compressor. Windings have become too hot. Possible intermediate injection problem.  or lack of refrigerant. Check compressor fan if present
+-404,hard error,The SMO1 reports: Incorrect Sim-file version,
+-405,hard error,The SMO1 reports: SPI – fault message 1,
+-406,hard error,the SMO1 reports: SPI- fault message 2,
+-407,hard error,The SMO1 reports: SPI - fault message: 'interface busy',
+-408,hard error,the SMO1 reports: SPI – 'data register not free',
+-409,hard error,The SMO1 reports: Pt100 AD-converter reports it is busy,Das SM01 meldet: 'Pt100 AD Wandler meldet: busy'
+-410,hard error,The SMO1 reports: Pt100 AD-converter is at end stop,
+-411,hard error,The SMO2 reports: incorrect Sim-file version,
+-412,hard error,The SMO2 reports: SPI - fault message 1,
+-413,hard error,The SMO2 reports: SPI – fault message 2, -414 [hard error]. the SMO2 reports: SPI – fault message: 'interface busy'
+-415,hard error,The SMO2 reports: SPI 'data register not free',
+-416,hard error,The SMO2 reports: Pt100 AD-converter reports it is busy,Das SM02 meldet: 'Pt100 AD Wandler meldet: busy'
+-417,hard error,The SMO2 reports: Pt100 AD-converter is at end stop,
+-418,hard error,The TDM1 reports: Incorrect Sim-file version,
+-419,hard error,The TDM1 reports: SPI - fault message 1,
+-420,hard error,The TDM1 reports: SPI - fault message 2,
+-421,hard error,The TDM1 reports: SPI - fault message: 'interface busy',
+-422,hard error,The TDM1 reports: SPI 'data register not free',
+-423,hard error,An element of the pump error chain has tripped Check connectors and contacts,
+-424,hard error,The TDM1 reports: Pt100 AD-converter reports it is busy,Das TDM1 meldet: 'Pt100 AD Wandler meldet Busy'
+-425,hard error,The TDM1 reports: Pt100 AD-converter is on the endstop (full range),
+-426,hard error,An error has occurred in reading the controller-EEPROM. All 3 values read out were unequal. Try a factory default setting. Check controller by substitution,
+-427,hard error,An error has occurred in reading out the machine-EEPROM. All 3 values read out were unequal,Try a factory default setting
+-428,hard error,A factory reset could not be carried out, as an error accessing the EPROM has occurred. SIMfile not ok. Try a factory default setting
+-429,hard error,At least one of the two fans M10.4 and M10.5 reports a fault,Check fan supplies ok. Check connectors
+-430,hard error,The temperature of the electrical compartment has risen to over 70 °C ,Check electrical compartment fans operating.  and air circulation ok
+-431,hard error,The superheat of the intermediate injection of the LT-stage is too small,
+-432,hard error,The superheat of the intermediate injection of the HT-stage is too small,
+-433,hard error,The circuit breaker for the fan has tripped,The digital input for the HT-Stage pressure switch F5M3 and the circuit breaker for QM10 is fluttering
+-435,hard error,the TDM2 reports: incorrect Sim-file version,
+-436,hard error,The TDM2 reports: SPI - fault message 1,
+-437,hard error,The TDM2 reports: SPI - fault message 2,
+-438,hard error,The TDM2 reports: SPI - fault message: 'interface busy',
+-439,hard error,The TDM2 reports: SPI 'data register not free',
+-440,hard error,The TDM2 reports: Pt100 AD-converter reports it is busy,TDM2 meldet: 'Pt100 AD Wandler meldet: busy'
+-441,hard error,The TDM2 reports: Pt100 AD-converter is at end stop,
+-442,hard error,The DSM1 reports: incorrect Sim-file version,Pt100 sensor of the intermediate injection end MT stage is faulty Check connectors
+-444,hard error,Pt100 sensor of the intermediate injection end LT stage is faulty Check connectors,
+-445,hard error,The SMO1 reports that the condensation monitor has tripped,Condensation temperature too high. Check cooling water / air. If air cooled.  check fans all rotating at same speed. Clean condenser
+-446,hard error,The SMO1 reports that the MOP monitor has tripped,MOP too high. HT Compressor running. Check fuses. Check controller by substitution
+-447,hard error,The SMO1 reports that the Min Flow monitor has tripped,Min flow too low. Possible leak. Check refrigerant sight glass is full - no bubbles. Check suitable fluid
+-448,hard error,the SMO1 reports that the superheat monitor has tripped,Superheat too small. Possible wrong or impure fluid
+-449,hard error,The SMO2 reports that the condensation monitor has tripped,Condensation too high Possible HT stage lack of power:
+-450,hard error,The SMO2 reports that the MOP monitor has tripped,MOP too high. MT compressor running. Check fuses
+-451,hard error,The SMO2 reports that the Min Flow monitor has tripped,Min Flow too low. Possible MT stage refrigerant leak. Check refrigerant sight glass is full. No bubbles
+-452,hard error,the SMO2 reports the superheat monitor has tripped,MT stage superheat too small
+-453,hard error,Over current relay of the HT stage (F2M3) has operated,Reset HT compressor over current relay F2M3 by hand. Check power supplies to compressor. Check all phases reaching compressor
+-454,hard error,Sensor Cooling water / air inlet faulty,Check condensation / cooling water / air inlet Pt100. Check connectors and wiring
+-455,hard error,sensor cooling water / air exit faulty,Check condensation / cooling water / air outlet Pt100. Check connectors and wiring. The active board does not report any more. Check connectors on active board and on adapter board on 15 pin accessories connector: Possible CAN-Bus problem. The active board (A7.4) notifies: all data is not the same when reading out the EEPROM. (Active board EEPROM or SIMfile defective). Check all connectors. Make a Factory reset. The active board (A7.4) notifies: No SimFile present. The active board (A7.4) notifies an unknown error
+-460,hard error,Over current relay of the LT stage (F2M4) has operated,Reset F2M4 by hand. Check power supply for correct voltage and frequency. Check actuating relay not stuck or any loose wiring
+-461,hard error,Motor over current trip for the pump motor (QP1) has operated,Reset QP1 by hand. Check pump motor turns freely.  Check power supply for correct voltage and frequency. Check fluid viscosity at lowest temperature
+-462,hard error,Pressostat HT, safety pressure limiter (F8M3) has operated. Check cooling water / air / fans for correct operation. Clean water filter / condenser fins. Check air circulation and temperature with air cooled machines
+-463,hard error,Motor over current trip for the HT compressor (QV1.1-HT) has operated,1-HT by hand. Check power supply for correct voltage and frequency. Check actuating relay not stuck or any loose wiring
+-464,hard error,LT stage Pressostat Over pressure protection (F8M4) has operated,Probable fault or lack of power in HT stage. Check HT stage refrigerant sight glass for bubbles. Check cooling water /air temperature and flow. Analogue level sensor fault. Re-teach the level sensor. Check connectors and wiring. The cooling water valve (KWV or SWV) has not been found. Check connections / connectors / wiring for loose connections. Check and note for lit LEDs on water valve rear side. The cooling water valve (KWV or SWV) communication failed. Check connections / connectors / wiring for loose connections. Check and note for lit LEDs on water valve rear side
+-468,hard error,The KWV communicates that it does not receive any more data from the controller,Check connections / connectors / wiring for loose connections. Check and note for lit LEDs on water valve rear side
+-469,hard error,The KWV communicates a fault to the controller,Check connections / connectors / wiring for loose connections. Check and note for lit LEDs on water valve rear side
+-470,hard error,Cooling water outlet temperature is too high,Not enough cooling water flowing or inlet temp to high. Check water inlet temperature.  filters and differential pressure
+-471,hard error,The temperature of the expansion vessel is too high (CC401),It is probable that a lower boiling point component in the thermal fluid is boiling. This must be identified and removed by slow.  careful degassing. Check expansion tank over-temp setting. Can be up to 70°C.  or 100°C when in degassing mode
+-472,hard error,The temperature of the expansion pipes are too high,It is probable that a lower boiling point component in the thermal fluid is boiling. This must be identified and removed by slow.  careful degassing. Check expansion tank over-temp setting. Can be up to 70°C.  or 100°C when in degassing mode
+-473,hard error,The UCT board does not communicate any more,Defective board.  or CAN-Bus problem. Change board.  check CAN-bus connections and flat band cable to Over Temp board
+-474,hard error,The over temperature board (OT) does not communicate any more (Via CAN),Defective board.  or CAN-Bus problem. Change board.  check CAN-bus connections and flat band cable to Over Temp board
+-475,hard error,The LT stage thermal monitor in M4 (M4-F9) has operated,LT compressor motor windings too hot. Check cooling fan for compressor. Check LT stage refrigerant sight glass for bubbles
+-476,hard error,The fan status contact has operated,Check fan power supply present. Check fan connectors. Check fan by replacement. An evaporator freezing event was observed.  The evaporation pressure in evaporator is too low. Check refrigerant sight glass for bubbles. Check thermal fluid circulation. An evaporator freezing event was observed. The evaporator-end temperature is too low. Check refrigerant sight glass for bubbles. Check thermal fluid circulation
+-479,hard error,The UC-board was not found,
+-480,hard error,The thermistor monitoring system with integrated phase relay for the HT stage (M3-F30) has operated,Either supply voltage/phases to HT compressor incorrect.  or the HT compressor windings have become too hot. Check power supply phases / voltage. Check operating relay for sticking
+-481,hard error,The stepper motor operated water valve 1 reports: 'Hardware could not be found',Check connections / connectors / wiring for loose connections. Check and note for lit LEDs on water valve rear side
+-482,hard error,The stepper motor operated water valve 1 reports: 'Wrong Sim-File in module,
+-483,hard error,The stepper motor operated water valve 1 reports: Wrong Sim-File version,
+-484,hard error,The stepper motor operated water valve 1 reports:: 'No CAN-communication',Check connections / connectors / wiring for loose connections. Check and note for lit LEDs on water valve rear side
+-485,hard error,The stepper motor operated water valve 1 has reported a fault,Check connections / connectors / wiring for loose connections. Check and note for lit LEDs on water valve rear side
+-486,hard error,The UC-Board reports: EEPROM is empty,UC board not programmed. Possible new UC board required. Das UCT-Board meldet: EEPROM ist leer
+-487,hard error,The UC-Board reports: It is not possible to write to the EEPROM,Try a factory default setting. Check controller by substitution. Possible new UC board required.  Check controller by substitution. Possible new UC board required
+-488,hard error,The UC-Board reports: It is not possible to read from the EEPROM,Try a factory default setting. Check controller by substitution. Possible new UC board required.  Check controller by substitution. Possible new UC board required
+-489,hard error,The UC-Board reports: Fault in 2 from 3 EEPROM data comparison,Try a factory default setting. Check controller by substitution. Possible new UC board required.  Check controller by substitution. Possible new UC board required
+-490,hard error,The UC-Board reports: Fault when copying the data structure,Try a factory default setting. Check controller by substitution. Possible new UC board required.  Check controller by substitution. Possible new UC board required
+-491,hard error,The UC-Board reports:: Hardware cannot be found,Try a factory default setting. Check controller by substitution. Possible new UC board required.  Check controller by substitution. Possible new UC board required
+-492,hard error,The UC-Board reports: Wrong SimFile,
+-493,hard error,The UC-Board reports: Fluttering on input 0 Check UC board connections,
+-494,hard error,The UC-Board reports: Fluttering on input 1 Check UC board connections,
+-495,hard error,The UC-Board reports: Fluttering on input 2 Check UC board connections,
+-496,hard error,The UC-Board reports: Fluttering on input 3 Check UC board connections,
+-497,hard error,The UC-Board reports: Fluttering on input 4 Check UC board connections,
+-498,hard error,The UC-Board reports: Fluttering on input 5 Check UC board connections,
+-499,hard error,The UC-Board reports: Fluttering on input 6 Check UC board connections,
+-500,hard error,The UC-Board reports: Fluttering on input 7 Check UC board connections,
+-501,hard error,The UC-Board reports: No CAN-communication Check UC board connections,
+-502,hard error,The UC-Board reports a fault,Check UC board connections
+-503,hard error,The HT stage pressostat has operated. Reason is that the fan is not running, Check cooling fan connections and connector and power supply
+-504,hard error,The temperature of the floating seal was continuously too high during the last 30 minutes. Insufficient shaft seal cooling. Check water flow and inlet temperature,
+-505,hard error,The temperature of the shaft throat heat sink was continually too high during the last 30 minutes,Insufficient throat seal cooling. Check water flow and inlet temperature
+-506,hard error,Status contact of the fan 2 has operated,Check fan 2 connections and connector and power supply
+-507,hard error,No water flow registered Water valve open,Check water connections.  water filter and that water pressure is available
+-508,hard error,The VPC is not present,Check VPC connections and cable to accessories connector
+-509,hard error,The LT compressor cannot be started. The condensation and evaporation of the LT stage are too high,Check HT / MT compressor is running. Check HT / MT refrigerant sight glass is full and no bubbles
+-510,hard error,The middle stage compressor cannot be started. The condensation and evaporation of the MT,stage are too high. The RAM Test of the Unistat Control has detected a faulty memory. Reflash Controller software. If unsuccessful.  Replace Controller. The RAM Test of the Unistat pilot has detected a faulty memory. Reflash Pilot software. If unsuccessful.  Replace Pilot. did not recognize graphic chip. Reflash Pilot software. If unsuccessful.  Replace Pilot. Reflash Pilot software. If unsuccessful.  Bitte Pilot ersetzen. Registers of the S1D13705 were changed. Reflash Pilot software. CRC-Check of pilot not successful. CRC-Check of the Unistat Control not successful. Reflash Controller software. If unsuccessful.  Replace Controller
+-517,hard error,communication problems with Active Board have been detected,Check connections to active board and adapter board on 15 pin service socket. If ok check Pilot by exchange. Possible Active board defect. Possible Software problem
+-518,hard error,communication problems with Active Board has been detected (structures different),Possible software incompatibility between Pilot and Active board. Re-flash Pilot and active board. If no better exchange Active board
+-519,hard error,this should never happen, if so.  think about changing something in the CAN driver
+-520,hard error,Flash check of the panel not successful (program code in flash has been damaged),Reflash Pilot software. If unsuccessful.  replace Pilot and/or Active Board or controller
+-521,hard error,Data was different when comparing 2 out of 3 in Control Panel EEPROM,Try a factory default setting. Check Pilot by substitution. Possible new UC board required.  Check Pilot by substitution. Possible new UC board required
+-522,hard error,the software version of the Active Board is incompatible Re-Flash active board and Pilot,Softwareversion vom Active Board ist nicht kompatibel Bitte das Active Board und den Pilot neu flashen
+-523,hard error,Active Board not in a correct state. AB Simfile existing,check earthing of machine and electrical cabinet. Effect caused by static build up. Also possible graphics mode bug in Pilot. Change to Normal display mode.  for software. error all data was wrong when executing 2 out of 3 comparison for Pilot EEPROM. Make factory reset. If no better.  possible faulty Pilot - Replace or reflash
+-525,hard error,the analogue input error chain is not working correctly,
+-526,hard error,The pump rotates although is should be switched off, as the fluid has not yet reached the required temperature. For CC402. possible active board or pump motor fault
+-527,hard error,During the pre-heating with a Unistat CC402 (pump is off) a temperature of greater than 140°C has been reached in the heating chamber,Check heater control
+-528,hard error,During initialisation, the temperature/pressure module 3 was not found
+-529,hard error,The Temperature/pressure module 3 does not acknowledge any more,Check CAN-Bus connections. Possible module defect. Check LEDs on module are lit
+-530,hard error,The TDM3 notifies: 'hardware cannot be found',
+-531,hard error,The TDM3 notifies: 'Incorrect Sim-File in module,
+-532,hard error,The TDM3 notifies: 'No CAN-communication',Check Can-Bus connection.  possible TDM3 module fault. Check LEDs on module. Das TDM3 meldet: 'Keine CAN-Kommunikation'
+-533,hard error,The TDM3 has notified a fault,Check Can-Bus connection.  possible TDM3 module fault. Check LEDs on module
+-534,hard error,The TDM3 notifies: Incorrect Sim-File version,Check Can-Bus connection.  possible TDM3 module fault. Check LEDs on module
+-535,hard error,The TDM3 notifies: SPI-fault message 1 (not further defined),Check Can-Bus connection.  possible TDM3 module fault. Check LEDs on module
+-536,hard error,The TDM3 notifies: SPI-fault message 2 (not further defined),Check Can-Bus connection.  possible TDM3 module fault. Check LEDs on module
+-537,hard error,The TDM3 notifies: SPI-fault message Interface busy,Check Can-Bus connection.  possible TDM3 module fault. Check LEDs on module
+-538,hard error,The TDM3 notifies: SPI-fault message Data register busy,Check Can-Bus connection.  possible TDM3 module fault. Check LEDs on module
+-539,hard error,The TDM3 notifies: Pt100 AD-converter busy,Check connections.  possible TDM3 module fault. Check LEDs on module. Das TDM3 meldet: Pt100 AD-Wandler meldet Busy
+-540,hard error,The TDM3 notifies: Pt100 AD-converter is on end stop,Check connections.  possible TDM3 module fault. Check LEDs on module
+-541,hard error,During initialisation, The stepper motor module 3 was not found. Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-542,hard error,The stepper motor module 3 does not respond,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-543,hard error,The SMO3 notifies: 'Hardware cannot be found,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-544,hard error,The SMO3 notifies: 'Incorrect Sim File is module,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-545,hard error,The SMO3 notifies 'No CAN communication',Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module. 
+-546,hard error,The SMO3 has notified a fault,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-547,hard error,The SMO3 notifies: incorrect SIM file version,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-548,hard error,The SMO3 notifies: SPI-fault message 1 (not further defined),Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-549,hard error,The SMO3 notifies: SPI-fault message 3 (not further defined),Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-550,hard error,The SMO3 notifies: SPI-fault message Interface is busy,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-551,hard error,The SMO3 notifies: SPI-fault message data register is busy,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-552,hard error,The SMO3 notifies: Pt100 AD-converter notifies it is busy,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module. Das SMO3 meldet: Pt100 AD-Wandler meldet Busy
+-553,hard error,The SMO3 notifies: Pt100 AD-converter is at the end stop,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-554,hard error,The SMO3 notifies, that the condensation-monitor has tripped. Condensation too high for stage driven by stepper motor module 3
+-555,hard error,The SMO3 notifies, that the MOP-monitor has tripped. MOP too high for stage driven by stepper motor module 3. Compressor running
+-556,hard error,The SMO3 notifies, that the SGD-monitor has tripped. Min Flow too low for stage driven by stepper motor module 3. Possible refrigerant leak. Check refrigerant fluid sight glass for no bubbles
+-557,hard error,
+-558,hard error,The frequency converter T1 of pump reports a fault. Possible converter fault,
+-559,hard error,The temperature of the pump motor is too high,Check pump motor power supplies. Check motor rotates freely. Check fluid is not too viscous. Possible pump motor fault. The wellhead supplies no more water. The pump is running.  but no water flows. Check wellhead valves. Check for pipe blockage
+-561,hard error,The rechargeable battery notifies that the power supply is not available any more,
+-562,hard error,The rechargeable battery error,Leave machine in standby for a few hours for the battery to recharge. If this fails then a new battery / Pilot may be required
+-563,hard error,A fault has occurred during the current test: NTR return message 1 is LOW, but should be HIGH
+-564,hard error,A fault has occurred during the current test: NTR return message 2 is LOW, but should be HIGH
+-565,hard error,A fault has occurred during the current test: Current flow with K1 off / Opto off has been detected,
+-566,hard error,A fault has occurred during the current test: Minimum current with K1 off / Opto off Is outside the tolerance range (5.0 +- 0,2V)
+-567,hard error,A fault has occurred during the current test: Maximum current with K1 off / Opto off is outside the tolerance range,
+-568,hard error,A fault has occurred during the current test: Current flow with K1 off / Opto on has been detected,
+-569,hard error,A fault has occurred during the current test: Minimum current with K1 off / Opto on is outside the tolerance range (5.0 +- 0,2V)
+-570,hard error,A fault has occurred during the current test: Maximum current with K1 off / Opto on is outside the tolerance range,
+-571,hard error,A fault has occurred during the current test: No OT (Over temp) release has been received,
+-572,hard error,A fault has occurred during the current test: NTR Return message 1 is HIGH, but should be LOW
+-573,hard error,A fault has occurred during the current test: NTR Return message 2 is HIGH, but should be LOW
+-574,hard error,A fault has occurred during the current test: Current flow with K1 on / Opto off has been detected,
+-575,hard error,A fault has occurred during the current test: Minimum current with K1 on / Opto off is outside the tolerance range (5.0 +- 0,2V)
+-576,hard error,A fault has occurred during the current test: maximum current with K1 on / Opto off is outside the tolerance,
+-577,hard error,A DEM1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-578,hard error,A DEM2 is present on the CAN-Bus, but according to the SimFile it should not be there
+-579,hard error,A DEM3 is present on the CAN-Bus, but according to the SimFile it should not be there
+-580,hard error,A DEM4 is present on the CAN-Bus, but according to the SimFile it should not be there
+-581,hard error,A DEM5 is present on the CAN-Bus, but according to the SimFile it should not be there
+-582,hard error,A DEM6 is present on the CAN-Bus, but according to the SimFile it should not be there
+-583,hard error,A DAM1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-584,hard error,A DAM2 is present on the CAN-Bus, but according to the SimFile it should not be there
+-585,hard error,A DAM3 is present on the CAN-Bus, but according to the SimFile it should not be there
+-586,hard error,A DAM4 is present on the CAN-Bus, but according to the SimFile it should not be there
+-587,hard error,An SMO1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-588,hard error,An SMO2 is present on the CAN-Bus, but according to the SimFile it should not be there
+-589,hard error,An SMO3 is present on the CAN-Bus, but according to the SimFile it should not be there
+-590,hard error,A TDM1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-591,hard error,A TDM2 is present on the CAN-Bus, but according to the SimFile it should not be there
+-592,hard error,A TDM3 is present on the CAN-Bus, but according to the SimFile it should not be there
+-593,hard error,An OT is present on the CAN-Bus, but according to the SimFile it should not be there
+-594,hard error,A T2M1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-595,hard error,A T2M2 is present on the CAN-Bus, but according to the SimFile it should not be there
+-596,hard error,A UC-Board is present on the CAN-Bus, but according to the SimFile it should not be there
+-597,hard error,A DSM1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-598,hard error,An SKM1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-599,hard error,An SWV1 / KWV1 is present on the CAN-Bus, but according to the SimFile it should not be there. PL-M1 Collective error message Pump 1. PL-M1 Sammelstörmeldung Pumpe 1. PL-M1 Collective operating message Pump 1. PL-M1 Collective error message Pump 2. PL-M1 Sammelstörmeldung Pumpe 2. PL-M1 Collective operating message Pump 1. Motor protection relay HK-QV1-NT has tripped Check power supply voltage correct. Faulty behaviour on accessing EEPROM
+-607,hard error,The thermal contact of the HT stage compressor has operated,Compressor too hot. Check correct supply voltage. Check cooling water and air flow of compressor cooling fan (if fitted). Possible lack of refrigerant. Check refrigerant sight glass for bubbles. The receive buffer of the CAN-MemCopy protocol is full. The received fragment of the CAN-MemCopy protocol is faulty. The data length of the data received via the CAN-MemCopy protocol is incorrect. The CAN-MemCopy transmit queue is over-full
+-612,hard error,The modbus tcp socket could not be set up,
+-614,hard error,During the initialisation, the safety circuit module 2 was not found
+-615,hard error,The safety circuit module 2 does not answer,
+-616,hard error,An SKM2 is present on the CAN-Bus, although according to the SimFile.  it should not be present
+-617,hard error,the safety circuit module 2 has notified an error,
+-618,hard error,
+-619,hard error,The safety circuit module 2 has notified: 'short circuit sensor PT1' Safety circuit module 2, Sensor PT1 or module faulty
+-620,hard error,The safety circuit module 2 has notified: 'open circuit sensor PT1',Safety circuit module 2.  Sensor PT1 faulty or module faulty or bad contact on plug or wiring to sensor
+-621,hard error,The safety circuit module 2 has notified: 'Reference current sensor PT1.' Safety circuit module 2 Sensor PT1 or module faulty,
+-622,hard error,
+-623,hard error,The safety circuit module 2 has notified: 'Short circuit sensor PT2' Safety circuit module 2 Sensor PT2 or module faulty,
+-624,hard error,The safety circuit module 2 has notified: 'open circuit sensor PT2',Safety circuit module 2 Sensor PT2 or module faulty or bad contact on plug or wiring to sensor
+-625,hard error,The safety circuit module 2 has notified: 'reference current sensor PT2.' Safety circuit module 2 Sensor PT1 or module faulty,
+-626,hard error,The safety circuit module 2 has notified: 'over temperature sensor PT3' Safety circuit module 2, PT3 sensor.  Over Temperature setting too low
+-627,hard error,The safety circuit module 2 has notified: 'short circuit sensor PT3' Safety circuit module 2 Sensor PT3 or module faulty,
+-628,hard error,The safety circuit module 2 has notified: 'open circuit sensor PT3',Safety circuit module 2 Sensor PT3 or module faulty or bad contact on plug or wiring to sensor
+-629,hard error,The safety circuit module 2 has notified: 'reference current sensor PT3.' Safety circuit module 2 Sensor PT3 or module faulty,
+-630,hard error,The safety circuit module 2 has notified: 'over temperature PT reference' Safety circuit module 2 faulty,
+-631,hard error,The safety circuit module 2 has notified: 'short circuit PT reference' Safety circuit module 2 faulty,
+-632,hard error,The safety circuit module 2 has notified: 'open circuit PT reference' Safety circuit module 2 faulty,
+-633,hard error,The safety circuit module 2 has notified: 'reference current PT reference.' Safety circuit module 2 faulty,
+-634,hard error,The safety circuit module 2 has notified: 'set point PT1 varies,Safety circuit module 2 faulty or controller
+-635,hard error,The safety circuit module 2 has notified: 'set point PT2 varies,Safety circuit module 2 faulty or controller
+-636,hard error,The safety circuit module 2 has notified: 'Set point PT3 varies,Safety circuit module 2 faulty or controller
+-637,hard error,The safety circuit module 2 has notified: 'CAN-communication faulty.' Safety circuit module 2 or controller or CAN bus faulty,
+-638,hard error,The safety circuit module 2 has notified: 'fault in NTR driver transistor stage 1,Safety circuit module 2 sees that Mains isolation relay driver transistor stage 1 is faulty. Change controller or module
+-639,hard error,The safety circuit module 2 has notified: 'fault in NTR driver transistor stage 2,Safety circuit module 2 sees that Mains isolation relay driver transistor stage 2 is faulty. Change controller or module
+-640,hard error,The safety circuit module 2 has notified: 'fault in NTR-answer,Safety circuit module 2 sees that Mains isolation relay does not answer correctly. Change controller or module
+-641,hard error,The minimum evaporation is below the min allowed value due to influence of the condensation controller,Possible lack of cooling water/air. Check water and air flow/temperature. Check fans and. water filter. If air cooling check condenser fins are clean
+-642,hard error,The pilot has made a restart (but not the active board),Possible Pilot hardware problem.  or static discharge or EMC problem. Check Pilot by replacement. If fault persists.  check all earthing of sensors .  machine.  connecting cables. Single point Earthing. Possible Graphics mode bug in Pilot. Set display to normal mode. Replace software with newest version
+-643,hard error,On start-up, the cooling water valve KWV cannot be found. Check wiring to cooling water valve.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board fault
+-644,hard error,The cooling water valve KWV does no longer responds,Check wiring to cooling water valve.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-645,hard error,On start-up, the cooling water valve SWV1 cannot be found. Check wiring to cooling water valve SWV1.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-646,hard error,The cooling water valve SWV1 does no longer responds,Check wiring to cooling water valve SWV1.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-647,hard error,On start-up the cooling water valve SWV2 was not found,Check wiring to cooling water valve SWV2.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-648,hard error,The cooling water valve SWV2 does no longer responds,Check wiring to cooling water valve SWV2.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-649,hard error,A SWV2 is present on the CAN-Bus, although according to the SIM-File it should not be there. Possible SimFile error
+-650,hard error,The stepper motor for the water valve 2 says: 'Hardware cannot be found,Check wiring to cooling water valve SWV2.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-651,hard error,The stepper motor for the water valve 2 says: 'Incorrect Sim-File in Module.' Possible incorrect or faulty stepper motor module,
+-652,hard error,The stepper motor water valve 2 says:: Wrong Sim-File Version Possible incorrect or faulty stepper motor module,
+-653,hard error,The stepper motor water valve 2 says: 'No CAN-communication',Check wiring to cooling water valve SWV2.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-654,hard error,The stepper motor water valve 2 has notified a fault. Possible incorrect or faulty stepper motor module,
+-655,hard error,The pressure in the evaporator is too low (< 1,5 bar abs). Possible refrigerant leak or stepper motor problem
+-656,hard error,The pump pressure is too low or too high. Sensor faulty. Static pressure in system ,Pump pressure too low or too high. Check sensor by replacement. Check that there is no flow blockage
+-657,hard error,The pressure in the return flow is too low or too high. Sensor faulty. Static pressure in system,Return pressure too low or too high. Check sensor by replacement. Check that there is no flow blockage
+-658,hard error,The module SMO1 is configured with a controller for the ht stage,
+-659,hard error,Stromtest timeout,
+-660,hard error,Safety module 3 fault during initialisation,
+-661,hard error,Communication with safety module 3 failed,
+-662,hard error,An SKM3 is present on the CAN-Bus, although according to the sim file it should not be present
+-663,hard error,
+-664,hard error,Safety module 3 fault: 'OT PT1',
+-665,hard error,Safety module 3 fault: 'Sensor PT1 short circuit',
+-666,hard error,Safety module 3 fault: 'Sensor PT1 open circuit',
+-667,hard error,Safety module 3 fault: 'Reference current sensor PT1,
+-668,hard error,Safety module 3 fault: 'OT Sensor PT2',
+-669,hard error,Safety module 3 fault: 'Short circuit sensor PT2',
+-670,hard error,Safety module 3 fault: 'Open circuit sensor PT2',
+-671,hard error,Safety module 3 fault: 'Reference current PT2,PT2
+-672,hard error,Safety module 3 fault: 'OT Sensor PT3',
+-673,hard error,Safety module 3 fault: 'Short circuit sensor PT3',
+-674,hard error,Safety module 3 fault: 'Open circuit PT3',
+-675,hard error,Safety module 3 fault: 'Reference current sensor PT3,
+-676,hard error,Safety module 3 fault: 'OT PT Reference',
+-677,hard error,Safety module 3 fault: 'Short circuit PT Reference',
+-678,hard error,Safety module 3 fault: 'Open circuit PT Reference',
+-679,hard error,Safety module 3 fault: 'Reference current PT Reference,
+-680,hard error,Safety module 3 fault: 'Set point value PT1 fluctuating,
+-681,hard error,Safety module 3 fault: 'Set point value PT2 fluctuating,
+-682,hard error,Safety module 3 fault: 'Set point value PT3 fluctuating,
+-683,hard error,Safety module 3 fault: 'CAN-communication failed,
+-684,hard error,Safety module 3 fault: 'Fault in NTR Stage 1,
+-685,hard error,Safety module 3 fault: 'Fault in NTR Stage 2,
+-686,hard error,Safety module 3 fault: 'Fault NTR feedback,
+-687,hard error,PoKo/ECS Interface should be used, but cannot be found
+-688,hard error,Com.G@te and ECS-PoKo-Interface detected,Please disconnect Com.G@te or ECS-PoKo-Interface. Only one of these interfaces are allowed
+-689,hard error,OT trip values error,OT trigger values in device EEPROM are different and they must be entered again
+-690,hard error,Device data base error,The device data base is obsolete Gerätedatenbankfehler
+-691,hard error,Evaporator end sensor from evaporator 2 LT stage is defekt,Superheat in the 2nd evaporator of the LT stage too small
+-693,hard error,Circuit breaker pump 2 has tripped,
+-694,hard error,Temperature Solid State 1 ventilation too high (over 70 °C),
+-695,hard error,Temperature Solid State 2 ventilation too high (over 70 °C),
+-696,hard error,Suction gas superheat LT stage too small,
+-697,hard error,Feedback from of the two heater contactors KHZ1 or KHZ2 has a fault,
+-698,hard error,Check pump seal drip tray,
+-699,hard error,Process pump pressure has dropped severely during temperature control,Air / gas in the pump. Leakage. Boiling in fluid. HTF contaminated or de-natured
+-710,hard error,
+-711,hard error,During the initialisation AIO1 not found,
+-712,hard error,AIO1 has been found on the CAN-Bus, although the SIM file is not configured to have one. Module AIO1 reports a fault
+-714,hard error,Module AIO1: Hardware fault,
+-715,hard error,Module AIO1: Sim file fault,
+-716,hard error,
+-717,hard error,Module AIO1: CAN communication fault,Das AIO1-Modul meldet: CAN-Kommunikationsfehler
+-718,hard error,Module AIO1: SPI0 not defined,
+-719,hard error,Module AIO1: SPI1 not defined,
+-720,hard error,Module AIO1: Fault SPI Interface,
+-721,hard error,Module AIO1: SPI Data register fault,
+-722,hard error,Module AIO1: Pt100 AD-converter reports it is busy,Das AIO1 meldet: 'Pt100 AD Wandler meldet Busy'
+-723,hard error,Module AIO1: Pt100 AD-converter is on the endstop (full range),
+-724,hard error,
+-725,hard error,During the initialisation AIO2 not found,
+-726,hard error,AIO2 has been found on the CAN-Bus, although the SIM file is not configured to have one
+-727,hard error,Module AIO2 reports a fault,
+-728,hard error,Module AIO2: Hardware fault,
+-729,hard error,Module AIO2: Sim file fault,
+-730,hard error,
+-731,hard error,Module AIO2: CAN communication fault,Das AIO2-Modul meldet: CAN-Kommunikationsfehler
+-732,hard error,Module AIO2: SPI0 not defined,
+-733,hard error,Module AIO2: SPI1 not defined,
+-734,hard error,Module AIO2: Fault SPI Interface,
+-735,hard error,Module AIO2: SPI Data register fault,
+-736,hard error,Module AIO2: Pt100 AD-converter reports it is busy,Das AIO2 meldet: 'Pt100 AD Wandler meldet Busy'
+-737,hard error,Module AIO2: Pt100 AD-converter is on the endstop (full range),
+-738,hard error,Steam module not ready (Status contact of contactor open),
+-739,hard error,No steam power available (no power measured despite valve being open),
+-740,hard error,Steam flow measurement device sends wrong value,
+-741,hard error,Insufficient storage for all G- and X-Infos,Control and feedback of contactors KP1-TK (Thermal fluid circuit) and KP1-PK (Process circuit) are not synchronised
+-743,hard error,Safety module 4 fault during initialisation,
+-744,hard error,Communication with safety module 4 failed,
+-745,hard error,An SKM4 is present on the CAN-Bus, although according to the sim file it should not be present
+-746,hard error,
+-747,hard error,Safety module 4 fault: 'OT PT1',
+-748,hard error,Safety module 4 fault: 'Sensor PT1 short circuit',
+-749,hard error,Safety module 4 fault: 'Sensor PT1 open circuit',
+-750,hard error,Safety module 4 fault: 'Reference current sensor PT1,
+-751,hard error,Safety module 4 fault: 'OT Sensor PT2',
+-752,hard error,Safety module 4 fault: 'Short circuit sensor PT2',
+-753,hard error,Safety module 4 fault: 'Open circuit sensor PT2',
+-754,hard error,Safety module 4 fault: 'Reference current PT2,
+-755,hard error,Safety module 4 fault: 'OT Sensor PT3',
+-756,hard error,Safety module 4 fault: 'Short circuit sensor PT3',
+-757,hard error,Safety module 4 fault: 'Open circuit PT3',
+-758,hard error,Safety module 4 fault: 'Reference current sensor PT3,
+-759,hard error,Safety module 4 fault: 'OT PT Reference',
+-760,hard error,Safety module 4 fault: 'Short circuit PT Reference',
+-761,hard error,Safety module 4 fault: 'Open circuit PT Reference',
+-762,hard error,Safety module 4 fault: 'Reference current PT Reference,
+-763,hard error,Safety module 4 fault: 'Set point value PT1 fluctuating,
+-764,hard error,Safety module 4 fault: 'Set point value PT2 fluctuating,
+-765,hard error,Safety module 4 fault: 'Set point value PT3 fluctuating,
+-766,hard error,Safety module 4 fault: 'CAN-communication failed,
+-767,hard error,Safety module 4 fault: 'Fault in NTR Stage 1,
+-768,hard error,Safety module 4 fault: 'Fault in NTR Stage 2,
+-769,hard error,Safety module 4 fault: 'Fault NTR feedback,
+-770,hard error,The DEM7 did not respond during the start-up phase even though it should have been present. Digital input module DEM 7 not found. Check connections. Are module LEDs lit,
+-771,hard error,The DEM7 is not responding anymore,Digital input module DEM 7 no longer answers. Check connections. Are module LEDs lit
+-772,hard error,The input 1 of the DEM7 is fluttering,Input 1 of Digital input module DEM7 fluttered. Check connections
+-773,hard error,The input 2 of the DEM7 is fluttering,Input 2 of Digital input module DEM7 fluttered. Check connections
+-774,hard error,The input 3 of the DEM7 is fluttering,Input 3 of Digital input module DEM7 fluttered. Check connections
+-775,hard error,The input 4 of the DEM7 is fluttering,Input 4 of Digital input module DEM7 fluttered. Check connections
+-776,hard error,The DEM7 has signalled that it has not received any data from the controller for more than,30s. Check connections on Digital input module DEM7
+-777,hard error,The DEM7 has reported an error,
+-778,hard error,A DEM7 is present on the CAN-Bus, but according to the SimFile it should not be there
+-779,hard error,During initialisation, the temperature/pressure module 4 was not found. Check CAN-Bus connections. Possible module defect. Check LEDs on module are lit
+-780,hard error,The Temperature/pressure module 4 does not acknowledge any more,Check CAN-Bus connections. Possible module defect. Check LEDs on module are lit
+-781,hard error,The TDM4 notifies: 'hardware cannot be found',
+-782,hard error,The TDM4 notifies: 'Incorrect Sim-File in module,
+-783,hard error,The TDM4 notifies: 'No CAN-communication',Check Can-Bus connection.  possible TDM4 module fault. Check LEDs on module
+-784,hard error,The TDM4 has notified a fault,Check Can-Bus connection.  possible TDM4 module fault. Check LEDs on module
+-785,hard error,The TDM4 notifies: Incorrect Sim-File version,Check Can-Bus connection.  possible TDM4 module fault. Check LEDs on module
+-786,hard error,The TDM4 notifies: SPI-fault message 1 (not further defined),Check Can-Bus connection.  possible TDM4 module fault. Check LEDs on module
+-787,hard error,The TDM4 notifies: SPI-fault message 2 (not further defined),Check Can-Bus connection.  possible TDM4 module fault. Check LEDs on module
+-788,hard error,The TDM4 notifies: SPI-fault message Interface busy,Check Can-Bus connection.  possible TDM4 module fault. Check LEDs on module
+-789,hard error,The TDM4 notifies: SPI-fault message Data register busy,Check Can-Bus connection.  possible TDM4 module fault. Check LEDs on module
+-790,hard error,The TDM4 notifies: Pt100 AD-converter busy,Check connections.  possible TDM4 module fault. Check LEDs on module. Das TDM4 meldet: Pt100 AD-Wandler meldet Busy
+-791,hard error,The TDM4 notifies: Pt100 AD-converter is on end stop,Check connections.  possible TDM4 module fault. Check LEDs on module
+-792,hard error,A TDM4 is present on the CAN-Bus, but according to the SimFile it should not be there
+-793,hard error,One of the control cabinet doors is open,
+-794,hard error,The contactor KHK5.1 of the heating cartridge 1 of heating chamber 5 has tripped,Reset circuit breaker
+-795,hard error,The contactor KHK5.2 of the heating cartridge 2 of heating chamber 5 has tripped,Reset circuit breaker
+-796,hard error,HT-stage twin compressor 1 contactor (HT-KV1) has tripped,Reset circuit breaker
+-797,hard error,HT-stage twin compressor 2 contactor (HT-KV2) has tripped,Reset circuit breaker
+-798,hard error,Sensor defect: temperature of the oil separator of HT-stage compressor 1 (HT-RF36V1). Sensor must be replaced,
+-799,hard error,Sensor defect: temperature of the oil separator of HT-stage compressor 2 (HT-RF36V2). Sensor must be replaced,
+-800,hard error,Sensor defect: sensor of fluid pipeline behind condensor HT-stage (HT-RF28),Sensor must be replaced
+-801,hard error,HT-stage compressor oil level (HT-FA3) has tripped (trips if oil level is too low),
+-802,hard error,HT-stage compressor 1 protection device has tripped,Reset circuit breaker
+-803,hard error,HT-stage compressor 2 protection device has tripped,Reset circuit breaker
+-804,hard error,Pressostat compressor 2 HT-stage (HT-F5.1V2) has tripped,Check machine cooling (water or air). If air check for free circulation of cool air. If water check for adequate supply of cooling water (filter blocked
+-805,hard error,HT-stage frequency converter 1 has tripped,Reset circuit breaker
+-806,hard error,HT-stage frequency converter 2 has tripped,Reset circuit breaker
+-807,hard error,HT-stage compressor 1 protection device signals a pause time although it shouldn't,
+-808,hard error,HT-stage compressor 2 protection device signals a pause time although it shouldn't,
+-809,hard error,Low pressure pressostat 1 HT-stage (HT-F10V1) has tripped,Check machine cooling (water or air). If air check for free circulation of cool air. If water check for adequate supply of cooling water (filter blocked
+-810,hard error,Low pressure pressostat 2 HT-stage (HT-F10V2) has tripped,Check machine cooling (water or air). If air check for free circulation of cool air. If water check for adequate supply of cooling water (filter blocked
+-811,hard error,The activation of the signal contact of the contactor KV3.1 for compressor cooling of the expansion and vent lines is not synchronous,
+-812,hard error,The maximum operating pressure monitor of the compressor circuit which cools the expansion and vent lines has tripped,
+-813,hard error,The superheat monitor of the compressor circuit which cools the expansion and vent lines has tripped,
+-814,hard error,The minimum operating pressure monitor of the compressor circuit which cools the expansion and vent lines has tripped,
+-815,hard error,
+-816,hard error,On start-up the cooling water valve SWV3 was not found,Check wiring to cooling water valve SWV3.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-817,hard error,The cooling water valve SWV3 does no longer responds,Check wiring to cooling water valve SWV3.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-818,hard error,A SWV3 is present on the CAN-Bus, although according to the SIM-File it should not be there. Possible SimFile error
+-819,hard error,The stepper motor for the water valve 3 says: 'Hardware cannot be found,Check wiring to cooling water valve SWV3.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-820,hard error,The stepper motor for the water valve 3 says: 'Incorrect Sim-File in Module.' Possible incorrect or faulty stepper motor module,
+-821,hard error,The stepper motor water valve 3 says: Wrong Sim-File Version Possible incorrect or faulty stepper motor module,
+-822,hard error,The stepper motor water valve 3 says: 'No CAN-communication',Check wiring to cooling water valve SWV3.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-823,hard error,The stepper motor water valve 3 has notified a fault. Possible incorrect or faulty stepper motor module,
+-824,hard error,Suction gas superheat HT stage too small,
+-825,hard error,The communication watchdog time has expired,
+-826,hard error,The module SMO2 is configured with a controller for the mt stage, but it shouldn't
+-827,hard error,motor protection MT -stage (QV1-MT),MT stage over current trip QV1-MT has operated. Reset by hand. Check all power supplies correct
+-828,hard error,DIC1 does not respond,CAN-Bus or DIC1 (Digital input counter) module problem
+-829,hard error,DIC1 Timeout,DIC1 (Digital input counter module) signals no data received from Controller in last 30s - CAN problem
+-830,hard error,DIC1 unknown error,
+-831,hard error,DIC1 not found,DIC1 module (A18.1) cannot be found on the CAN-Bus although it should be present DIC1 nicht gefunden
+-832,hard error,A DIC1 is present on the CAN-Bus, but according to the SimFile it should not be there
+-833,hard error,HT-stage condensation pressure sensor faulty,HT-stage condensation pressure sensor OK
+-834,hard error,MT-stage condensation pressure sensor faulty MT-stage condensation pressure sensor OK,
+-835,hard error,LT-stage condensation pressure sensor faulty,LT-stage condensation pressure sensor OK
+-836,hard error,The input 1 of the DIC1 is fluttering,Intermittent contact at input 1 of DIC1 (Digital impulse counter module)
+-837,hard error,The input 2 of the DIC1 is fluttering,Intermittent contact at input 2 of DIC1 (Digital impulse counter module)
+-838,hard error,The input 3 of the DIC1 is fluttering,Intermittent contact at input 3 of DIC1 (Digital impulse counter module)
+-839,hard error,The input 4 of the DIC1 is fluttering,Intermittent contact at input 4 of DIC1 (Digital impulse counter module)
+-840,hard error,The DAM of the blow down unit is not responding,Digital output module no longer answers. Possible CAN-Bus or module problem. Check connections. Are module LEDs lit
+-841,hard error,The SMO of the blow down unit is not responding,Stepper motor module no longer answers. Possible CAN-Bus or module problem. connections. Are module LEDs lit
+-842,hard error,Fault by the measurement of the intermediate injection of the HT stage,
+-843,hard error,Fault by the measurement of the intermediate injection of the LT stage,Possible fault on pressure sensor for measuring the intermediate injection of the LT stage
+-844,hard error,Fault by the measurement of the intermediate injection of the HT stage,
+-845,hard error,Fault by the measurement of the intermediate injection of the HT stage,
+-846,hard error,Fault by the measurement of the intermediate injection of the LT stage,Possible fault on Pt100 sensor for measuring the intermediate injection of the LT stage
+-847,hard error,The measured value of SMO1 temperature sensor 1 out of range,The temperature sensor 1 on SMO1 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-848,hard error,The measured value of SMO1 temperature sensor 2 out of range,The temperature sensor 2 on SMO1 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-849,hard error,The measured value of SMO2 temperature sensor 1 out of range,The temperature sensor 1 on SMO2 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-850,hard error,The measured value of SMO2 temperature sensor 2 out of range,The temperature sensor 2 on SMO2 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-851,hard error,The measured value of SMO3 temperature sensor 1 out of range,The temperature sensor 1 on SMO3 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-852,hard error,The measured value of SMO3 temperature sensor 2 out of range,The temperature sensor 2 on SMO3 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-853,hard error,The measured value of TDM1 temperature sensor 1 out of range,The temperature sensor 1 on TDM1 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-854,hard error,The measured value of TDM1 temperature sensor 2 out of range,The temperature sensor 2 on TDM1 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-855,hard error,The measured value of TDM2 temperature sensor 1 out of range,The temperature sensor 1 on TDM2 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-856,hard error,The measured value of TDM2 temperature sensor 2 out of range,The temperature sensor 2 on TDM2 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-857,hard error,The measured value of TDM3 temperature sensor 1 out of range,The temperature sensor 1 on TDM3 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-858,hard error,The measured value of TDM3 temperature sensor 2 out of range,The temperature sensor 2 on TDM3 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-859,hard error,The measured value of TDM4 temperature sensor 1 out of range,The temperature sensor 1 on TDM4 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-860,hard error,The measured value of TDM4 temperature sensor 2 out of range,The temperature sensor 2 on TDM4 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-861,hard error,The measured value of AIO1 temperature sensor 1 out of range,The temperature sensor 1 on AIO1 X1:13/14 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-862,hard error,The measured value of AIO1 temperature sensor 2 out of range,The temperature sensor 2 on AIO1 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-863,hard error,The measured value of AIO2 temperature sensor 1 out of range,The temperature sensor 1 on AIO2 X1:13/14 measured value out of range. Possible module. problem.  bad connection or Pt100 defect. Check and replace if necessary
+-864,hard error,The measured value of AIO2 temperature sensor 2 out of range,The temperature sensor 2 on AIO2 X1:15/16 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-865,hard error,The measured value of SWV1 temperature sensor 1 out of range,The temperature sensor 1 on SWV1 X4 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-866,hard error,The measured value of SWV1 temperature sensor 2 out of range,The temperature sensor 2 on SWV1 X5 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-867,hard error,The measured value of SWV2 temperature sensor 1 out of range,The temperature sensor 1 on SWV2 X4 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-868,hard error,The measured value of SWV2 temperature sensor 2 out of range,The temperature sensor 2 on SWV2 X5 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-869,hard error,The measured value of SWV3 temperature sensor 1 out of range,The temperature sensor 1 on SWV3 X4 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-870,hard error,The measured value of SWV3 temperature sensor 2 out of range,The temperature sensor 2 on SWV3 X5 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-871,hard error,Status contact of the fan 3 has operated,Check fan 3 connections and connector and power supply
+-872,hard error,Status contact of the fan 4 has operated,Check fan 4 connections and connector and power supply. Water valve position check does not behave as expected. The water valve position feedback is not synchronised with the control signal position
+-874,hard error,The cooling water control valve KRV does no longer responds,Check wiring to cooling water valve KRV.  check LED lit on its rear side. Check connections to Bus Board. Possible KRV or bus board or wiring fault
+-875,hard error,The cooling water control valve KRV says: 'Hardware cannot be found,Check wiring to cooling water valve KRV.  check LED lit on its rear side. Check connections to Bus Board. Possible KRV or bus board or wiring fault
+-876,hard error,The cooling water control valve KRV says: 'Incorrect Sim-File in Module.' Possible incorrect or faulty cooling water control valve module KRV,
+-877,hard error,The cooling water control valve KRV says: Wrong Sim-File Version Possible incorrect or faulty cooling water control valve module KRV,
+-878,hard error,The cooling water control valve KRV says: 'No CAN-communication',Check wiring to cooling water control valve KRV.  check LED lit on its rear side. Check connections to Bus Board. Possible KRV or bus board or wiring fault
+-879,hard error,The cooling water control valve KRV has notified a fault,Possible incorrect or faulty cooling water control valve module KRV
+-880,hard error,The measured value of KRV temperature sensor 1 out of range,The temperature sensor 1 on KRV X4 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-881,hard error,The measured value of KRV temperature sensor 2 out of range,The temperature sensor 2 on KRV X5 measured value out of range. Possible module problem.  bad connection or Pt100 defect. Check and replace if necessary
+-882,hard error,The safety circuit module 1 signals: 'The mains frequency monitor has identified a problem',
+-883,hard error,The safety circuit module 1 signals: 'There is a shortcircuit on feedback of the NTR',Safety circuit module 1 faulty
+-884,hard error,The safety circuit module 2 signals: 'The mains frequency monitor has identified a problem',
+-885,hard error,The safety circuit module 2 signals: 'There is a shortcircuit on feedback of the NTR',Safety circuit module 2 faulty
+-886,hard error,The safety circuit module 3 signals: 'The mains frequency monitor has identified a problem',
+-887,hard error,The safety circuit module 3 signals: 'There is a shortcircuit on feedback of the NTR',Safety circuit module 3 faulty
+-888,hard error,The safety circuit module 4 signals: 'The mains frequency monitor has identified a problem',
+-889,hard error,The safety circuit module 4 signals: 'There is a shortcircuit on feedback of the NTR',Safety circuit module 4 faulty
+-890,hard error,Cooling water control valve could not be closed,To prevent steam from beeing formed the valve has to be closed. Check connections to Bus Board. Possible KRV or bus board or wiring fault
+-891,hard error,The measured value of ActiveBoard temperature sensor 1 out of range,The temperature sensor 1 (ActiveBoard X15 / TangoBoard X1:1-3) measured value out of range. Possible hardware problem.  bad connection or Pt100 defect. Check and replace if necessary
+-892,hard error,The measured value of ActiveBoard temperature sensor 2 out of range,The temperature sensor 2 (ActiveBoard X16 / TangoBoard process temperature) measured value out of range. Possible hardware problem.  bad connection or Pt100 defect. Check and replace if necessary
+-893,hard error,The measured value of ActiveBoard temperature sensor 3 out of range,The temperature sensor 3 (ActiveBoard X17 / TangoBoard X1:4-6) measured value out of range. Possible hardware problem.  bad connection or Pt100 defect. Check and replace if necessary
+-894,hard error,The measured value of ActiveBoard temperature sensor 4 out of range,The temperature sensor 4 (ActiveBoard X18 / TangoBoard X1:10-12) measured value out of range. Possible hardware problem.  bad connection or Pt100 defect. Check and replace if necessary
+-895,hard error,The measured value of ActiveBoard temperature sensor 5 out of range,The temperature sensor 5 (ActiveBoard X19 / TangoBoard X1:7-9) measured value out of range. Possible hardware problem.  bad connection or Pt100 defect. Check and replace if necessary
+-896,hard error,The measured value of ActiveBoard temperature sensor 6 out of range,The temperature sensor 6 (ActiveBoard X20) measured value out of range. Possible hardware problem.  bad connection or Pt100 defect. Check and replace if necessary
+-897,hard error,The superheat of the intermediate injection of the HT-stage is too small,
+-898,hard error,The valve in the vent line has not reacted,Opening or closing of the valve is not possible. Perhaps the valve or the feedback signal is defect
+-899,hard error,The level inside the expansion tank is too low,The level must always be higher than 10%. Fill fluid
+-900,hard error,Error on receiving data over modbus tcp,
+-901,hard error,Unable to send data over modbus tcp,
+-902,hard error,
+-903,hard error,Smoke detector has tripped,Isolate unit from electrical supply immediately. A suitably qualified person should investigate the unit
+-904,hard error,The frequency converter of compressor reports a fault. Possible converter fault,
+-940,hard error,Error on receiving data over Ethernet,
+-941,hard error,Unable to send data over Ethernet,
+-942,hard error,Could not create CAN raw write thread,
+-943,hard error,EEPROM database handler error (check /var/log/messages),
+-944,hard error,The Active Board does not send data any more,
+-945,hard error,The device database of the Pilot ONE is too old,Pilot ONE® exchanged for one with an older software. Update the firmware
+-946,hard error,Error on receiving data over RS232,
+-947,hard error,Could not init USB serial device,
+-948,hard error,Could not clean USB serial device,
+-949,hard error,Error on reading USB serial device,
+-950,hard error,Error on sending over USB serial device,
+-951,hard error,The structure of the Active Board was not received despite several requests, and despite other structures being sent
+-952,hard error,Something is configured wrong. See /var/log/messages for details,
+-953,hard error,
+-954,hard error,
+-955,hard error,The USB interface could not be opened,
+-956,hard error,CAN PP device could not be opened,
+-957,hard error,Timer thread could not be started,
+-958,hard error,Could not clean the ActiveBoard structure queue,
+-960,hard error,Initialisation of the CAN communication for sending and receiving of ActiveBoard structures failed,
+-961,hard error,The ethernet socket could not be set up,
+-962,hard error,The buffer for receiving structures from the ActiveBoard is too small. Extend the maximum size in the source code,The initialisation of the EEPROM database failed
+-964,hard error,While writing circulator parameter to the database an error occurred,
+-965,hard error,While reading out circulator parameter from the database an error occurred,
+-966,hard error,Unable to update the circulator parameter database,The PP-command could not be sent over dbus. Could not open one of the CAN protocol files. While decrypting the overtemperature protection setting an error occurred
+-971,hard error,Could not initialise the serial port,
+-972,hard error,Unable to send data on the serial port,
+-973,hard error,Unable to clean the serial port buffer,
+-974,hard error,Could not initialise dbus,
+-975,hard error,An error occured while reading the structures from the ActiveBoard,
+-976,hard error,While trying to lock or unlock the message mutex an error occured,
+-977,hard error,While trying to lock or unlock the dbus mutex an error occured,
+-978,hard error,Unable to send a structure with dbus,A read error on the 'CAN_raw_buf' device interface occured. A write error on the CAN raw buf device occured. A read error on the 'CAN_raw' device interface occured. A write error on the 'CAN_raw' device interface occurred. A read error on the 'CAN_frag' device interface occured. A write error on the 'CAN_frag' device interface occurred. A read error on the 'CAN_memcpy' device interface occurred. A write error on the 'CAN_memcpy' device interface occurred. A read error on the 'CAN_PP' device interface occurred. A write error on the 'CAN_PP' device interface occurred
+-989,hard error,Error on sending to active board,
+-990,hard error,CAN interface could not be opened,
+-991,hard error,The Service RS232 interface could not be opened,
+-992,hard error,CAN interface to Com.G@te could not be opened,
+-993,hard error,Error on reading from the CAN interface to Com,
+-994,hard error,Error on writing to the CAN interface to Com,
+-995,hard error,CAN interface to modules could not be opened,
+-996,hard error,Fault on reading from the CAN interface to the modules,
+-997,hard error,Fault on writing to the CAN interface to the modules,
+-998,hard error,The interface for the Pilot Temperature sensors could not be opened,
+-999,hard error,Cannot read from the Pilot Temperature sensors interface,A processor trap (illegal word operand access) has occurred during the initialisation phase 1 (Unistat control). Exchange controller. A processor trap (illegal word operand access has occurred during the initialisation phase 2 (Unistat control). Exchange controller. Ein Prozessor-Trap (illegal word operand access) ist während der Initialisierungsphase 2 aufgetreten (Unistat Control). A processor trap (illegal word operand access has occurred during the initialisation phase 3 (Unistat control). Exchange controller. A processor trap (illegal word operand access has occurred during the initialisation phase 4 (Unistat control). Exchange controller. A processor trap (illegal word operand access has occurred during the initialisation phase 5 (Unistat control). Exchange controller. A processor trap (illegal word operand access has occurred during the initialisation phase 6 (Unistat control). Exchange controller. Ein Prozessor-Trap (illegal word operand access) ist während der Initialisierungsphase 6 aufgetreten (Unistat Control). A processor trap (illegal word operand access has occurred during the initialisation phase 7 (Unistat control). Exchange controller. A processor trap (illegal word operand access has occurred during the initialisation phase 8 (Unistat control). Exchange controller. Ein Prozessor-Trap (illegal word operand access) ist während der Initialisierungsphase 8 aufgetreten (Unistat Control). A processor trap (illegal word operand access has occurred during the initialisation phase 9 (Unistat control). Exchange controller. . A processor trap (illegal word operand access has occurred during the initialisation phase 10 (Unistat control). Exchange controller. A processor trap (illegal word operand access has occurred during the initialisation phase 11 (Unistat control). Exchange controller. Ein Prozessor-Trap (illegal word operand access) ist während der Initialisierungsphase 11 aufgetreten (Unistat Control). The Unistat control notifies: 'Non-Maskable Interrupt' was caused (by a falling flank on NMI processor pin). Should never happen.  as this input is connected to 5V via a 10kOhm resistor. Exchange controller. The Unistat control notifies: Stack-overflow Exchange controller. The Unistat control notifies: Stack-underflow Exchange controller. The Unistat control notifies: SBRK instruction. Exchange controller. The Unistat control notifies: Undefined opcode Exchange controller. The Unistat control notifies: Programm memory interface access error Exchange controller. The Unistat control notifies: Protection fault. Exchange controller. The Unistat control notifies: Illegal word operand access Exchange controller
+-9144,hard error,Global output release is rescinded. (Stop Error),A serious internal error has occurred. For safety.  all outputs are turned off
+-9999,hard error,No communication from active board to Pilot,
+-10001,hard error,Error with Database,The database couldn't be opened. Database missing or corrupt
+-10002,hard error,Database corrupt,A mapping of a menu whose item is in the database cannot be found. Menu database corrupt
+-10003,hard error,DBus failure,Connection to d-bus could not be established. Process missing or not reachable
+-10101,hard error,Database corrupt,A mapping of a configuration whose entry is in the database cannot be found. Config database corrupt
+-10102,hard error,Not enough memory,Not enough memory left to complete the current operation
+-10109,hard error,Cannot load Machine Configs,An error has occurred in loading the global configuration values from the machine
+-10110,hard error,Wrong Language Mapping,The given language id couldn't be found in the mapping table
+-10111,hard error,Timer error,An error occurred while starting a timer
+-10112,hard error,Couldn't connect to d-bus,The user interface wasn't able to connect to the Control Core of the machine. Application will exit
+-10113,hard error,Communication error with d-bus,A Communication error while transferring data to Control Core has occurred
+-10114,hard error,PP Command buffer overflow,PP command buffer overflow
+-10115,hard error,Wizard Stack too small,Wizard state machine Stack too small. Application will exit
+-10116,hard error,Error with Data structures,The d-bus data structures are different (version error
+-10117,hard error,D-bus communication error,There was an communication error with the Control Core (d-bus) (structures different
+-10118,hard error,Error with d-bus structure,An invalid structure has been sent or received within d-bus
+-10120,hard error,Error synchronisation structures from controller,Cannot load the structures from the controller
+-10122,hard error,Database error,Database restore was not successful. Giving up. Please contact support
+-10123,hard error,The data received from the controller was corrupt,Please inform your Huber Service Provider. Please keep the software version and the machine serial number available. Perhaps also read the machine history using the 'InfoViewer' and send it to your Huber Service Provider
+-10126,hard error,Cannot load Global Data,The Global Data function load is called before the Global Data init function Kann keine globalen Daten laden
+-10128,hard error,Calendar start synchronisation error,error in synchronizing local rtc with controller rtc Kalenderstartsynchronisationsfehler
+-10129,hard error,State machine stack overflow,A state machine stack overflow has occurred.  cannot proceed current operation
+-10130,hard error,Control not available,The control application has not started yet
+-10131,hard error,D-bus communication error,There was a timeout on the d-bus while communicating with the Control Core
+-10133,hard error,Driver error,OT security driver (subproc driver) not loaded
+-10134,hard error,Driver error,The security processor doesn't answer.  so the current action will be terminated
+-10137,hard error,Display mode error,Cannot initialise display mode Display-Mode Fehler
+-10138,hard error,Display mode error,Cannot set display mode Display-Mode Fehler
+-10139,hard error,Display mode error,No gui widget available Display-Mode Fehler
+-10141,hard error,PoCo abstraction layer,There is an error with the PoCo channel POKO-Abstraktionsschicht
+-10142,hard error,Sim file error,The device sim file is not available
+-10143,hard error,Database error,Hiding or activating of this menu point is not possible. Does menu point exist
+-10144,hard error,Custom factory default settings error,
+-10150,hard error,Error with Database,Database query is null
+-10151,hard error,Error with Database,There seems to be something wrong with the config table
+-10152,hard error,Error with Database,There seems to be something wrong with the menu_entry table
+-10153,hard error,Error with Database,There seems to be something wrong with the menu_tree table
+-10154,hard error,Error with Database,The database version cannot be read from the database
+-10159,hard error,Couldn't open ConAdapter,See /var/log/messages for details
+-10160,hard error,Couldn't connect to ConAdapter See /var/log/messages for details,
+-10161,hard error,Couldn't initialise ConAdapter,
+-10162,hard error,Couldn't register ConAdapter See /var/log/messages for details,
+-10163,hard error,Error with IPC COM module See /var/log/messages for details,
+-15000,hard error,CAN Controller communication error,The communication to the CAN Controller is not working correctly
+-15002,hard error,CAN Controller EEPROM error,The CAN Controller EEPROM is invalid
+-15003,hard error,CAN Controller firmware error,The CAN Controller firmware validity check failed
+-15004,hard error,CAN Controller CAN error,The CAN Controller CAN module could not be started correctly. CAN Controller CAN-Fehler. Das CAN-Controller CAN-Modul kann nicht korrekt gestartet werden
+-15005,hard error,OT value mismatch,The OT values are not correct set. Please input them again in the OT menu
+-15007,hard error,Touch Controller initialisation error,The initialization of the Touch Controller failed
+-15030,hard error,Firmware validity check failed,The firmware is corrupted. Please flash the latest firmware with Pilot ONE® Flasher. Break. Despite the pump rotating an increase in pump pressure cannot be detected. Is the Pump dry. Check if sufficient fluid (at least 1/3rd full sightglass. Air in system. Check air vent valve(if fitted) is open. Check if isolating rod in expansion tank is removed. Start the pump by hand a few times.  and then use the air purge function. Despite the pump rotating an increase in pump pressure cannot be detected. Is the Pumpe trocken
+-1025,resettable error,there is no control panel available,Check Pilot connector at bottom of Pilot or cable connections. Check software version same for Pilot and Controller
+-1026,resettable error,Notification from the control panel that no controller is present or that the initialisation has taken too long,Check Pilot connector at bottom of Pilot or cable connections. Check software version same for Pilot and Controller
+-1027,resettable error,Pump dry,Check if sufficient fluid (at least 1/3rd full sightglass. Is fluid very viscous. Air in system. Check air vent valve(if fitted) is open. Check if isolating rod in expansion tank is removed. Start the pump by hand a few times.  and then use the air purge function. Pumpe trocken
+-1028,resettable error,Controller and control panel software are not compatible,Check software version of Pilot and Controller. Flash new compatible software on Pilot and Controller. Der Control meldet.  dass Control- und Pilot-Softwareversion nicht kompatibel sind
+-1029,resettable error,OT temperature impulse not OK,Heating does not operate. At power on.  and at pump start.  a short heating impulse is given.  and it is tested if a definite increase of the OverTemp temperature is registered → No level. The same message is given when it is discovered during operation that the level has fallen. Fluid level too low. Correct fluid chosen. Check and refill. (Usually for Immersion circulators)
+-1030,resettable error,Level when pump starts not OK,Failure of Level registration using the pump operating characteristics. Fluid level too low. Check and refill. (Usually for Immersion Thermostats)
+-1031,resettable error,Level switch F2M1 has operated,The level switch has operated. Check level and refill. NOTE:- An essential protection system
+-1032,resettable error,Oil cannot be pumped. Temp too low,Machine designed for highly viscous HTF. The minimum temperature in the heated feed lines must be maintained. Wait until working temperature is reached
+-1033,resettable error,Process pump dry,Check if sufficient fluid is in the process circuit
+-1034,resettable error,The communication watchdog time has expired. Circulator is set to standby mode,
+-1035,resettable error,Unable to start. Select current draw first,
+-1036,resettable error,Unable to start. Select supply voltage first,Go to menu point 'Installation Guide' → 'Supply Voltage' and enter supply voltage
+-1037,resettable error,The level inside the expansion tank is too low,While air venting is active the level must always be higher than 10%. Fill fluid
+-10004,resettable error,DBus failure,An error occurred while communicating to the d-bus. Warning
+-2053,warning,AIF-IN signal not okay,The signal current from the transmitter is considerably outside the permitted limits of 0.5mA and 24.5mA. Check the analogue input current with a meter to see if it is correct. NOTE:- Too high a current can damage the interface
+-2055,warning,Condensation temperature warning,Check that enough air/water is flowing. Air cooled machines check good cooling air circulation. Check fans working and that condenser fins clean. Water cooled machines - check water differential pressure / inlet temperature. Check water filter
+-2063,warning,Main loop taking too long,
+-2064,warning,Static pump pressure warning,Pump static pressure is too high. System pressurised or expansion tank placed at high level. Use the 'Hydrostatic correction' feature. Possible Pump pressure sensor fault. During the comparison of the 3 EEPROM data sets one set was found to be corrupt and was corrected
+-2066,warning,The maximum number of warning signals to be checked,Low external volume. During the identification of the circulation volume.  no significant external volume could be detected.  so the smallest minimum value possible is taken. The fluid circuit identification requires that there is a delay between temp jump out and measured temp jump return. If no time delay or reaction time to fast.  the algorithm cannot work. In this case.  the smallest possible has been assumed. Delta-T between Jacket/bath and OT sensor too large. The heating was reduced or turned off due to the difference between the over-temperature trip sensor and jacket-temperature being is too high. The heating is reduced to minimise excessively high surface temperatures on the heating element. This is a typical sign of very poor fluid circulation. The heat energy in the heater is not transferred out of the chamber to the outlet temperature sensor. Temp difference between heater and outlet is greater than 30°C. Heater turned off. Ensure flow is improved.  or thinner oil is used. Help can often be given by reducing the heating power by 50% or so. Cannot write to seven segment display. Possible controller fault.  bad plug connector or controller or bus board fault. Test by replacement. The flow diagram could not be written to. Possible controller fault.  bad plug connector or controller or bus board fault. Test by replacement. The rpm-set point was reduced because the pump could not reach the desired rpm (due to high viscosity or density)Is not used anymore because Anti wind-up has been introduced. Pump speed reduced due to high fluid viscosity
+-2072,warning,OT Expansion vessel is 5K before trip point,Check the over temperature setting of expansion tank. The warning says that the expansion tank temperature has risen to shortly before the shut off point. Possibly something in the fluid is boiling to cause this
+-2073,warning,The maximum number of notifications has been reached. The reason is either a programming error or really so many notifications have accumulated over time,Possible software error. Reflash Controller and Pilot with newest software.  or exchange with a known good set
+-2074,warning,Compressor turned off due to low temperature,The compressor has been turned off as the jacket temperature is considerably lower than than the Min SP. Heating fault. PID not okay. The compressor has been turned off as the jacket temperature is considerably lower than than the Min SP. Heating fault
+-2075,warning,The Set point limits have been reached,The set point boundaries were exceeded by the internal temperatures. Reaction: the maximum heat or cooling capacity is limited. The machine runs at reduced heating / cooling power to prevent the max / min set points being exceeded. Check these are correct.  and that the machine is not being overloaded
+-2076,warning,A fault has occurred when reading out the AD-converter values of the AD7738 chip via SPI. Possible Controller fault. Check by replacement. If fault persists,
+-2077,warning,WD2-watchdog sets the 2nd set point,A temperature control to the 2nd set point was triggered because the RS-Watchdog WD2 was not updated in time. The RS232 interface software watchdog 2 has been activated.  but if not updated in time.  the machine then goes to its second setpoint. Check software programming that this watchdog is correctly updated on a regular basis.  or is turned off
+-2078,warning,The maximum number of notifications in the AD7738 interrupt routine was reached. Software or hardware fault in Controller. Replace by known good Controller,
+-2079,warning,The desired evaporation temperature cannot be reached. Refrigerant leak,Check refrigerant sight glass for bubbles - it should be full of refrigerant and there should be no bubbles. Check controller by replacement. Possible stuck expansion valve or refrigerant leak
+-2080,warning,Noise on Channel 0 - Reference 150 Ohm resistor,Possible Controller fault. Replace by known good controller. Possibly the insulation resistance of the process PT100 is too low. Please investigate.  replace or remove this sensor
+-2081,warning,Noise on Channel 1 - Reference 100 Ohm resistor,Possible Controller fault. Replace by known good controller. Possibly the insulation resistance of the process PT100 is too low. Please investigate.  replace or remove this sensor
+-2082,warning,Noise on Channel 2 - Not used (Reserve sensor),Possible Controller fault. Replace by known good controller. Possibly the insulation resistance of the process PT100 is too low. Please investigate.  replace or remove this sensor
+-2083,warning,Noise on Channel 3 - PT100 sensor 3 Pt_T3 X1:7-9,Possible PT100 or connection fault. Possibly the insulation resistance of the process PT100 is too low. Please investigate.  replace or remove this sensor
+-2084,warning,Noise on Channel 4 - Fluid Return PT100,Fluid return Pt100 possibly faulty.  or sudden warm fluid flow from external source. Possibly the insulation resistance of the process PT100 is too low. Please investigate.  replace or remove this sensor
+-2085,warning,Noise on Channel 5 - Evaporator end PT100,
+-2086,warning,Noise on Channel 6 - T-Process PT100,Process sensor faulty or connection or cable faulty or pick up of noise on cable. Check cable screened and earthed at one end only. Possibly the insulation resistance of the process PT100 is too low. Please investigate.  replace or remove this sensor
+-2087,warning,Noise on Channel 7 - Fluid outlet PT100,Internal PT100 sensor possibly faulty or has bad connections. Possibly the insulation resistance of the process PT100 is too low. Please investigate.  replace or remove this sensor. Blowdown stepper module not responding. The BlowDown-stepper motor module is required but is not responding (anymore).Check LEDs on stepper motor module. At least one should be lit. (Green) Check cable connections and that all connectors are firmly in place. Check 24 volt supply for Blowdown is available
+-2089,warning,G command activated Watchdog 2 sets 2nd Set Point,The RS232 interface software watchdog 2 has been activated using the G command.  but not updated in time. Temperature controlled to the the 2nd set point. Check software programming that this watchdog is correctly updated on a regular basis.  or is turned off
+-2090,warning,ASC0 framing error (for Test),ASC0 framing error (für Test)
+-2091,warning,ASC0 overrun error (for Test),ASC0 overrun error (für Test)
+-2092,warning,Temperature in unit casing >60°C,The temperature in the machine's motor room has risen above 60 °C. When 80 °C is reached the machine turns off. Check ventilation fans in the compressor spaces are all running. Check environment temperature not too hot. error reading the internal (Pilot) EEPROM Replace Pilot. error writing the internal (Pilot) EEPROM. Replace Pilot. Fluid level has fallen. The fluid level has fallen. Temperature control continues until the level timer has run out (Default 30 Seconds). The maximum heating is limited for safety. Check the fluid level where the sensor is placed and re-fill. error 2 out of 3 comparison (Pilot internal EEPROM). A failure was detected in data stored in the internal EEPROM of the pilot.  and was corrected using 2 from 3 comparison. This is just an info message
+-2097,warning,Expansion vessel temperature too high,The expansion vessel temperature is too high. Water is required to cool it. Check that this is available
+-2098,warning,Level sensor faulty,Check connections are tight. The compressor has been turned off because of low evaporation or evaporator end temperature as freeze protection. Compressor turned off to prevent freezing. Check good circulation of fluid (water). The LT pressostat had operated but no fault has occurred.  A compressor restart was made
+-2101,warning,The status contact for the fan M10.1 has dropped out,Check fan power supply is present and correct. Check fan is free to rotate
+-2102,warning,Status contact of the fan M10.2 has operated,Check fan 2 power supply is present and correct. Check fan is free to rotate. Statuskontakt des Lüfters M10
+-2103,warning,Switching water / air cooling,Machine cooling is either air or water. Due to a lack of water cooling.  the machine has been switched to air cooling. Either cooling water supply insufficient or of too high an inlet temperature
+-2104,warning,Power supply voltage information is missing,Please give the mains supply voltage. (or possibly carry out a factory reset)
+-2105,warning,Heaters safety cut off,
+-2106,warning,Freezing protection,The Freezing protection monitoring (Evaporation temperature) has temporarily turned off the compressor due to a too low evaporation temperature
+-2107,warning,Freezing protection,The freezing protection monitoring (Evaporator end temperature) has temporarily turned off the compressor due to very low internal temperatures. Possible fluid flow problem. Check good fluid flow. One data set was faulty and corrected With the 2 from 3 comparison in the machine EEPROM. An error in machine EEPROM data was detected.  and corrected. This is only an information message. One data set was faulty and corrected With the 2 from 3 comparison in theController EEPROM. An error in the Controller EEPROM data was detected.  and corrected. This is only an information message
+-2110,warning,At least one of the two fans M10.4 and M10.5 report an error,Check fans power supply and connectors. Check fans are free to rotate. If all ok.  then a possible fan fault. Check by replacement
+-2111,warning,Electrical compartment temperature >60°C,The temperature in the electrical compartment is over 60 °C. The electrical compartment temperature must be prevented from increasing further. Otherwise the machine will switch off. Check ventilation fans running and unobstructed. If full sun is shining on on machine.  try to shade
+-2112,warning,Pump motor temperature too high,Check power supply voltage is correct. Check pump turns freely by hand. Ensure fluid is not too viscous (under 50 Cst at lowest temperature). If all OK then possible pump motor defect. EEPROM could not be written to despite several attempts. EEPROM could not be read despite several attempts. Despite repeated attempts.  the EEPROM of the controller cannot be correctly written to. Make a factory reset. Possible controller hardware fault. Check by replacing controller or Controller and Pilot. Despite repeated attempts.  the EEPROM of the TangoBoard/ActiveBoard cannot be correctly written to. Make a factory reset. Possible BusBoard hardware fault. Despite repeated attempts.  the EEPROM of the controller cannot be correctly read. Make a factory reset. Possible controller hardware fault. Check by replacing controller or Controller and Pilot. Despite repeated attempts.  the EEPROM of the TangoBoard/ActiveBoard cannot be correctly read. Make a factory reset. Possible BusBoard hardware fault. The Pilot has made a new start (not Active board)
+-2120,warning,Stirrer head not in measurement position,
+-2121,warning,The compressor was switched off by the freeze monitor due to too a low evaporator end temperature,Freezing protection has turned off compressor due to very low internal temperatures. Possible fluid flow problem. Check good fluid flow
+-2122,warning,The size of the received structure does not match the size inside the Control,Unable to store the PP-command (dbus) into the ring buffer
+-2124,warning,Com.G@te: The size of the read data does not match the length of the string,
+-2125,warning,Could not set system clock,
+-2126,warning,Could not set hardware clock,
+-2127,warning,Error writing a CAN PP command,
+-2128,warning,
+-2129,warning,RTI Watchdog,RTI Watchdog has switched off CITM mode. RTI Watchdog hat den CITM Modus beendet
+-2130,warning,RTE Watchdog,RTE Watchdog hat activated internal control
+-2131,warning,Key lock watchdog problem,Key lock watchdog has occurred. Key lock is deactivated. Keylock Watchdog Problem
+-2132,warning,Temperature Solid State 1 ventilation too high (over 60 °C),
+-2133,warning,Temperature Solid State 2 ventilation too high (over 60 °C),
+-2134,warning,Error sending via USB serial device,
+-2135,warning,Error on flushing USB serial device,
+-2136,warning,Steam module deactivated,No steam power available (steam flow measurement device measures no steam heating power despite the valve being open)
+-2137,warning,An error occurred while initialising the service package,
+-2138,warning,Error while writing the service package: USB stick has been removed,
+-2139,warning,While encrypting the service package an error occurred,
+-2140,warning,Not enough space left on the usb device to save the service package,
+-2141,warning,An error occurred while initializing the data recorder,
+-2142,warning,Data recorder error: USB stick has been removed,
+-2143,warning,Data recorder error: Writing data failed,
+-2144,warning,Data recorder error: Reset failed,
+-2145,warning,Data recorder error: Not enough space on usb device,
+-2146,warning,Temperature Solid State 1 ventilation too high (over 60 °C),
+-2147,warning,Temperature Solid State 2 ventilation too high (over 60 °C),
+-2148,warning,The machine should be equipped with a VPC,The machine should be equipped with a VPC to control the heating water flow of an external heat exchanger. The VPC was not recognized.  so the machine behaves like a standard machine without VPC
+-2149,warning,Control parameters of internal control (expert mode) are not initialized,
+-2150,warning,An error occurred while encrypting the service package for the network,
+-2151,warning,An error occurred while uploading the service package to the network,Check ethernet settings
+-2152,warning,The communication watchdog time has expired. The second setpoint was set,
+-2153,warning,DEM1 does not respond,CAN-Bus or DEM1 (Digital input) module problem
+-2154,warning,DEM2 does not respond,CAN-Bus or DEM2 (Digital input) module problem
+-2155,warning,DEM3 does not respond,CAN-Bus or DEM3 (Digital input) module problem
+-2156,warning,DEM4 does not respond,CAN-Bus or DEM4 (Digital input) module problem
+-2157,warning,DEM5 does not respond anymore,Digital input module 5 no longer answers. Check connections. Check connections. Check that at least some module LEDs are lit and no blinking red LEDs
+-2158,warning,The DEM6 is not responding anymore,Digital input module DEM 6 no longer answers. Check connections. Are module LEDs lit
+-2159,warning,The DEM7 is not responding anymore,Digital input module DEM 7 no longer answers. Check connections. Are module LEDs lit
+-2160,warning,DAM1 does not respond,CAN-Bus or DAM1 (Digital output) module problem
+-2161,warning,DAM2 does not respond,CAN-Bus or DAM2 (Digital output) module problem
+-2162,warning,DAM3 does not respond,CAN-Bus or DAM3 (Digital output) module problem
+-2163,warning,DAM4 does not respond,CAN-Bus or DAM4 (Digital output) module problem
+-2164,warning,The stepper motor module1 does not respond anymore,Stepper motor module 1 no longer answers. Check connections
+-2165,warning,The stepper motor module 2 is not responding anymore,Stepper motor module 2 not answering any more
+-2166,warning,The stepper motor module 3 does not respond,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
+-2167,warning,The temperature pressure module 1 is not responding anymore Check connections etc,
+-2168,warning,The Temperature - pressure module 2 is not responding. Check connections etc,
+-2169,warning,The Temperature/pressure module 3 does not acknowledge any more,Check CAN-Bus connections. Possible module defect. Check LEDs on module are lit
+-2170,warning,The Temperature/pressure module 4 does not acknowledge any more,Check CAN-Bus connections. Possible module defect. Check LEDs on module are lit
+-2171,warning,The DSM1 is not responding anymore,
+-2172,warning,
+-2173,warning,
+-2174,warning,The safety circuit module 1 does not respond anymore,Safety module 1 no longer answers. Check connections
+-2175,warning,The safety circuit module 2 does not answer,
+-2176,warning,Communication with safety module 3 failed,
+-2177,warning,Communication with safety module 4 failed,
+-2178,warning,T2M1 no longer answers,Check connections to second temperature module 1
+-2179,warning,T2M2 does not respond anymore Check connections to T2M2,The VPC is not responding anymore. VPC no longer answers. Check connections
+-2181,warning,The cooling water valve SWV1 does no longer responds,Check wiring to cooling water valve SWV1.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-2182,warning,The cooling water valve SWV2 does no longer responds,Check wiring to cooling water valve SWV2.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-2183,warning,The cooling water valve SWV3 does no longer responds,Check wiring to cooling water valve SWV3.  check LED lit on its rear side. Check connections to Bus Board. Possible water valve or bus board or wiring fault
+-2184,warning,The UCT board does not communicate any more,Defective board.  or CAN-Bus problem. Change board.  check CAN-bus connections and flat band cable to Over Temp board
+-2185,warning,The over temperature board (OT) does not communicate any more (Via CAN),Defective board.  or CAN-Bus problem. Change board.  check CAN-bus connections and flat band cable to Over Temp board
+-2186,warning,The compressor was not switched off correctly (e.g. because of a mains failure),Please do not switch off the power supply before the machine has stopped operating. There may be a delay of several hours before the temperature control can be started
+-2187,warning,DIC1 does not respond,CAN-Bus or DIC1 (Digital input counter) module problem
+-2188,warning,Status contact of the fan 3 has operated,Check fan 3 power supply is present and correct. Check fan is free to rotate
+-2189,warning,Status contact of the fan 4 has operated,Check fan 4 power supply is present and correct. Check fan is free to rotate. Cooling water outlet temperature lower than expected. Possible cooling water valve defect
+-2191,warning,Process safety mode deactivated,As no cooling is available the process safety mode has been deactivated
+-2192,warning,The level inside the expansion tank is too low,The level has fallen below 20%. If it falls below 10% the unit will switch off to protect the pump. Fill fluid
+-2193,warning,No water flow registered Water valve open,Check water connections.  water filter and that water pressure is available
+-2194,warning,The temperature difference between active board temperature and ambient temperature is too high (thermal resistance),Please take counteraction in construction
+-2195,warning,Level switch F2M1 has operated,The level switch has operated. Check level and refill
+-2196,warning,Something is configured wrong. See /var/log/messages for details,
+-2197,warning,Noise on temperature sensor – Internal temperature (fluid outlet or bath),Internal PT100 sensor possibly faulty or has bad connections. Possibly the insulation resistance of the internal or process PT100 is too low. Please investigate and/or replace the faulty sensor. Possible Controller fault. Replace by known good controller
+-2198,warning,Noise on temperature sensor – Process temperature,Process sensor faulty or connection or cable faulty or pick up of noise on cable. Check cable shielding and earthing. Possibly the insulation resistance of the process PT100 is too low. Please investigate and/or replace this sensor. Possible Controller fault. Replace by known good controller
+-2199,warning,Noise on temperature sensor – Fluid return temperature,Fluid return Pt100 possibly faulty or has bad connections. Possibly the insulation resistance of the process PT100 is too low. Please investigate and/or replace the faulty sensor. Possible. Controller fault. Replace by known good controller
+-2200,warning,Noise on temperature sensor,PT100 sensor possibly faulty or has bad connections. Possibly the insulation resistance of the internal or process PT100 is too low. Please investigate and/or replace the faulty sensor. Possible Controller fault. Replace by known good controller. Check service package for details
+-2201,warning,Modbus tcp transmit error,
+-2202,warning,The temperature in the expansion vessel has risen above 80 °C. When 90 °C is reached the machine turns off,
+-3000,warning,Clock rechargeable battery is empty,When the Pilot ONE has been turned off for a very long time.  then this is OK. Leave the machine switched on.  in standby for a few hours. The battery will recharge. The clock will have to be set to the correct time and date afterwards
+-3001,warning,The graphics librarary has notified the error : GUILIBErrorNYI: function not yet implemented (Pilot),(Pilot)
+-3003,warning,The graphics library has notified the error : GUILIBErrorPAR: parameters out of range (Pilot),Die Grafikbibliothek meldet den Fehler: GUILIBErrorPAR: parameters out of range (Pilot)
+-3006,warning,The graphics library has notified the error : GUILIBErrorMEM (Pilot),
+-3007,warning,The graphics library has notified the error : GUILIBErrorCNA (Pilot),
+-3008,warning,The graphics library has notified the error : GUILIBErrorDDE: device driver error (Pilot),Die Grafikbibliothek meldet den Fehler: GUILIBErrorDDE: device driver error (Pilot)
+-3020,warning,The graphics library notified the error : GUILIBErrorLST (Pilot),
+-3030,warning,The graphics library has notified the error : GUILIBErrorBUT (Pilot),
+-3128,warning,Latest after 10ms still no acknowledgement has arrived from Pilot-EEPROM */ Possible Pilot hardware fault. Check Pilot by replacement,
+-3129,warning,An automation system has requested data too quickly,
+-3130,warning,Error writing settings file to USB stick,
+-3131,warning,The settings file cannot be loaded. Please wait,
+-3132,warning,Settings cannot be copied as the circulator is not in standby mode or the circulation is running. Turn machine to standby mode by stopping temperature control, circulation or air purge
+-3134,warning,Error loading settings file from USB stick,File was not found.  is corrupted or encryption type does not match
+-3135,warning,Error loading settings file from USB stick,Device is not compatible to the source device
+-3136,warning,Error loading settings file from USB stick,Pilot ONE software is older than the software on the source device
+-3137,warning,Error loading settings file from USB stick. The E-grades do not match,
+-9101,warning,The EEPROM cannot be opened,A fault has occurred when accessing the EEPROM EEPROM kann nicht gelesen werden
+-9102,warning,No hardware key found / AB type not known,The Active Board cannot be correctly identified. There is probably a memory fault
+-9103,warning,No Virgin code found,The identifier in the EEPROM cannot be found. There is probably a fault in the EEPROM
+-9104,warning,The SimFile is faulty,The data in the EEPROM cannot be corrected. There is probably a fault in the EEPROM
+-9105,warning,The device interface 'Pump' cannot be opened,Present access to the pump control was refused
+-9106,warning,The device interface 'SysAdc' cannot be opened. Present access to the AD-converter was refused,
+-9107,warning,The device interface 'MWE-EH' cannot be opened,Present access to the measured values found was refused
+-9108,warning,The device interface 'AD7793' cannot be found,
+-9109,warning,The device interface 'Stepper' cannot be opened,Present access to the stepper motor was refused
+-9110,warning,The device interface 'Analogue-In CC/VG' cannot be opened,Present access to the analogue input of the Active Board CC / Active Board VG was refused
+-9111,warning,The device interface 'TMP100' cannot be opened,Present access to the temperature monitoring of the Active Board was refused
+-9112,warning,The device interface 'control voltage Pump' cannot be opened,Present access to the analogue output (pump speed control voltage) was refused
+-9113,warning,The device interface 'DigPot' cannot be opened,
+-9114,warning,The device interface 'I2C' cannot be opened,Present access to the I2C bus was refused
+-9115,warning,The device interface 'SPI' cannot be opened,Present access to the SPI bus was refused
+-9116,warning,The device interface 'I2C' cannot be opened for the PCA9552,Present access to the flow diagram I2C was refused
+-9117,warning,The device interface 'I2C' cannot be opened for the SAA1064,Present access to the 7 segment display of the flow diagram via I2C bus was refused
+-9118,warning,The device interface 'PCA9555' cannot be opened,Present access to the digital input / output via the I2C bus was refused
+-9119,warning,The EEPROM cannot be opened,
+-9120,warning,The process SysAdc cannot be started,The process for the analogue conversion cannot be started
+-9121,warning,The process MWE cannot be started,The process for acquiring the measured values cannot be started
+-9122,warning,The process Safety cannot be started,The process for the safety monitoring cannot be started
+-9123,warning,The process Data controller cannot be started,The process for data processing cannot be started
+-9124,warning,The process Mains frequency cannot be started,The process to find the mains frequency cannot be started
+-9125,warning,The process PCF8574 cannot be started,The process for controlling the digital input / output cannot be started
+-9126,warning,The process Analog-In CC/VG cannot be started,The process for the analogue input cannot be started
+-9127,warning,The process Stepper motor cannot be started,The process for the stepper motor control cannot be started
+-9128,warning,The process SPI cannot be started,The process for the SPI interface cannot be started
+-9129,warning,The process AD7793 cannot be started,The temperature conversion process cannot be started
+-9130,warning,The process PCA9555 cannot be started,The process for controlling the digital input /output cannot be started
+-9131,warning,The process TMP100 cannot be started,The measuring circuit board temperature process cannot be started
+-9132,warning,The process Display cannot be started,The process for controlling the flow diagram and the 7 segment display cannot be started
+-9133,warning,On accessing a device interface, not all the requested bytes can be read
+-9134,warning,On accessing a device interface, not all the requested bytes can be written
+-9135,warning,There has been no message from the Pilot for too long,There has been no data exchanged with the Pilot for at least 30 seconds
+-9136,warning,A message from the pilot have been received again. Data exchange has been resumed with the Pilot,
+-9137,warning,NTR is o.k,The function test of the mains isolation relay was successful. NTR ist o.k
+-9138,warning,The mains isolation relay is on when it should be off,When monitoring the mains isolation relay it has been detected that this is turned on.  when it should be off. Possibly a contact is sticking
+-9139,warning,The mains isolation relay is off, but should be on. When monitoring the mains isolation relay.  it has been detected that this is turned off when it should be on . Possibly a contact is faulty
+-9140,warning,The mains isolation relay left hand circuit registers on, when it should be off. The left hand circuit of the mains isolation relay is registering as being on.  but it should be off. Possibly a driver transistor is faulty
+-9141,warning,The mains isolation relay left hand circuit registers off when it should be on,The left hand circuit of the mains isolation relay is registering as being off.  but it should be on. Possibly a driver transistor is faulty
+-9142,warning,The mains isolation relay right hand circuit registers on, when it should be off. The right hand circuit of the mains isolation relay is registering as being on.  but it should be off. Possibly a driver transistor is faulty
+-9143,warning,The mains isolation relay right hand circuit registers off when it should be on,The right hand circuit of the mains isolation relay is registering as being off.  but it should be on. Possibly a driver transistor is faulty
+-9145,warning,RDY is not HIGH (AD7793),The temperature measurement circuit refuses to give clearance for a new measurement cycle
+-9146,warning,RDY is not LOW (from AD7793),The temperature measurement circuit refuses to give clearance for a new measurement cycle
+-9147,warning,With the output return monitoring, a discrepancy between the measured and requested condition has been found
+-9148,warning,With the output return monitoring, a discrepancy between the measured and requested condition has been found
+-9149,warning,With the output return monitoring, a discrepancy between the measured and requested condition has been found
+-9150,warning,With the output return monitoring, a discrepancy between the measured and requested condition has been found
+-9151,warning,CHK SIG_24HZ1,With the output return monitoring.  a discrepancy between the measured and requested condition has been found
+-9152,warning,CHK SIG_24HZ2,With the output return monitoring.  a discrepancy between the measured and requested condition has been found
+-9153,warning,CHK PRELOAD_PUMP,With the output return monitoring.  a discrepancy between the measured and requested condition has been found
+-9154,warning,CHK DA_10,With the output return monitoring.  a discrepancy between the measured and requested condition has been found
+-9155,warning,EEP Seek failed on EEPROM,
+-9156,warning,Unable to open device CAN_MEMCOPY,
+-9157,warning,Invalid file handle: device is not open,
+-9158,warning,Timeout receiving sciopta message,
+-9159,warning,Unable to open serial port,
+-10000,warning,Error with Database,A generic database error has occurred during a query
+-10100,warning,Error with Database,A generic database error with the configuration values has occurred during a query
+-10104,warning,Error managing favourites,The favourite you have selected cannot be found in the database. Database corrupt
+-10105,warning,Translation,Chosen translation could not be found in libError. Is your translation file missing
+-10106,warning,Translation,Chosen translation could not be found in qt library. Is your translation file missing
+-10107,warning,Translation,Chosen translation could not be found. Is your translation file missing
+-10108,warning,Translation,Chosen translation could not be found in libs library. Is your translation file missing
+-10119,warning,Error receiving data from control,An error while waiting for data from the control (d-bus) has occurred
+-10121,warning,Database error,There seems to be something wrong with the menu/configuration database. Database will be restored
+-10124,warning,Database error,The database couldn't be restored
+-10127,warning,Calendar start time/date/rtcEvent/program is not valid,The calendar start time/date is set to 01.2000 00:00 as default value and is valid now Kalenderstart time/date/rtcEvent/program ist ungültig
+-10132,warning,Control synchronisation error,A timeout is occurred while waiting for synchronisation from control. Driver error. Security controller detected a mismatch between the values entered and observed
+-10136,warning,Timeout,Security controller signals an error.  did you need longer than 30s to adjust your value. (Safety feature)
+-10140,warning,
+-10145,warning,Write error with d-bus structure,
+-10146,warning,
+-10147,warning,Unknown error with d-bus structure,
+-10148,warning,The GUI watchdog time has expired,
+-10155,warning,Error with Database,The database is outdated and will be restored
+-10156,warning,Couldn't get value from config database See /var/log/messages for details,
+-10157,warning,Couldn't set value to config database See /var/log/messages for details,
+-10158,warning,Couldn't convert config database value,
+-15001,warning,Touch Controller communication error,The communication to the touch controlles is not working correctly
+-15008,warning,The touch sensor selftest has failed,
+-15020,warning,Network error,The ethernet configuration could not be set correctly. Please set the configuration in the ethernet menu
+-15025,warning,Pilot EEPROM error,The Pilot EEPROM could not be written correctly
+-15035,warning,Firmware version mismatch,The firmware has been modified. Please flash the latest firmware. Make a factory reset. Check controller by replacement
+-4097,message,A factory reset cannot be carried out as the circulator is not in standby mode,
+-4098,message,The temperature control program exceeds the limits of the minimum / maximum set point. Check that the max and min set points set for the machine will allow the temperature extremes required in the program to be run. If required change the Max / Min setpoint or the program to suit,
+-4099,message,Process temperature not okay,An attempt was made to switch the Temperature mode to process regulation but the required process temperature cannot be correctly read. The external temperature display must not show NC or -274°C. Turn off the identification. It has finished. At the moment it is not possible to switch the identification mode in order to only measure the volumetric flow rate. The identification mode cannot presently be changed to only measure the flow rate. A performance target from an external automation system is not presently possible.  because either a ramp.  a program.  set point following or set point setting via the AIF input is activated. Check machine settings allow the external control system to operate correctly. E. if a ramp is running on the programmer.  the external system cannot change this
+-4103,message,TAC successfully completed,TAC was able to identify the fluid circuit and all control parameters are now available for use
+-4104,message,TP cannot be started during De-gassing,When degassing is activated.  no temperature control programme can be started. Degassing can only take place under hand control of the temperature set point. If a programme is required to be started.  then Degassing must be first turned off
+-4105,message,TP not okay,The desired programme can not be used because it has not been defined. The TP under the requested number is empty. No programme name or number has been given for starting.  or the program contains no data
+-4106,message,The set point has been limited during input,A set-point input via the digital interface was higher or lower than the present max or min setpoint.  and was thus limited to these values
+-4107,message,Min SP limited,The Min SP was limited as it was set below the minimum machine temperature range or. above the actual setpoint
+-4108,message,Max SP limited,The Max SP was limited as it was set above the maximum machine temperature range or below the actual setpoint
+-4109,message,TP start not okay,The program could not be started because an alarm is active. Cancel the alarm by turning the machine off and on again. Temperaturprogrammstart abgebrochen
+-4110,message,TP temp not okay,Before the TP start it was found that there is a segment whose temperature was too low and lies outside the set point range. The entered value was discarded. Check temperatures required in program and enter the appropriate value
+-4111,message,TP temp not okay,Before the TP start it was found that there is a segment whose temperature was too high and lay outside the set point range. The entered value was discarded. Check temperatures required in program and enter the appropriate value. No more adjustment points available. The maximum number of adjustment points for this sensor have been reached. Perhaps delete a non essential point
+-4113,message,ComG@te not found,The Com.G@te is either generally required or a machine function using the Com.G@te is required.  and it has not been found. Check Com.G@te by replacement. These settings can not be accepted because no Com.G@te is connected. Check Com.G@te connections to machine. Check Com.G@te by replacement. TAC is temporarily not possible. The TAC start is presently not possible due to some prevailing condition. Temperature control OFF.  external set point control activated.  compressor automatic temperature control only just started.  refrigerating machine not ready) or the power setting is done directly (AIF. DIF) etc
+-4116,message,The compressor automatic can not be set to 'always off' at present because cooling capacity has to be available for the identification. As soon as the first initial identification has been completed the compressor can be switched off,Wait until the machine has finished the first phase of identification.  after which cooling is not required. The compressor Automatic can then be set to 'Always off'. The emergency cooling cannot be switched off at present because cooling is needed for the identification.  though the compressor automatic was switched to 'always off'. Please wait until the identification process has finished.  and then change the setting
+-4118,message,Process security requires compressor to run,The OT mode Process security requires the refrigeration to be in continuous readiness. Please set the compressor automatic to 'Always on'
+-4119,message,Process security requires compressor to run,The OT mode Process security requires the refrigeration to be in continuous readiness. The Compressor Automatic can only be be switched to 'Always on'. If a setting for the Compressor Automatic other than 'Always on' is required then the emergency cooling must be turned off. The operating point adjustment is not possible at present because the identification has not yet been completed. Please wait until the Identification process has completed before any settings are changed
+-4121,message,TAC has been aborted,The TAC has been aborted as the evaluation has given nonsense results. Possibly thermal influence by the application . The Die Identifikation wurde abgebrochen as the evaluation has given nonsense results. Possibly thermal influence by the application
+-4122,message,TAC has been aborted,TAC aborted as the required power was not reached. Is a power reduction activated. Has the set point been changed
+-4123,message,TAC has been aborted,TAC could not find the dead time. The external fluid system is very slow reacting or the. machine has insufficient power. TAC started too close to the end temperature
+-4124,message,The release signal from the oil sump for the compressor was not issued yet. Please wait until the compressor has reached operating temperature,
+-4125,message,The ModBus-module could not be found,The Modbus module required by the system was not found Check connections to machine. Possible Modbus module fault
+-4126,message,Choice of AIF-SP blocked,Another automatic set point demand is active. This must first be ended. Thus set point selection via AIF is not possible at present because e.g. a ramp.  a program or set point following is activated.Check machine settings to ensure that the AIF interface has control of the Set-point. Choice of Set Point following is blocked. Some other automatic set point demand is active. This must first be ended. Thus.  set point following is not possible because e.g. a ramp.  a program or a set point selection is activated via AIF. Check machine settings to ensure that set point following is possible. Only for test. Only for test. The controller has received an unknown command from the Com. Check Com.G@te connections and check Com.G@te by replacement. Prüfe Com. das Com. During the transmissions of the AIF structures from pilot to control an error has occurred. Problem: during the structure transfer the first fragment is missing.  the transmission begins with the second fragment
+-4132,message,TC mode switching is blocked,The requested function is only available when the manual set point input is active. Sensor adjustment not possible. The sensor is not present.  and thus the adjustment is not possible. Check if sensor is physically present. Possibly cable or connections or the sensor itself is defective Fühlerabgleich ist nicht möglich. Switching of SP source blocked. The set point source can not be changed because the circulator is in control mode. Either the set point or the identification is active. Before switching the source.  temperature control mode or TAC idenfication should not be active. Turn off the temperature control or the identification before the set-point source is changed. Machine should be in standby
+-4135,message,TAC has been aborted,The temperature control system does not deliver a sensible value for the process regulation over a longer time. Check external sensor placement. System fluid dynamics possibly very slow or very fast
+-4136,message,TAC not ideal,The temperature control system cannot deliver good results. The control will not be optimum
+-4137,message,The start is not yet possible,The VPC initialisation takes a few seconds. Please try again. AIF-out adjustment is not possible. The AIF-in adjustment is blocked as too large a value must be corrected. The determined adjustment point was refused during the calibration of the AIF-input because the deviation between set and actual current value is more than 4mA. Find and correct the reason for the large difference. Check that the actual current delivered by the external system is within 4mA of the set current
+-4140,message,Max number of adjustment point reached,
+-4141,message,The desired (pressure) sensor is not available and can therefore not be adjusted,Check sensor is physically present. Check connector and cables are ok. Possible sensor fault. Check by replacement
+-4142,message,No start possible as fluid level is not OK,Please first correct the fluid level
+-4143,message,No start possible as the expansion vessel OT set point is over 70°C,For normal operation.  70°C is the maximum allowed OT set point. Higher settings are only (temporarily) possible in De-gassing mode. Reduce the expansion tank over temperature trip value to below 70°C
+-4144,message,TAC aborted,The required temperature could not be reached in the time allowed. The system is too slow. Either System dynamics very slow.  or insufficient cooling/heating power available in machine
+-4145,message,PID controller switching blocked,Switching to TC process regulation is blocked as the PID values there are not correct. Adjust hand parameters. All PID values must be positive
+-4146,message,TC mode switching is blocked,The specially set PID temperature controller does not allow process control. It is preferable to change control mode in the standby condition
+-4147,message,PID not okay,The PID does not match the control algorithm (anymore).The external control parameters are not allowed with the chosen control algorithm. T process switching blocked. Set the standard settings before the switching is made. The process temperature is presently given by an alternative channel. This setting must first be be reset before a new source can be set. AIF-out adjustment is not possible. The correction is too large. There is either an operational or a hardware fault. the difference between the measured and set value is greater than 4mA. Check that the actual current deliverd by the external system is within 4mA of the set current. The TAC conditions are not very stable. The system must not be disturbed during TAC. The identification is finished.  but the quality of the parameters are not good. Try out the system.  and if not satisfactory do another identification.  perhaps with a larger temperature jump
+-4151,message,Stepper motor reset, as the stepper motor (LT-stage in two stage systems.  HT stage in single stage systems) has reached minimum position during the refrigeration control. This can occasionally happen
+-4152,message,Pump parameters not okay,Adjustment data for the torque test is missing. (Active board). This data can often be entered from the FAT
+-4153,message,A reference movement of the parallel evaporator stepper motor is being carried out, as it has lost Steps and cannot be closed. This can occasionally happen
+-4154,message,A reference movement of the stepper motor for the intermediate injection of the LT stage has been carried out, as it was wide enough open. This can occasionally happen
+-4155,message,A reference movement of the stepper motor for the superheat or frost protection control is being carried out,This can occasionally happen
+-4156,message,A reference movement of the hot gas injection stepper motor (LT-stage) was made because it had lost steps and was not closed,
+-4157,message,PoKo/ECS Interface not found,
+-4158,message,HT stage stepper motor reset, because the stepper motor minimum position had been reached during refrigeration control. was printed until 24.2012 as -4156 errornously
+-4159,message,Stepper motor reset, (2nd LT-Stage stepper motor) because minimum position had been reached during the refrigeration control
+-4160,message,A reference movement of the hot gas injection stepper motor (HT-stage) was made because it had lost steps and was not closed,
+-4161,message,A reference run of the stepper motor expansion valve used to control the compressor circuit which cools the expansion and vent lines has been done because of possible lost steps,
+-4162,message,A reference run of the mt-stage stepper motor valve has been done,
+-4170,message,Service/Maintenance recommented (due in 4 weeks),For further information www.huber-online.com/maintenance
+-4171,message,Service/Maintenance recommented (due in 3 weeks),For further information www.huber-online.com/maintenance.  -4172 [message]. Service/Maintenance recommented (due in 2 weeks). For further information www.huber-online.com/maintenance.   -4173 [message]. Service/Maintenance recommented (due in 1 week). For further information www.huber-online.com/maintenance.   -4174 [message]. Service/Maintenance recommented. For further information www.huber-online.com/maintenance.   -4175 [message]. F-Gas test (due in 4 weeks). For further information www.huber-online.com/maintenance F-Gas Test durchführen (in 4 Wochen)
+-4176,message,F-Gas test (due in 3 weeks),For further information www.huber-online.com/maintenance
+-4177,message,F-Gas test (due in 2 weeks),For further information www.huber-online.com/maintenance.   -4178 [message]. F-Gas test (due in 1 week). For further information www.huber-online.com/maintenance.   -4179 [message]. F-Gas test due. For further information www.huber-online.com/maintenance.   -4180 [message]. No start possible as fluid level is too low. The fluid level inside the expansion tank must be at least 20%. To start venting mode a level of 25% is required. Fill fluid.    -4181 [message]. Degassing cannot be started while TP is running. While a temperature control programme is active.  degassing cannot be started. Degassing can only take place under manual control of the temperature set point
+-4182,message,Settings cannot be saved as the circulator is not in standby mode or the circulation is running,
+-4183,message,The settings file was successfully created on USB stick,
+-4185,message,No settings group was selected,Please select at least one settings group to copy. CAN-message in the MeldungObject 0 lost. CAN-message in the MeldungObject 1 lost. CAN-message in the MeldungObject 2 lost. CAN-message in the MeldungObject 3 lost. CAN-message in the MeldungObject 4 lost. CAN-message in the MeldungObject 5 lost. CAN-message in the MeldungObject 6 lost. CAN-message in the MeldungObject 7 lost. CAN-message in the MeldungObject 8 lost. CAN-message in the MeldungObject 9 lost. CAN-message in the MeldungObject 10 lost. CAN-message in the MeldungObject 11 lost. CAN-message in the MeldungObject 12 lost. CAN-message in the MeldungObject 13 lost. CAN-message in the MeldungObject 14 lost. CAN-message in the MeldungObject 15 lost. CAN-message in the MeldungObject 16 lost. CAN-message in the MeldungObject 17 lost. CAN-message in the MeldungObject 18 lost. CAN-message in the MeldungObject 19 lost. CAN-message in the MeldungObject 20 lost. CAN-message in the MeldungObject 21 lost. CAN-message in the MeldungObject 22 lost. CAN-message in the MeldungObject 23 lost. CAN-message in the MeldungObject 24 lost. CAN-message in the MessageObject 26 lost. CAN-message in the MeldungObject 26 lost. CAN-message in the MeldungObject 27 lost. CAN-message in the MeldungObject 28 lost. CAN-message in the MeldungObject 29 lost. CAN-message in the MeldungObject 30 lost. CAN-message in the MeldungObject 31 lost
+-4232,message,
+-4233,message,Error chain adjustment not possible,The discrepancy of the measured values was too large
+-4234,message,Error chain adjustment not okay,The adjustment data of the error chain is not available
+-4235,message,TAC without heating is blocked,TAC cannot run with a positive set point jump if the machine does not have any heating. If possible.  carry out identification using negative set point jumps
+-4236,message,TAC without cooling is blocked,TAC cannot run with a negative set point jump if the machine does not have any cooling. If possible.  carry out identification using positive set point jumps. An error has been found when decoding the over temperature tripping value. 
+-4238,message,TAC requires the compressor to run,As long as TAC is active.  the compressor automatic setting may not be changed. Identifikation benötigt laufenden Kompressor
+-4239,message,TAC couldn't be started,TAC couldn't be started. Identification is only possible with manual setpoint setting. Return the Set-point settings to hand operation. TAC konnte nicht gestartet werden. TAC konnte nicht gestartet werden. Identification is only possible with manual setpoint setting. Return the Set-point settings to hand operation
+-4240,message,TAC couldn't be started,TAC couldn't be started.  because temperature control is switched off. Start temperature control.  and let the system settle on a fixed temperature. 
+-4241,message,TAC couldn't be started,TAC couldn't be started.  because pump is switched off. Turn on the pump. TAC konnte nicht gestartet werden
+-4242,message,TAC couldn't be started,TAC couldn't be started.  because heating is switched off. Turn on the heating. TAC konnte nicht gestartet werden
+-4243,message,TAC couldn't be started,TAC couldn't be started.  because of a failure. Cancel alarm by turning off the machine and then turning on again.  and try to find the cause of the fault. TAC konnte nicht gestartet werden
+-4244,message,The identification cannot be started as the compressor is not yet ready,
+-4245,message,TAC couldn't be started,TAC couldn't be started.  because no steady state could be reached yet. Wait until temperature has stabilised to start identification. TAC konnte nicht gestartet werden
+-4246,message,TAC couldn't be started,TAC couldn't be started due to an unknown reason. TAC konnte nicht gestartet werden
+-4247,message,The service package has been successfully created,USB stick could be removed. Please see ServicePackageReadme
+-4248,message,The service package has been successfully created,USB stick still in use. Do not remove. Please see ServicePackageReadme.txt
+-4249,message,
+-4250,message,
+-4251,message,The service package has been created successfully and was uploaded to the network,
+-4252,message,Stepper motor reset (of the LT-stage resp. the HT-stage in single stage systems), as the evaporation pressure is too high (MOP monitor)
+-4253,message,CAN controller software can be updated,
+-4254,message,
+-4255,message,The service package has been successfully created. The file is located in home directory,
+-4300,message,Level not okay,The filling level must be corrected. Please check it. Re-fill the fluid to a suitable level. If a bath circulator check the correct fluid has been entered. Check that the internal circulation is good. Use max pump speed. An unexpected confirmation was received during the transmission
+-8190,message,A command to process a temperature control program was not correctly received from the controller, and thus cannot be executed. Repeat the action again
+-8191,message,A command to process a temperature control program was not correctly received from the controller, and thus cannot be executed. Repeat the action again
+-9100,message,Operating System fault Active board,
+-15006,message,CAN Controller dongle detected,Write Protection of CAN Controller configuration is now disabled. CAN-Controller Dongle erkannt. Info
+-10149,info,Connection to controller has been re-etablished,
+-16384,info,X-info which is stored together with a fault, or or automatically produced if no X-info is stored within the last 6 hours (NOT in standby)
+-16385,info,The temperature control was activated from the control panel,The temperature control was activated by autostart function
+-16387,info,The temperature control was activated by a PP- or LAI command via PC,
+-16388,info,The temperature control was activated by the external control signal via the Com,
+-16389,info,temperature control was started via a program,
+-16390,info,The temperature control was turned off from the control panel,
+-16391,info,The temperature control was deactivated by the autostart function,
+-16392,info,The temperature control was de-activated by a PP- or LAI command via PC,
+-16393,info,The temperature control was de-activated by the external control signal via the Com,
+-16394,info,Temperature control was turned off at the end of a programme,
+-16395,info,The degassing was started via the control panel,
+-16396,info,The degassing was started via by a PP- or LAI command via PC,
+-16397,info,The degassing was turned off via the control panel,
+-16398,info,The degassing was turned off by a PP- or LAI command via PC,
+-16399,info,The air venting was started via the control panel,
+-16400,info,The air venting was started by PP- or LAI command via PC,
+-16401,info,The air venting was turned off from the control panel,
+-16402,info,The air venting was turned off by PP- or LAI command via PC,
+-16403,info,Circulation was started via the control panel,
+-16404,info,Circulation was started by PP- or LAI command via PC,
+-16405,info,Circulation was stopped via the control panel,
+-16406,info,Circulation was turned off by PP- or LAI command via PC,
+-16407,info,The temperature control program 1 has been started,
+-16408,info,The temperature control program 2 has,been started. been started. been started. been started. been started. been started. been started. been started
+-16409,info,The temperature control program 3 has,
+-16410,info,The temperature control program 4 has,
+-16411,info,The temperature control program 5 has,
+-16412,info,The temperature control program 6 has,
+-16413,info,The temperature control program 7 has,
+-16414,info,The temperature control program 8 has,
+-16415,info,The temperature control program 9 has,
+-16416,info,The temperature control program 10 has been started,
+-16417,info,The temperature control program 1 has been stopped,
+-16418,info,The temperature control program 2 has been stopped,
+-16419,info,The temperature control program 3 has been stopped,
+-16420,info,The temperature control program 4 has been stopped,
+-16421,info,The temperature control program 5 has been stopped,
+-16422,info,The temperature control program 6 has been stopped,
+-16423,info,The temperature control program 7 has been stopped,
+-16424,info,The temperature control program 8 has been stopped,
+-16425,info,The temperature control program 9 has been stopped,
+-16426,info,The temperature control program 10 has been stopped,
+-16427,info,The service password was entered,
+-16428,info,The circulator was switched on at the mains,Information for error search (error -48.  E+H)
+-16430,info,The circulator was restarted by the watchdog-timer,The circulator was restarted after a Hardware reset
+-16432,info,The circulator was restarted by a software-reset,A fixed stepper motor position was given by the Pilot. A fixed stepper motor position was determined (not by the pilot). A definite stepper motor position was not given (by the Pilot). A definite stepper motor position is not given by the pilot
+-16437,info,The source of the control parameters was switched via RS232,
+-16438,info,The source for the control parameters (Auto/hand) was switched via the Pilot,
+-16439,info,The source for the control parameters (Auto /hand) was switched by an unknown source,The structure “ActiveBoardInOnce” must be requested from the active board. (note.  that the Pilot has made a restart)
+-16441,info,
+-16442,info,Power switched on after user reset,Action
+-20000,action,The superheat of the HT stage has been too small for some time, therefore the the HT-Valve should be closed. (possibly the valve closes too slowly when controlling)
+-20001,action,The superheat of the MT stage has been too small for some time, therefore the the MT-Valve should be closed. (possibly the valve closes too slowly when controlling)
+-20002,action,Stepper motor reset because of stepper motor minimum position while cooling control,
+-20003,action,A reference run of the stepper motor expansion valve, used to control the compressor circuit which cooles the expansion and vent lines.  has been done because of a too low superheat
+-20004,action,Stepper motor reset because the superheat inside the first LT stage evaporator has been too small for some time,
+-20005,action,Stepper motor reset because the superheat inside the second LT stage evaporator has been too small for some time,
+-20006,action,Delta-T between Jacket/bath and OT sensor too large,The heating was reduced or turned off due to the difference between the over-temperature trip sensor and jacket-temperature being is too high. The heating is reduced to minimise. excessively high surface temperatures on the heating element. This is a typical sign of very poor fluid circulation. The heat energy in the heater is not transferred out of the chamber to the outlet temperature sensor. Temp difference between heater and outlet is greater than 30°C. Heater turned off. Ensure flow is improved.  or thinner oil is used. Help can often be given by reducing the heating power by 50% or so
+,
