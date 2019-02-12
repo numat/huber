@@ -14,14 +14,6 @@ Installation
 pip install huber
 ```
 
-If you don't like pip, you can also install from source:
-
-```
-git clone https://github.com/numat/huber.git
-cd huber
-python setup.py install
-```
-
 Usage
 =====
 
@@ -106,4 +98,4 @@ This uses the PB method described in
 Note that this does not take advantage of the PB package commands, which would
 cut down on the data transmission at the cost of extra bath configuration.
 This also does not take advantage of the high-accuracy PB data transmission,
-as its resolution is unnecessary in NuMat's current use case.
+as its resolution is unnecessary in most use cases.
