@@ -20,7 +20,7 @@ class Bath(object):
     port = 8101
     defaults = [
         'on',
-        'temperature.internal',
+        'temperature.bath',
         'temperature.setpoint',
         'pump.pressure',
         'pump.speed',
@@ -95,9 +95,13 @@ class Bath(object):
         """Set the temperature setpoint of the bath, in C."""
         return await self._set('temperature.setpoint', value)
 
-    async def get_internal(self):
+    async def get_bath_temperature(self):
         """Get the internal temperature of the bath, in C."""
-        return await self._get('temperature.internal')
+        return await self._get('temperature.bath')
+
+    async def get_process_temperature(self):
+        """Get the (optionally installed) process temperature, in C."""
+        return await self._get('temperature.process')
 
     async def get_pump_pressure(self):
         """Get the bath pump outlet pressure, in mbar."""

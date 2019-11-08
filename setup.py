@@ -6,7 +6,7 @@ with open('README.md', 'r') as in_file:
 
 setup(
     name='huber',
-    version='0.2.7',
+    version='0.3.0',
     description='Python driver for Huber recirculating baths.',
     long_description=long_description,
     long_description_content_type='text/markdown',

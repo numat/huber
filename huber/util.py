@@ -27,8 +27,13 @@ fields = {
             'format': 'f',
             'range': (-151, 327)
         },
-        'internal': {
+        'bath': {
             'address': 0x01,
+            'format': 'f',
+            'range': (-151, 327)
+        },
+        'process': {
+            'address': 0x07,
             'format': 'f',
             'range': (-151, 327)
         }
