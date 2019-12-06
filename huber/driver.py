@@ -69,7 +69,7 @@ class Bath(object):
         output = {}
         for default in self.defaults:
             util.set_nested(output, default, await self._get(default))
-        if 'status' in output:
+        if output.get('status'):
             for fault in ['warning', 'error']:
                 if output['status'][fault]:
                     output[fault] = await self._get(fault)
