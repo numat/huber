@@ -186,18 +186,14 @@ class Bath(object):
         """Write a command and reads a response from the bath.
 
         As these baths are commonly moved around, this has been expanded to
-        handle recovering from disconnects.
+        handle recovering from disconnects.  A lock is used to queue multiple requests.
         """
-        if self.waiting:
-            return None
-        self.waiting = True
-
-        value = '****' if value is None else util.int_to_hex(value)
-        command = f'{{M{address:02X}{value}\r\n'
-
-        await self._handle_connection()
-        response = await self._handle_communication(command)
-        self.waiting = False
+        lock = asyncio.Lock()
+        async with lock:
+            value = '****' if value is None else util.int_to_hex(value)
+            command = f'{{M{address:02X}{value}\r\n'
+            await self._handle_connection()
+            response = await self._handle_communication(command)
 
         if (response is None or len(response) != 8 or
                 response[:4] != f'{{S{address:02X}'):
