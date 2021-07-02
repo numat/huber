@@ -39,6 +39,7 @@ class Bath(object):
         self.max_timeouts = 10
         self.waiting = False
         self.connection = None
+        self.lock = asyncio.Lock()
 
     def __enter__(self):
         """Provide entrance to context manager."""
@@ -188,8 +189,7 @@ class Bath(object):
         As these baths are commonly moved around, this has been expanded to
         handle recovering from disconnects.  A lock is used to queue multiple requests.
         """
-        lock = asyncio.Lock()
-        async with lock:
+        async with self.lock:  # lock releases on CancelledError
             value = '****' if value is None else util.int_to_hex(value)
             command = f'{{M{address:02X}{value}\r\n'
             await self._handle_connection()
