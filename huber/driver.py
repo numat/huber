@@ -37,7 +37,6 @@ class Bath(object):
         self.reconnecting = False
         self.timeouts = 0
         self.max_timeouts = 10
-        self.waiting = False
         self.connection = None
         self.lock = asyncio.Lock()
 
