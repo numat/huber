@@ -31,7 +31,7 @@ class Bath(MagicMock):
         return {
             'on': self.on,  # Temperature control (+pump) active
             'temperature': {
-                'internal': 23.49,  # Internal temperature, °C
+                'bath': 23.49,                  # Internal (bath) temperature, °C
                 'setpoint': self.temp_setpoint  # Temperature setpoint, °C
             },
             'pump': {
@@ -71,7 +71,11 @@ class Bath(MagicMock):
 
     async def get_bath_temperature(self):
         """Get the internal temperature of the bath, in C."""
-        return (await self.get())['temperature']['internal']
+        return (await self.get())['temperature']['bath']
+
+    async def get_process_temperature(self):
+        """Get the (optionally installed) process temperature, in C."""
+        return (await self.get())['temperature']['process']
 
     async def get_pump_pressure(self):
         """Get the bath pump outlet pressure, in mbar."""
