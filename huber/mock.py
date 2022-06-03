@@ -35,18 +35,18 @@ class Bath(MagicMock):
                 'setpoint': self.temp_setpoint  # Temperature setpoint, °C
             },
             'pump': {
-                'pressure': random() * 1000,  # Pump head pressure, mbar
-                'speed': random() * 1000,  # Pump speed, rpm
+                'pressure': random() * 1000,    # Pump head pressure, mbar
+                'speed': random() * 1000,       # Pump speed, rpm
                 'setpoint': self.pump_setpoint  # Pump speed setpoint, rpm
             },
             'status': {
                 'circulating': choice([False, True]),  # True if device is circulating
                 'controlling': choice([False, True]),  # True if temperature control is active
-                'error': False,  # True if an uncleared error is present
-                'pumping': choice([False, True]),  # True if pump is on
-                'warning': False,  # True if an uncleared warning is present
+                'error': False,                        # True if an uncleared error is present
+                'pumping': choice([False, True]),      # True if pump is on
+                'warning': False,                      # True if an uncleared warning is present
             },
-            'fill': random(),  # Oil level, [0, 1]
+            'fill': random(),             # Oil level, [0, 1]
             'maintenance': random()*365,  # Time until maintenance alarm, days
         }
 
