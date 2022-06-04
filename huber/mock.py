@@ -31,22 +31,22 @@ class Bath(MagicMock):
         return {
             'on': self.on,  # Temperature control (+pump) active
             'temperature': {
-                'internal': 23.49,  # Internal temperature, °C
+                'bath': 23.49,                  # Internal (bath) temperature, °C
                 'setpoint': self.temp_setpoint  # Temperature setpoint, °C
             },
             'pump': {
-                'pressure': random() * 1000,  # Pump head pressure, mbar
-                'speed': random() * 1000,  # Pump speed, rpm
+                'pressure': random() * 1000,    # Pump head pressure, mbar
+                'speed': random() * 1000,       # Pump speed, rpm
                 'setpoint': self.pump_setpoint  # Pump speed setpoint, rpm
             },
             'status': {
                 'circulating': choice([False, True]),  # True if device is circulating
                 'controlling': choice([False, True]),  # True if temperature control is active
-                'error': False,  # True if an uncleared error is present
-                'pumping': choice([False, True]),  # True if pump is on
-                'warning': False,  # True if an uncleared warning is present
+                'error': False,                        # True if an uncleared error is present
+                'pumping': choice([False, True]),      # True if pump is on
+                'warning': False,                      # True if an uncleared warning is present
             },
-            'fill': random(),  # Oil level, [0, 1]
+            'fill': random(),             # Oil level, [0, 1]
             'maintenance': random()*365,  # Time until maintenance alarm, days
         }
 
@@ -71,7 +71,11 @@ class Bath(MagicMock):
 
     async def get_bath_temperature(self):
         """Get the internal temperature of the bath, in C."""
-        return (await self.get())['temperature']['internal']
+        return (await self.get())['temperature']['bath']
+
+    async def get_process_temperature(self):
+        """Get the (optionally installed) process temperature, in C."""
+        return (await self.get())['temperature']['process']
 
     async def get_pump_pressure(self):
         """Get the bath pump outlet pressure, in mbar."""

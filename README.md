@@ -48,7 +48,7 @@ If the bath is communicating, this should print a dictionary of the form:
 {
     'on': False,               # Temperature control (+pump) active
     'temperature': {
-        'internal': 23.49,     # Internal temperature, °C
+        'bath': 23.49,         # Internal (bath) temperature, °C
         'setpoint': 20.0       # Temperature setpoint, °C
     },
     'pump': {
