@@ -194,8 +194,8 @@ class Bath(object):
             await self._handle_connection()
             response = await self._handle_communication(command)
 
-        if (response is None or len(response) != 8 or
-                response[:4] != f'{{S{address:02X}'):
+        if (response is None or len(response) != 8
+           or response[:4] != f'{{S{address:02X}'):
             return None
         return util.hex_to_int(response[4:])
 

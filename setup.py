@@ -18,6 +18,15 @@ setup(
     entry_points={
         'console_scripts': [('huber = huber:command_line')]
     },
+    extras_require={
+        'test': [
+            'pytest',
+            'pytest-cov',
+            'pytest-asyncio',
+            'flake8>=3,<6',
+            'flake8-docstrings==1.*',
+        ],
+    },
     license='GPLv2',
     classifiers=[
         'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
