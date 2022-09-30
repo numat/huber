@@ -2,12 +2,11 @@
 from huber.driver import Bath
 
 
-def command_line():
+def command_line(args=None):
     """Command-line interface to the Huber bath."""
     import argparse
     import asyncio
     import json
-
     parser = argparse.ArgumentParser(description="Control a Huber bath "
                                      "from the command line.")
     parser.add_argument('ip', help="The bath IP address.")
