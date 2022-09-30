@@ -1,7 +1,7 @@
 """Mock interface to a Huber bath."""
 
 import asyncio
-from random import random, choice
+import random
 from unittest.mock import MagicMock
 
 from huber.driver import Bath as realBath
@@ -27,27 +27,28 @@ class Bath(MagicMock):
 
     async def get(self):
         """Return data structure randomly populated."""
-        await asyncio.sleep(random() * 0.25)
+        await asyncio.sleep(random.random() * 0.25)
         return {
             'on': self.on,  # Temperature control (+pump) active
             'temperature': {
                 'bath': 23.49,                  # Internal (bath) temperature, °C
+                'process': 22.71,               # Process temperature, °C
                 'setpoint': self.temp_setpoint  # Temperature setpoint, °C
             },
             'pump': {
-                'pressure': random() * 1000,    # Pump head pressure, mbar
-                'speed': random() * 1000,       # Pump speed, rpm
+                'pressure': random.random() * 1000,    # Pump head pressure, mbar
+                'speed': random.random() * 1000,       # Pump speed, rpm
                 'setpoint': self.pump_setpoint  # Pump speed setpoint, rpm
             },
             'status': {
-                'circulating': choice([False, True]),  # True if device is circulating
-                'controlling': choice([False, True]),  # True if temperature control is active
+                'circulating': random.choice([False, True]),  # True if device is circulating
+                'controlling': random.choice([False, True]),  # True if temp control is active
                 'error': False,                        # True if an uncleared error is present
-                'pumping': choice([False, True]),      # True if pump is on
+                'pumping': random.choice([False, True]),      # True if pump is on
                 'warning': False,                      # True if an uncleared warning is present
             },
-            'fill': random(),             # Oil level, [0, 1]
-            'maintenance': random()*365,  # Time until maintenance alarm, days
+            'fill': random.random(),             # Oil level, [0, 1]
+            'maintenance': random.random()*365,  # Time until maintenance alarm, days
         }
 
     async def start(self):
