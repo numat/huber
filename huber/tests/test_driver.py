@@ -5,7 +5,6 @@ import random
 import pytest
 
 from huber.mock import Bath
-from huber import command_line
 
 fixed_random = random.random()
 fixed_choice = random.choice([False, True])
