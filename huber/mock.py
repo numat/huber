@@ -48,7 +48,7 @@ class Bath(MagicMock):
                 'warning': False,                      # True if an uncleared warning is present
             },
             'fill': random.random(),             # Oil level, [0, 1]
-            'maintenance': random.random()*365,  # Time until maintenance alarm, days
+            'maintenance': random.random() * 365,  # Time until maintenance alarm, days
         }
 
     async def start(self):
