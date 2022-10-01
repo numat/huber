@@ -1,9 +1,11 @@
 """Test the driver correctly initializes and returns mocked data."""
 from unittest import mock
+from json import loads
 
 import random
 import pytest
 
+from huber import command_line
 from huber.mock import Bath
 
 fixed_random = random.random()
@@ -51,3 +53,22 @@ async def test_get_data(huber_driver, expected_data):
     with mock.patch('random.random', lambda: fixed_random), \
          mock.patch('random.choice', lambda arg: fixed_choice):
         assert expected_data == await huber_driver.get()
+
+@mock.patch('huber.Bath', Bath)
+def test_driver_cli(capsys, expected_data):
+    """Confirm the commandline interface works."""
+    with mock.patch('random.random', lambda: fixed_random), \
+         mock.patch('random.choice', lambda arg: fixed_choice):
+        command_line(['fakeip'])
+        captured = loads(capsys.readouterr().out)
+        assert expected_data == captured
+
+@mock.patch('huber.Bath', Bath)
+def test_driver_cli_setpoint(capsys, expected_data):
+    """Confirm setting a setpoint via the commandline interface works."""
+    with mock.patch('random.random', lambda: fixed_random), \
+         mock.patch('random.choice', lambda arg: fixed_choice):
+        command_line(['fakeip', '--set-setpoint', '1.23'])
+        captured = loads(capsys.readouterr().out)
+        expected_data['temperature']['setpoint'] = 1.23
+        assert expected_data == captured
