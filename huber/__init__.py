@@ -1,4 +1,6 @@
 """Import shorthand and command-line tool for Huber baths."""
+from sys import version_info
+
 from huber.driver import Bath
 
 
@@ -19,12 +21,15 @@ def command_line(args=None):
             await bath.set_setpoint(args.set_setpoint)
         print(json.dumps(await bath.get(), indent=4, sort_keys=True))
 
-    ioloop = asyncio.get_event_loop()
-    try:
-        with Bath(args.ip) as bath:
-            ioloop.run_until_complete(print_state())
-    except KeyboardInterrupt:
-        pass
+    with Bath(args.ip) as bath:
+        if version_info < (3, 7):
+            ioloop = asyncio.get_event_loop()
+            try:
+                ioloop.run_until_complete(print_state())
+            except KeyboardInterrupt:
+                pass
+        else:
+            asyncio.run(print_state())
 
 
 if __name__ == '__main__':
