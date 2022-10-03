@@ -54,6 +54,7 @@ async def test_get_data(huber_driver, expected_data):
          mock.patch('random.choice', lambda arg: fixed_choice):
         assert expected_data == await huber_driver.get()
 
+
 @mock.patch('huber.Bath', Bath)
 def test_driver_cli(capsys, expected_data):
     """Confirm the commandline interface works."""
@@ -62,6 +63,7 @@ def test_driver_cli(capsys, expected_data):
         command_line(['fakeip'])
         captured = loads(capsys.readouterr().out)
         assert expected_data == captured
+
 
 @mock.patch('huber.Bath', Bath)
 def test_driver_cli_setpoint(capsys, expected_data):
