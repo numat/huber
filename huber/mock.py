@@ -53,12 +53,12 @@ class Bath(MagicMock):
 
     async def start(self):
         """Start the controller and pump."""
-        await asyncio.sleep(random())
+        await asyncio.sleep(random.random())
         self.on = True
 
     async def stop(self):
         """Stop the controller and pump."""
-        await asyncio.sleep(random() * 0.25)
+        await asyncio.sleep(random.random() * 0.25)
         self.on = False
 
     async def get_setpoint(self, *args, **kwargs):
@@ -67,7 +67,7 @@ class Bath(MagicMock):
 
     async def set_setpoint(self, value):
         """Set the temperature setpoint of the bath, in C."""
-        await asyncio.sleep(random() * 0.25)
+        await asyncio.sleep(random.random() * 0.25)
         self.temp_setpoint = value
 
     async def get_bath_temperature(self):
@@ -88,7 +88,7 @@ class Bath(MagicMock):
 
     async def set_pump_speed(self, value):
         """Set the bath pump speed, in RPM."""
-        await asyncio.sleep(random() * 0.25)
+        await asyncio.sleep(random.random() * 0.25)
         self.pump_setpoint = value
 
     async def get_fill_level(self):
