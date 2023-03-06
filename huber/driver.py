@@ -8,6 +8,7 @@ try:
 except ImportError:
     raise ImportError("TCP connections require python >=3.5.")
 import logging
+from typing import Any, Dict
 
 from huber import util
 
@@ -37,7 +38,7 @@ class Bath(object):
         self.reconnecting = False
         self.timeouts = 0
         self.max_timeouts = 10
-        self.connection = None
+        self.connection = {}
         self.lock = asyncio.Lock()
 
     def __enter__(self):
@@ -66,7 +67,7 @@ class Bath(object):
         Note that this is slow, as it chains multiple requests to construct
         a response. Look into the other `get` methods for single fields.
         """
-        output = {}
+        output: Dict['str', Any] = {}
         for default in self.defaults:
             util.set_nested(output, default, await self._get(default))
         if output.get('status'):
