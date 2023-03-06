@@ -1,7 +1,7 @@
 """Install parameters for CLI and python import."""
 from sys import version_info
-from setuptools import setup
 
+from setuptools import setup
 
 if version_info < (3, 7):
     raise ImportError("This module requires Python >=3.7 for asyncio support")
@@ -11,7 +11,7 @@ with open('README.md', 'r') as in_file:
 
 setup(
     name='huber',
-    version='0.5.0',
+    version='0.5.1',
     description='Python driver for Huber recirculating baths.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -43,6 +43,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Scientific/Engineering :: Human Machine Interfaces',
         'Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)'
     ]
