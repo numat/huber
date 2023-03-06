@@ -1,8 +1,8 @@
 """Test the driver correctly initializes and returns mocked data."""
-from unittest import mock
-from json import loads
-
 import random
+from json import loads
+from unittest import mock
+
 import pytest
 
 from huber import command_line
