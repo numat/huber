@@ -179,7 +179,7 @@ Code,Type,Condition,Recovery
 -239,hard error,HD-limiter Tandem compressor2 (F6M31) has triggered,Pressostat F6M31 has operated. Check water flow and temperature
 -240,hard error,Motor protection Tandem compressor1 (QV1.1-HT, QV2.2-HT) has triggered. Tandem compressor 1 Over current QV1.1-HT.  QV2.2-HT have tripped. Check supplies to compressor
 -241,hard error,Motor protection Tandem compressor2 (QM31, QM31.1) has triggered. Tandem compressor 2 Over current QM31.  QM31.1 have tripped. Check supplies to compressor
--242,hard error,Thermistors in M3 (M3-T1) (Tandem compressor1) have triggered,Kriwan Compressor 1. Check compressor supplies and fans. Check water cooling ok. Check refrigerant sight glass for being full with no bubbles. 
+-242,hard error,Thermistors in M3 (M3-T1) (Tandem compressor1) have triggered,Kriwan Compressor 1. Check compressor supplies and fans. Check water cooling ok. Check refrigerant sight glass for being full with no bubbles.
 -243,hard error,Thermistors in M4 (M4-T1) (Tandem compressor2) have triggered,Kriwan Compressor 2. Check compressor supplies and fans. Check water cooling ok. Check refrigerant sight glass for being full with no bubbles
 -244,hard error,Oil differential pressure switch Tandem compressor1 (F14M30) has triggered Compressor 1 oil pressure too low. Reset F14M30 by pressing red knob,
 -245,hard error,Oil differential pressure switch Tandem compressor2 (F14M31) has triggered Compressor 2 oil pressure too low. Reset F14M31 by pressing red knob,
@@ -285,7 +285,7 @@ Code,Type,Condition,Recovery
 -348,hard error,HD-limiter compressor liquid subcooling (F6M5),Over pressure switch F6M5 has operated. Check cooling and fluid flow
 -349,hard error,motor protection HT-stage part-winding.1 (QV1.1-HT),HT stage part winding over current QV1.1-HT. Reset by hand. Check power supplies and relays not sticking. Check controller by replacement
 -350,hard error,motor protection HT-stage part-winding.2 (QV1.2-HT),HT stage part winding over current QV1.2-HT. Reset by hand. Check power supplies and relays not sticking. Check controller by replacement
--351,hard error,Thermistors in M4 (M4-T1) (LT-stage),NT compressor M4 windings too hot. Thermistor monitoring (M4-T1) Check power supply voltage and phases and machine cooling. 
+-351,hard error,Thermistors in M4 (M4-T1) (LT-stage),NT compressor M4 windings too hot. Thermistor monitoring (M4-T1) Check power supply voltage and phases and machine cooling.
 -352,hard error,Oil differential pressure switch LT-stage (F14M4),LT stage oil pressure too low (F14M4). Reset by pressing red button
 -353,hard error,LT-stage contactor part-winding 1 (KM4),LT stage part winding start KM4 gives an error. Check for sticking contacts. Check controller. by replacement
 -354,hard error,LT-stage part-winding 2 (KM4,LT stage part winding start KM4.1 gives an error. Check for sticking contacts. Check controller by replacement
@@ -296,7 +296,7 @@ Code,Type,Condition,Recovery
 -359,hard error,RF4M5 Pt100 sensor compressor 2 outlet gas temperature HT-stage,Compressor 2 outlet gas temp sensor RF4M5 - Pt100 HT stage alarm
 -360,hard error,RF4M5 Pt100 sensor compressor outlet gas temperature MT-stage,Compressor outlet gas temp sensor RF4M5 - Pt100 MT stage alarm
 -361,hard error,The VPC is not responding anymore,VPC no longer answers. Check connections
--362,hard error,M10-F3: Thermo contact condenser fan,M10-F3: Thermo contact of condenser fan has operated. Turn off power.  Check fan for free running.  wait to cool.  turn on power and Check fan rotation. 
+-362,hard error,M10-F3: Thermo contact condenser fan,M10-F3: Thermo contact of condenser fan has operated. Turn off power.  Check fan for free running.  wait to cool.  turn on power and Check fan rotation.
 -363,hard error,M10.1-F3: Thermo contact condenser fan,M10.1-F3: Thermo contact of condenser fan has operated. Turn off power.  Check fan for free running.  wait to cool.  turn on power and Check fan rotation
 -364,hard error,The temperature-pressure module 1 was not recognised during initialisation Check connections etc,
 -365,hard error,The temperature pressure module 1 is not responding anymore Check connections etc,
@@ -452,7 +452,7 @@ Code,Type,Condition,Recovery
 -542,hard error,The stepper motor module 3 does not respond,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
 -543,hard error,The SMO3 notifies: 'Hardware cannot be found,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
 -544,hard error,The SMO3 notifies: 'Incorrect Sim File is module,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
--545,hard error,The SMO3 notifies 'No CAN communication',Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module. 
+-545,hard error,The SMO3 notifies 'No CAN communication',Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module.
 -546,hard error,The SMO3 has notified a fault,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
 -547,hard error,The SMO3 notifies: incorrect SIM file version,Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
 -548,hard error,The SMO3 notifies: SPI-fault message 1 (not further defined),Check connections.  CAN-Bus connections.  possible Stepper motor module modul fault. Check LEDs on module
@@ -1170,10 +1170,10 @@ Code,Type,Condition,Recovery
 -4233,message,Error chain adjustment not possible,The discrepancy of the measured values was too large
 -4234,message,Error chain adjustment not okay,The adjustment data of the error chain is not available
 -4235,message,TAC without heating is blocked,TAC cannot run with a positive set point jump if the machine does not have any heating. If possible.  carry out identification using negative set point jumps
--4236,message,TAC without cooling is blocked,TAC cannot run with a negative set point jump if the machine does not have any cooling. If possible.  carry out identification using positive set point jumps. An error has been found when decoding the over temperature tripping value. 
+-4236,message,TAC without cooling is blocked,TAC cannot run with a negative set point jump if the machine does not have any cooling. If possible.  carry out identification using positive set point jumps. An error has been found when decoding the over temperature tripping value.
 -4238,message,TAC requires the compressor to run,As long as TAC is active.  the compressor automatic setting may not be changed. Identifikation benötigt laufenden Kompressor
 -4239,message,TAC couldn't be started,TAC couldn't be started. Identification is only possible with manual setpoint setting. Return the Set-point settings to hand operation. TAC konnte nicht gestartet werden. TAC konnte nicht gestartet werden. Identification is only possible with manual setpoint setting. Return the Set-point settings to hand operation
--4240,message,TAC couldn't be started,TAC couldn't be started.  because temperature control is switched off. Start temperature control.  and let the system settle on a fixed temperature. 
+-4240,message,TAC couldn't be started,TAC couldn't be started.  because temperature control is switched off. Start temperature control.  and let the system settle on a fixed temperature.
 -4241,message,TAC couldn't be started,TAC couldn't be started.  because pump is switched off. Turn on the pump. TAC konnte nicht gestartet werden
 -4242,message,TAC couldn't be started,TAC couldn't be started.  because heating is switched off. Turn on the heating. TAC konnte nicht gestartet werden
 -4243,message,TAC couldn't be started,TAC couldn't be started.  because of a failure. Cancel alarm by turning off the machine and then turning on again.  and try to find the cause of the fault. TAC konnte nicht gestartet werden
