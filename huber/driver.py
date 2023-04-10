@@ -8,14 +8,14 @@ try:
 except ImportError:
     raise ImportError("TCP connections require python >=3.5.")
 import logging
-from typing import Any, Dict
+from typing import Any
 
 from huber import util
 
 logger = logging.getLogger('huber')
 
 
-class Bath(object):
+class Bath:
     """Python driver for Huber recirculating baths."""
 
     port = 8101
@@ -67,7 +67,7 @@ class Bath(object):
         Note that this is slow, as it chains multiple requests to construct
         a response. Look into the other `get` methods for single fields.
         """
-        output: Dict['str', Any] = {}
+        output: dict['str', Any] = {}
         for default in self.defaults:
             util.set_nested(output, default, await self._get(default))
         if output.get('status'):
@@ -179,9 +179,9 @@ class Bath(object):
         response = await self._write_and_read(settings['address'], encoded)
         new = util.parse(response, settings)
         if new is None:
-            raise IOError(f'Could not set {key}. (No response)')
+            raise OSError(f'Could not set {key}. (No response)')
         if settings['format'] != 'b' and abs(new - value) > .1:
-            raise IOError(f'Could not set {key}. (Received response, but did not change)')
+            raise OSError(f'Could not set {key}. (Received response, but did not change)')
 
     async def _write_and_read(self, address, value=None):
         """Write a command and reads a response from the bath.
