@@ -95,7 +95,7 @@ def int_to_hex(number, bits=16):
     This uses two's complement in encoding the integer, per Huber's
     manual.
     """
-    return '{:04X}'.format((number + (1 << bits)) % (1 << bits))
+    return f'{(number + (1 << bits)) % (1 << bits):04X}'
 
 
 def hex_to_int(hex_string, bits=16):
@@ -107,7 +107,7 @@ def hex_to_int(hex_string, bits=16):
     """
     number = int(hex_string, bits)
     if number == 32767:
-        raise IOError("Command not enabled on this Huber model.")
+        raise OSError("Command not enabled on this Huber model.")
     if number >> (bits - 1) == 1:
         number -= (1 << bits)
     return number
