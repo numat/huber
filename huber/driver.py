@@ -3,6 +3,8 @@
 Distributed under the GNU General Public License v2
 Copyright (C) 2017 NuMat Technologies
 """
+from __future__ import annotations
+
 try:
     import asyncio
 except ImportError:
@@ -67,7 +69,7 @@ class Bath:
         Note that this is slow, as it chains multiple requests to construct
         a response. Look into the other `get` methods for single fields.
         """
-        output: dict['str', Any] = {}
+        output: dict[str, Any] = {}
         for default in self.defaults:
             util.set_nested(output, default, await self._get(default))
         if output.get('status'):
