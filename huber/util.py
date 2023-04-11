@@ -138,7 +138,7 @@ def get_field(key):
     """Search period-separated key searching on `fields`."""
     f = fields
     for k in key.split('.'):
-        f = f[k]
+        f = f[k]  # type: ignore
     return f
 
 
