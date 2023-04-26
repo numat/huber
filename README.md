@@ -36,7 +36,7 @@ import asyncio
 from huber import Bath
 
 async def get():
-    with Bath('192.168.1.100') as bath:
+    async with Bath('192.168.1.100') as bath:
         print(await bath.get())
 
 asyncio.run(get())
