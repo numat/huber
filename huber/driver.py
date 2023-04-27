@@ -40,10 +40,6 @@ class Bath:
         self.connection = {}
         self.lock = asyncio.Lock()
 
-    def __enter__(self):
-        """Provide entrance to context manager."""
-        return self
-
     async def __aenter__(self):
         """Provide async entrance to context manager.
 

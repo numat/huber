@@ -16,12 +16,12 @@ def command_line(args=None):
     args = parser.parse_args(args)
 
     async def print_state():
-        if args.set_setpoint is not None:
-            await bath.set_setpoint(args.set_setpoint)
-        print(json.dumps(await bath.get(), indent=4, sort_keys=True))
+        async with Bath(args.ip) as bath:
+            if args.set_setpoint is not None:
+                await bath.set_setpoint(args.set_setpoint)
+            print(json.dumps(await bath.get(), indent=4, sort_keys=True))
 
-    with Bath(args.ip) as bath:
-        asyncio.run(print_state())
+    asyncio.run(print_state())
 
 
 if __name__ == '__main__':

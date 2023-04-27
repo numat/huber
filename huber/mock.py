@@ -2,28 +2,26 @@
 
 import asyncio
 import random
-from unittest.mock import MagicMock
 
 from huber.driver import Bath as realBath
 
 
-class Bath(MagicMock):
+class Bath(realBath):
     """Mock interface to a Huber bath."""
 
     def __init__(self, *args, **kwargs):
         """Init fixed variables."""
-        super().__init__(spec=realBath)
         self.temp_setpoint = 50
         self.pump_setpoint = 500
         self.on = False
 
-    async def __aenter__(self, *args):
-        """Set up connection."""
-        return self
+    async def _connect(self):
+        """Mock creating the TCP connection."""
+        self.open = True
 
-    async def __aexit__(self, *args):
-        """Close connection."""
-        pass
+    def close(self):
+        """Mock closing the TCP connection."""
+        self.open = False
 
     async def get(self):
         """Return data structure randomly populated."""
