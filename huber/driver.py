@@ -5,10 +5,7 @@ Copyright (C) 2017 NuMat Technologies
 """
 from __future__ import annotations
 
-try:
-    import asyncio
-except ImportError:
-    raise ImportError("TCP connections require python >=3.5.")
+import asyncio
 import logging
 from typing import Any
 
