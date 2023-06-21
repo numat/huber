@@ -3,7 +3,7 @@ import csv
 import os
 
 root = os.path.normpath(os.path.dirname(__file__))
-with open(os.path.join(root, 'faults.csv')) as in_file:
+with open(os.path.join(root, 'faults.csv'), encoding='utf8') as in_file:
     reader = csv.reader(in_file)
     next(reader)
     faults = {int(row[0]): {
