@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
-from typing import Any
+from typing import Any, ClassVar
 
 from huber import util
 
@@ -18,7 +18,7 @@ class Bath:
     """Python driver for Huber recirculating baths."""
 
     port = 8101
-    defaults = [
+    defaults: ClassVar[list] = [
         'on',
         'temperature.bath',
         'temperature.setpoint',
