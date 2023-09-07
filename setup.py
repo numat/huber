@@ -13,6 +13,8 @@ setup(
     url='http://github.com/numat/huber/',
     author='Patrick Fuller',
     author_email='pat@numat-tech.com',
+    maintainer='Alex Ruddick',
+    maintainer_email='alex@numat-tech.com',
     packages=['huber'],
     package_data={'huber': ['faults.csv']},
     entry_points={
