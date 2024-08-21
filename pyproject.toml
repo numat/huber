@@ -6,13 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "huber"
 version = "0.6.1"
 description="Python driver for Huber recirculating baths."
-dependencies = [
-  "pymodbus>=2.4.0; python_version == '3.8'",
-  "pymodbus>=2.4.0; python_version == '3.9'",
-  "pymodbus>=3.0.2,<3.8.0; python_version >= '3.10'",
-  "pyserial",
-  "crcmod"
-]
 authors = [
   {name = "Pat Fuller", email = "patrickfuller@gmail.com" },
 ]
@@ -45,11 +38,17 @@ test = [
 ]
 
 [project.scripts]
-watlow = "huber:command_line"
+huber = "huber:command_line"
 
 [project.urls]
 Homepage = "https://github.com/alexrudd2/huber"
 Issues = "https://github.com/alexrudd2/huber/issues"
+
+[tool.setuptools]
+packages = ["huber"]
+
+[tool.setuptools.package-data]
+"huber" = ["faults.csv"]
 
 [tool.ruff]
 exclude = ["venv*"]
