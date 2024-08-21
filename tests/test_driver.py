@@ -21,8 +21,8 @@ def huber_driver():
 @pytest.fixture
 def expected_data():
     """Return the mocked data."""
-    with mock.patch('random.random', lambda: fixed_random), \
-         mock.patch('random.choice', lambda arg: fixed_choice):
+    with mock.patch('random.random', return_value=fixed_random), \
+         mock.patch('random.choice', return_value=fixed_choice):
         return {
             'on': False,  # Temperature control (+pump) active
             'temperature': {
@@ -50,16 +50,16 @@ def expected_data():
 @pytest.mark.asyncio
 async def test_get_data(huber_driver, expected_data):
     """Confirm that the driver returns correct values on get() calls."""
-    with mock.patch('random.random', lambda: fixed_random), \
-         mock.patch('random.choice', lambda arg: fixed_choice):
+    with mock.patch('random.random', return_value=fixed_random), \
+         mock.patch('random.choice', return_value=fixed_choice):
         assert expected_data == await huber_driver.get()
 
 
 @mock.patch('huber.Bath', Bath)
 def test_driver_cli(capsys, expected_data):
     """Confirm the commandline interface works."""
-    with mock.patch('random.random', lambda: fixed_random), \
-         mock.patch('random.choice', lambda arg: fixed_choice):
+    with mock.patch('random.random', return_value=fixed_random), \
+         mock.patch('random.choice', return_value=fixed_choice):
         command_line(['fakeip'])
         captured = loads(capsys.readouterr().out)
         assert expected_data == captured
@@ -68,8 +68,8 @@ def test_driver_cli(capsys, expected_data):
 @mock.patch('huber.Bath', Bath)
 def test_driver_cli_setpoint(capsys, expected_data):
     """Confirm setting a setpoint via the commandline interface works."""
-    with mock.patch('random.random', lambda: fixed_random), \
-         mock.patch('random.choice', lambda arg: fixed_choice):
+    with mock.patch('random.random', return_value=fixed_random), \
+         mock.patch('random.choice', return_value=fixed_choice):
         command_line(['fakeip', '--set-setpoint', '1.23'])
         captured = loads(capsys.readouterr().out)
         expected_data['temperature']['setpoint'] = 1.23
