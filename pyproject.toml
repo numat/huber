@@ -51,7 +51,7 @@ packages = ["huber"]
 "huber" = ["faults.csv"]
 
 [tool.ruff]
-exclude = ["venv*"]
+extend-exclude = ["venv*"]
 line-length = 99
 
 [tool.ruff.lint]
