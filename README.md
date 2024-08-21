@@ -4,7 +4,7 @@ huber
 Ethernet driver and command-line tool for Huber baths.
 
 <p align="center">
-  <img src="http://www.huber-online.com/images/product_img/group_3.06.jpg" />
+  <img src="https://www.huber-usa.com/fileadmin/_processed_/6/3/csm_Huber-Bad-Umwaelzthermostate-Gruppenbild_f3840bba75.png" />
 </p>
 
 Installation
