@@ -1,0 +1,91 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "huber"
+version = "0.6.1"
+description="Python driver for Huber recirculating baths."
+dependencies = [
+  "pymodbus>=2.4.0; python_version == '3.8'",
+  "pymodbus>=2.4.0; python_version == '3.9'",
+  "pymodbus>=3.0.2,<3.8.0; python_version >= '3.10'",
+  "pyserial",
+  "crcmod"
+]
+authors = [
+  {name = "Pat Fuller", email = "patrickfuller@gmail.com" },
+]
+maintainers = [
+  {name = "Alex Ruddick", email = "alex@ruddick.tech" }
+]
+readme = "README.md"
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Development Status :: 4 - Beta",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)"
+]
+
+[project.optional-dependencies]
+test = [
+  "mypy==1.11.1",
+  "pytest",
+  "pytest-cov",
+  "pytest-asyncio",
+  "ruff==0.5.6",
+]
+
+[project.scripts]
+watlow = "huber:command_line"
+
+[project.urls]
+Homepage = "https://github.com/alexrudd2/huber"
+Issues = "https://github.com/alexrudd2/huber/issues"
+
+[tool.ruff]
+exclude = ["venv*"]
+line-length = 99
+
+[tool.ruff.lint]
+ignore = [
+  "D104",     # Missing docstring in public package
+  "D107",     # Missing docstring in __init__
+  "PT001",    # Use `@pytest.fixture()` over `@pytest.fixture`
+  "PT023",    # Use `@pytest.mark.asyncio()` over `@pytest.mark.asyncio`
+]
+select = [
+    # "B",   # bandit
+    "C",   # complexity
+    "D",   # docstrings
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    # "PT",  # flake8-pytest
+    "RUF", # ruff base config
+    "SIM", # flake-simplify
+    "UP",  # pyupgrade
+    "W",   # pycodestyle warnings
+    "YTT", # flake8-2020
+    # "ARG", # flake8-unused args
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.ruff.lint.flake8-unused-arguments]
+ignore-variadic-names = true
+
+[tool.mypy]
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+addopts = "--cov=huber"
