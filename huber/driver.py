@@ -1,7 +1,6 @@
 """Python driver for Huber recirculating baths, using asynchronous TCP.
 
 Distributed under the GNU General Public License v2
-Copyright (C) 2017 NuMat Technologies
 """
 from __future__ import annotations
 
