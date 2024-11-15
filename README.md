@@ -7,6 +7,9 @@ Ethernet driver and command-line tool for Huber baths.
   <img src="http://www.huber-online.com/images/product_img/group_3.06.jpg" />
 </p>
 
+
+**Note:** Work on this repository has been discontinued, the official Huber driver repo is <https://github.com/alexrudd2/huber>
+
 Installation
 ============
 
